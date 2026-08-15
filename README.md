@@ -16,7 +16,7 @@ Channel Swimming Solo Database.
 Der Ärmelkanal kostet keinen *Faktor* auf die Seezeit, sondern einen festen Aufschlag:
 
 ```
-Kanalzeit = Zürichseezeit + 3:53 h        (95 %: +1:32 bis +9:53, n = 167)
+Kanalzeit = Zürichseezeit + 3:53 h        (95 %: +1:31 bis +9:58, n = 163)
 ```
 
 Die Korrelation zwischen Aufschlag und Seezeit beträgt **+0,06** — er hängt praktisch nicht

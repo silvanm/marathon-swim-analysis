@@ -11,7 +11,7 @@ Jahresseiten: `.../previous-results/<jahr>`
 | `marathon_swim.csv` | dieselben Daten flach als CSV |
 | `results/<jahr>.json` | Rohextraktion pro Jahrgang (inkl. Wetter, Wassertemperatur, Token-Usage) |
 | `explorer.html` | Auswertungsseite für die Ranglisten (Suche, Filter, Diagramme) |
-| `crossover.csv` / `crossover.json` | 167 Personen mit Zürichsee- **und** Ärmelkanal-Zeit |
+| `crossover.csv` / `crossover.json` | 163 Personen mit Zürichsee- **und** Ärmelkanal-Zeit |
 | `crossover_model.json` | Regressionsmodell für die Hochrechnung |
 | `crossover.html` | Auswertungsseite zur Hochrechnung Zürichsee → Ärmelkanal |
 
@@ -80,8 +80,8 @@ Nachnamen aus `Last Name [Previous Name]` und sowohl vollem Vornamen als auch er
 
 | Beleg | Paare |
 |---|---|
-| Geburtsjahr auf beiden Seiten, Abweichung ≤ 2 Jahre | 133 |
-| Geschlecht und Nationalitätsgruppe stimmen überein | 33 |
+| Geburtsjahr auf beiden Seiten, Abweichung ≤ 2 Jahre | 132 |
+| Geschlecht und Nationalitätsgruppe stimmen überein | 30 |
 | manuell geprüft (`OVERRIDES` in `match_channel.py`) | 1 |
 
 Das Geburtsjahr schlägt die Nationalität, weil international startende Freiwasserschwimmer
@@ -91,29 +91,29 @@ sind über das Geburtsjahr eindeutig bestätigt. Kein Paar beruht allein auf dem
 **Paarung** bei Mehrfachstarts: pro Person das Paar mit dem kleinsten Jahresabstand
 (Median 2 Jahre), damit vergleichbare Formzustände gegenübergestellt werden.
 
-**Modell** (Stand 2026-08-15, n = 167) — **additiv, nicht multiplikativ**:
+**Modell** (Stand 2026-08-15, n = 163) — **additiv, nicht multiplikativ**:
 
 ```
 Kanalzeit = Zürichseezeit + Aufschlag
-Aufschlag ~ LogNormal(mu = 1.360, sigma = 0.475)
-          → Median 3:53 h,  95 % zwischen 1:32 und 9:53 h
+Aufschlag ~ LogNormal(mu = 1.360, sigma = 0.478)
+          → Median 3:53 h,  95 % zwischen 1:31 und 9:58 h
 ```
 
 Die Funktionsform ist getestet, nicht angenommen (`project.py compare`, Residual-SD in Stunden):
 
 | Modell | Formel | Residual-SD |
 |---|---|---|
-| additiv (Steigung = 1) | `ZH + 4.25` | **1.631** |
-| linear mit Achsenabschnitt | `3.64 + 1.065·ZH` | 1.633 |
-| Potenzgesetz | `2.75·ZH^0.713` | 1.638 |
-| proportional durch 0 | `1.448·ZH` | 1.720 |
+| additiv (Steigung = 1) | `ZH + 4.25` | **1.644** |
+| linear mit Achsenabschnitt | `3.63 + 1.066·ZH` | 1.647 |
+| Potenzgesetz | `2.74·ZH^0.714` | 1.651 |
+| proportional durch 0 | `1.447·ZH` | 1.733 |
 
 Entscheidend ist nicht der minimale Fit-Unterschied, sondern dass der **Aufschlag nicht vom
 Tempo abhängt**: Korrelation Aufschlag ↔ Seezeit = **+0.06**. Damit ist die Steigung
 überflüssig, und die naheliegende Proportionalität durch den Nullpunkt wird von den Daten
 verworfen. Der Aufschlag ist strikt positiv und rechtsschief, deshalb lognormal — das ergibt
-ein asymmetrisches Prognoseband statt eines symmetrischen. Abdeckung: 161 von 167 Paaren
-(96 %) im 95-%-Band.
+ein asymmetrisches Prognoseband statt eines symmetrischen. Abdeckung: 158 von 163 Paaren
+(97 %) im 95-%-Band.
 
 Der *Faktor* Kanal/Zürichsee sinkt entsprechend mit langsameren Zeiten (1.58 bei unter 8 h,
 1.30 bei über 11 h) — das ist die arithmetische Folge eines konstanten Aufschlags und kein

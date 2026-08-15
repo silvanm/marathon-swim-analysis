@@ -1,59 +1,59 @@
 {
  "model": {
   "type": "additive_lognormal",
-  "n": 167,
-  "mu": 1.3600276368268942,
-  "sigma": 0.47544813343001463,
-  "median": 3.896300981703001,
-  "lo95": 1.5344414083218445,
-  "hi95": 9.893607704853835,
-  "lo90": 1.7824429599424234,
-  "hi90": 8.517053101385168,
-  "r": 0.6823334730970937,
-  "corr_surcharge_vs_time": 0.05701940448105498,
+  "n": 163,
+  "mu": 1.3585988252891719,
+  "sigma": 0.47995316582807934,
+  "median": 3.8907378771663033,
+  "lo95": 1.518780786093476,
+  "hi95": 9.967100826810741,
+  "lo90": 1.7667574911690336,
+  "hi90": 8.568148885447826,
+  "r": 0.682702131946042,
+  "corr_surcharge_vs_time": 0.05778226716498178,
   "xmin": 6.685555555555555,
   "xmax": 13.399166666666666
  },
  "alternatives": [
   {
    "label": "linear mit Achsenabschnitt",
-   "formula": "3.64 + 1.065·ZH",
-   "resid_sd": 1.6334140035601283
+   "formula": "3.63 + 1.066·ZH",
+   "resid_sd": 1.6465946398473161
   },
   {
    "label": "proportional (durch 0)",
-   "formula": "1.448·ZH",
-   "resid_sd": 1.719699407066334
+   "formula": "1.447·ZH",
+   "resid_sd": 1.732818391149797
   },
   {
    "label": "Potenzgesetz",
-   "formula": "2.75·ZH^0.713",
-   "resid_sd": 1.6382106100752571
+   "formula": "2.74·ZH^0.714",
+   "resid_sd": 1.6514324726729137
   },
   {
    "label": "additiv (Steigung = 1)",
    "formula": "ZH + 4.25",
-   "resid_sd": 1.6311404006924577
+   "resid_sd": 1.6442518918206104
   }
  ],
  "bands": [
   {
    "label": "unter 8 h",
-   "n": 36,
-   "median": 4.153333333333333,
-   "ratio_median": 1.5604660513507735
+   "n": 35,
+   "median": 4.1525,
+   "ratio_median": 1.5450357311277978
   },
   {
    "label": "8 – 9:30",
-   "n": 62,
+   "n": 60,
    "median": 3.9362499999999994,
    "ratio_median": 1.460118068013219
   },
   {
    "label": "9:30 – 11 h",
-   "n": 45,
-   "median": 4.005277777777778,
-   "ratio_median": 1.4203667531558846
+   "n": 44,
+   "median": 4.231111111111112,
+   "ratio_median": 1.4255531514975566
   },
   {
    "label": "über 11 h",
@@ -77,21 +77,6 @@
    "grade": "A",
    "zh_nat": "Czech",
    "zh_club": "Sri Chinmoy Marathon Team"
-  },
-  {
-   "name": "Aditya Santosh Raut",
-   "gender": "M",
-   "zh_year": 2009,
-   "zh_seconds": 33185,
-   "ch_year": 2009,
-   "ch_seconds": 53700,
-   "gap_years": 0,
-   "zh_first": true,
-   "ratio": 1.6182,
-   "surcharge": 5.6986,
-   "grade": "A",
-   "zh_nat": "Indien",
-   "zh_club": "Champion Aquatics Club"
   },
   {
    "name": "Aditya Santosh Raut",
@@ -407,21 +392,6 @@
    "grade": "A",
    "zh_nat": "Australian",
    "zh_club": "The Spit ASC Australia"
-  },
-  {
-   "name": "Anna-Carin Nordin",
-   "gender": "F",
-   "zh_year": 2011,
-   "zh_seconds": 31525,
-   "ch_year": 2010,
-   "ch_seconds": 43259,
-   "gap_years": 1,
-   "zh_first": false,
-   "ratio": 1.3722,
-   "surcharge": 3.2594,
-   "grade": "A",
-   "zh_nat": "Swedish",
-   "zh_club": "IFK Lindings"
   },
   {
    "name": "Annette Stewart",
@@ -1262,21 +1232,6 @@
    "grade": "A",
    "zh_nat": "British",
    "zh_club": ""
-  },
-  {
-   "name": "Jose Ramon Sanz Rodenas",
-   "gender": "M",
-   "zh_year": 2022,
-   "zh_seconds": 34368,
-   "ch_year": 2018,
-   "ch_seconds": 46980,
-   "gap_years": 4,
-   "zh_first": false,
-   "ratio": 1.367,
-   "surcharge": 3.5033,
-   "grade": "A",
-   "zh_nat": "Spain",
-   "zh_club": "Galea Ur Irekiak"
   },
   {
    "name": "Jose Ramon Sanz Rodenas",
@@ -2222,21 +2177,6 @@
    "grade": "A",
    "zh_nat": "USA/Ireland",
    "zh_club": "Red Top Swim"
-  },
-  {
-   "name": "Sean Paul Breslin",
-   "gender": "M",
-   "zh_year": 2026,
-   "zh_seconds": 27946,
-   "ch_year": 2024,
-   "ch_seconds": 44040,
-   "gap_years": 2,
-   "zh_first": false,
-   "ratio": 1.5759,
-   "surcharge": 4.4706,
-   "grade": "A",
-   "zh_nat": "Irish",
-   "zh_club": ""
   },
   {
    "name": "Sean Paul Breslin",

@@ -269,6 +269,18 @@ def main(verbose: bool = typer.Option(False, "--verbose", "-v")) -> None:
             "ratio": round(c["seconds"] / z["seconds"], 4),
         })
 
+    # A person with a double first name ("Anna-Carin") is found under both the full first
+    # name and the first token, so the same swim pair can arrive twice. Keep one entry per
+    # actual pair of swims, preferring the more specific key.
+    best: dict[tuple, dict] = {}
+    for p in pairs:
+        ident = (p["name"], p["zh_year"], p["zh_seconds"], p["ch_year"], p["ch_seconds"])
+        prev = best.get(ident)
+        if prev is None or len(p["key"].split()) > len(prev["key"].split()):
+            best[ident] = p
+    duplicates = len(pairs) - len(best)
+    pairs = sorted(best.values(), key=lambda p: p["key"])
+
     used = [p for p in pairs if p["grade"] in ("A", "B")]
     review = [p for p in pairs if p["grade"] == "C"]
 
@@ -293,6 +305,7 @@ def main(verbose: bool = typer.Option(False, "--verbose", "-v")) -> None:
 
     by_grade = {g: sum(1 for p in pairs if p["grade"] == g) for g in "ABC"}
     typer.echo(f"Kandidaten gesamt: {len(pairs)}  →  A {by_grade['A']} · B {by_grade['B']} · C {by_grade['C']}")
+    typer.echo(f"Doppeltreffer entfernt (Doppelvornamen): {duplicates}")
     typer.echo(f"Für die Auswertung verwendet (A+B): {len(used)}")
     gaps = sorted(p["gap_years"] for p in used)
     if gaps:

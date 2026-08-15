@@ -427,6 +427,16 @@
   });
 
   // ---------- go ----------
+  // Counts come from the data, so prose and table can never drift apart.
+  document.querySelectorAll("[data-n]").forEach(function (n) {
+    n.textContent = String(M.n);
+  });
+  document.querySelectorAll("[data-n-slow]").forEach(function (n) {
+    n.textContent = String(PAIRS.filter(function (p) {
+      return p.zh_seconds / 3600 >= 11;
+    }).length);
+  });
+
   drawScatter();
   renderFacts();
   renderBands();
