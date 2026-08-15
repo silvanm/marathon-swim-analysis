@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vom Zürichsee zum Ärmelkanal</title>
+<meta name="description" content="Hochrechnung von der Zürichsee-Zeit auf die Ärmelkanal-Zeit, basierend auf 167 Personen, die beide Strecken geschwommen sind.">
+<style>:root{color-scheme:light dark}html,body{margin:0;padding:0}</style>
+</head>
+<body>
+<p style="font-family:system-ui,sans-serif;font-size:13px;padding:10px 20px 0;margin:0">
+<a href="./" style="color:#0a6e9e;text-decoration:none">&larr; Übersicht</a>
+</p>
+<style>
+:root {
+  --ground: #eef2f1;
+  --surface: #f9fbfa;
+  --surface-2: #ffffff;
+  --ink: #0f1f1d;
+  --ink-2: #3d5350;
+  --ink-3: #6b807d;
+  --rule: #d2dedb;
+  --rule-strong: #b4c5c1;
+  --accent: #0a6e9e;
+  --accent-soft: rgba(10, 110, 158, 0.12);
+  --band: rgba(10, 110, 158, 0.10);
+  --s1: #0a6e9e;
+  --s2: #d65a18;
+  --grid: rgba(15, 31, 29, 0.09);
+  --shadow: 0 1px 2px rgba(15, 31, 29, .06), 0 8px 24px -16px rgba(15, 31, 29, .3);
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0c1214; --surface: #131b1e; --surface-2: #182226;
+    --ink: #e6efec; --ink-2: #a9bcb8; --ink-3: #7d918e;
+    --rule: #253236; --rule-strong: #35474c;
+    --accent: #2e8fc4; --accent-soft: rgba(46, 143, 196, 0.16);
+    --band: rgba(46, 143, 196, 0.14);
+    --s1: #2e8fc4; --s2: #e06b36;
+    --grid: rgba(230, 239, 236, 0.10);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0c1214; --surface: #131b1e; --surface-2: #182226;
+  --ink: #e6efec; --ink-2: #a9bcb8; --ink-3: #7d918e;
+  --rule: #253236; --rule-strong: #35474c;
+  --accent: #2e8fc4; --accent-soft: rgba(46, 143, 196, 0.16);
+  --band: rgba(46, 143, 196, 0.14);
+  --s1: #2e8fc4; --s2: #e06b36;
+  --grid: rgba(230, 239, 236, 0.10);
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--sans);
+  font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px 72px; }
+
+.masthead { padding: 44px 0 26px; border-bottom: 1px solid var(--rule); }
+.eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--ink-3); margin: 0 0 12px; }
+h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 14px; text-wrap: balance; }
+h1 em { font-style: italic; color: var(--accent); }
+.lede { max-width: 64ch; color: var(--ink-2); margin: 0; font-size: 16px; }
+
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 3px;
+  margin-top: 22px; box-shadow: var(--shadow); }
+.panel > header { padding: 16px 20px 0; }
+.panel h2 { font-family: var(--serif); font-weight: 400; font-size: 21px; margin: 0 0 3px;
+  letter-spacing: -0.01em; }
+.panel p.note { margin: 0; color: var(--ink-3); font-size: 13px; max-width: 72ch; }
+
+/* ---------- calculator ---------- */
+.calc { display: grid; gap: 0; grid-template-columns: 1fr; }
+@media (min-width: 820px) { .calc { grid-template-columns: 300px 1fr; } }
+.calc-in { padding: 20px; border-bottom: 1px solid var(--rule); }
+@media (min-width: 820px) { .calc-in { border-bottom: 0; border-right: 1px solid var(--rule); } }
+.calc-in label { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-3); margin-bottom: 7px; }
+#zh-time { font-family: var(--serif); font-size: 40px; width: 100%; text-align: center;
+  padding: 6px 8px; color: var(--ink); background: var(--surface-2);
+  border: 1px solid var(--rule-strong); border-radius: 2px; font-variant-numeric: tabular-nums; }
+#zh-range { width: 100%; margin-top: 14px; accent-color: var(--accent); }
+.rangelabels { display: flex; justify-content: space-between; font-family: var(--mono);
+  font-size: 10.5px; color: var(--ink-3); margin-top: 2px; }
+.calc-out { padding: 20px; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+.calc-out .big { font-family: var(--serif); font-size: clamp(38px, 7vw, 60px); line-height: 1;
+  font-variant-numeric: tabular-nums; }
+.calc-out .big span { font-size: .42em; color: var(--ink-3); margin-left: 6px; font-family: var(--sans); }
+.calc-out .range { font-family: var(--mono); font-size: 14px; color: var(--ink-2);
+  font-variant-numeric: tabular-nums; }
+.calc-out .caption { color: var(--ink-3); font-size: 13px; margin-top: 8px; max-width: 54ch; }
+.gauge { margin-top: 14px; height: 34px; position: relative; }
+.gauge .track { position: absolute; left: 0; right: 0; top: 13px; height: 8px;
+  background: var(--band); border-radius: 4px; }
+.gauge .mid { position: absolute; top: 8px; width: 3px; height: 18px; background: var(--accent);
+  border-radius: 2px; transform: translateX(-1.5px); }
+.gauge .tick { position: absolute; top: 26px; font-family: var(--mono); font-size: 10.5px;
+  color: var(--ink-3); transform: translateX(-50%); white-space: nowrap; }
+
+/* ---------- charts ---------- */
+.plot { padding: 10px 12px 4px; }
+.plot svg { display: block; width: 100%; height: auto; overflow: visible; }
+.axis text { font-family: var(--mono); font-size: 10px; fill: var(--ink-3); }
+.axis line { stroke: var(--grid); }
+.axis .domain { stroke: var(--rule-strong); }
+.axis-title { font-family: var(--mono); font-size: 10px; letter-spacing: .08em;
+  text-transform: uppercase; fill: var(--ink-3); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 4px 20px 16px;
+  font-size: 12.5px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.legend i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+.legend i.line { width: 16px; height: 3px; border-radius: 2px; }
+.legend i.dash { width: 16px; height: 0; border-radius: 0; border-top: 2px dashed var(--ink-3); }
+.legend i.area { width: 16px; height: 11px; border-radius: 2px; }
+
+/* ---------- findings ---------- */
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px;
+  background: var(--rule); border-top: 1px solid var(--rule); }
+.fact { background: var(--surface); padding: 14px 20px 16px; }
+.fact dt { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-3); margin: 0 0 5px; }
+.fact dd { margin: 0; font-family: var(--serif); font-size: 26px; line-height: 1.1;
+  font-variant-numeric: tabular-nums; }
+.fact dd small { font-family: var(--sans); font-size: 12px; color: var(--ink-3); display: block;
+  line-height: 1.35; margin-top: 3px; }
+
+/* ---------- table ---------- */
+.controls { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: flex-end;
+  padding: 14px 20px 0; }
+.field { display: flex; flex-direction: column; gap: 4px; }
+.field > label { font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-3); }
+select, input[type="search"] { font: inherit; font-size: 14px; color: var(--ink);
+  background: var(--surface-2); border: 1px solid var(--rule-strong); border-radius: 2px;
+  padding: 6px 9px; min-height: 34px; }
+input[type="search"] { width: 210px; }
+.seg { display: flex; border: 1px solid var(--rule-strong); border-radius: 2px; overflow: hidden; }
+.seg button { font: inherit; font-size: 13px; color: var(--ink-2); background: var(--surface-2);
+  border: 0; border-right: 1px solid var(--rule-strong); padding: 7px 11px; cursor: pointer;
+  min-height: 34px; }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+:root[data-theme="dark"] .seg button[aria-pressed="true"],
+:root:not([data-theme="light"]) .seg button[aria-pressed="true"] { color: #08121a; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.tablewrap { overflow-x: auto; margin-top: 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+thead th { position: sticky; top: 0; background: var(--surface-2); text-align: left;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-3); font-weight: 400; padding: 9px 10px;
+  border-bottom: 1px solid var(--rule-strong); white-space: nowrap; cursor: pointer;
+  user-select: none; }
+thead th.static { cursor: default; }
+thead th[aria-sort="ascending"], thead th[aria-sort="descending"] { color: var(--accent); }
+tbody td { padding: 7px 10px; border-bottom: 1px solid var(--rule); vertical-align: baseline; }
+tbody tr:hover { background: var(--accent-soft); }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.pos { color: var(--ink-3); }
+.name { font-weight: 600; }
+.sub { color: var(--ink-3); font-size: 12px; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px;
+  vertical-align: 1px; }
+.tfoot { padding: 12px 20px 16px; display: flex; gap: 14px; align-items: center;
+  color: var(--ink-3); font-size: 13px; flex-wrap: wrap; }
+.tfoot button { font: inherit; font-size: 13px; background: none;
+  border: 1px solid var(--rule-strong); color: var(--ink-2); border-radius: 2px;
+  padding: 6px 12px; cursor: pointer; }
+.tfoot button:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- caveats ---------- */
+.caveats { padding: 4px 20px 20px; }
+.caveats li { margin: 0 0 10px; color: var(--ink-2); max-width: 78ch; }
+.caveats strong { color: var(--ink); font-weight: 600; }
+
+#tip { position: fixed; z-index: 60; pointer-events: none; opacity: 0; transition: opacity .1s;
+  background: var(--surface-2); border: 1px solid var(--rule-strong); border-radius: 3px;
+  box-shadow: var(--shadow); padding: 8px 10px; font-size: 12.5px; max-width: 260px; }
+#tip .t-name { font-weight: 600; }
+#tip .t-row { color: var(--ink-2); font-family: var(--mono); font-size: 11.5px;
+  font-variant-numeric: tabular-nums; }
+
+footer.colophon { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--rule);
+  color: var(--ink-3); font-size: 12.5px; max-width: 76ch; }
+footer.colophon a { color: var(--accent); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="eyebrow">167 Schwimmerinnen und Schwimmer, die beides gemacht haben</p>
+    <h1>Vom Zürichsee zum <em>Ärmelkanal</em></h1>
+    <p class="lede">Wer 26 km über den Zürichsee schwimmt, tut das oft als Vorbereitung auf den
+      Kanal. Für 167 Personen liegen beide Zeiten vor — und sie zeigen etwas Unerwartetes: Der
+      Kanal kostet nicht ein Vielfaches der Seezeit, sondern einen <em>festen Aufschlag</em> von
+      rund vier Stunden. Ob du sieben oder zwölf Stunden über den See brauchst, ändert daran
+      fast nichts.</p>
+  </header>
+
+  <section class="panel">
+    <header>
+      <h2>Hochrechnung</h2>
+      <p class="note">Deine Zürichsee-Zeit eingeben oder den Regler schieben.</p>
+    </header>
+    <div class="calc">
+      <div class="calc-in">
+        <label for="zh-time">Zürichsee, 26 km</label>
+        <input type="text" id="zh-time" value="9:00" inputmode="numeric"
+               aria-describedby="calc-caption">
+        <input type="range" id="zh-range" min="360" max="810" step="5" value="540"
+               aria-label="Zürichsee-Zeit in Minuten">
+        <div class="rangelabels"><span>6:00</span><span>13:30</span></div>
+      </div>
+      <div class="calc-out">
+        <div class="big" id="out-mid">–<span>erwartete Kanalzeit</span></div>
+        <div class="range" id="out-range"></div>
+        <div class="gauge" id="gauge" aria-hidden="true">
+          <div class="track"></div><div class="mid"></div>
+        </div>
+        <p class="caption" id="calc-caption"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <header>
+      <h2>Jede Person ein Punkt</h2>
+      <p class="note">Zürichsee-Zeit waagrecht, Kanalzeit senkrecht. Die durchgezogene Linie
+        liegt parallel zur gestrichelten — das ist der feste Aufschlag. Das Band umfasst 95 %
+        der einzelnen Ergebnisse; es ist nach oben länger als nach unten, weil schlechte
+        Gezeiten und Wetter Stunden kosten können, während es nach unten eine harte Grenze gibt.</p>
+    </header>
+    <div class="plot"><svg id="scatter" viewBox="0 0 760 440" role="img"
+      aria-label="Streudiagramm Zürichsee-Zeit gegen Kanalzeit"></svg></div>
+    <div class="legend" id="legend"></div>
+    <dl class="facts" id="facts"></dl>
+  </section>
+
+  <section class="panel">
+    <header>
+      <h2>Warum kein Faktor</h2>
+      <p class="note">Der Aufschlag ist über alle Tempi praktisch gleich — er korreliert mit
+        der Seezeit zu 0,06, also gar nicht. Genau deshalb funktioniert ein Multiplikator
+        nicht: Wer den See in 7 h schwimmt, zahlt mit vier Stunden das 1,6-fache, wer 12 h
+        braucht, nur noch das 1,3-fache. Nicht der Faktor ist stabil, sondern die Differenz.</p>
+    </header>
+    <div class="plot"><svg id="bands" viewBox="0 0 760 200" role="img"
+      aria-label="Aufschlag in Stunden nach Tempoband"></svg></div>
+  </section>
+
+  <section class="panel">
+    <header>
+      <h2>Alle 167 Paare</h2>
+      <p class="note">Pro Person das Zürichsee- und das Kanal-Schwimmen mit dem kleinsten
+        zeitlichen Abstand.</p>
+    </header>
+    <div class="controls">
+      <div class="field">
+        <label for="q">Suche</label>
+        <input type="search" id="q" placeholder="Name, Nation, Club…" autocomplete="off">
+      </div>
+      <div class="field">
+        <label>Geschlecht</label>
+        <div class="seg" id="f-gender" role="group">
+          <button data-v="all" aria-pressed="true">Alle</button>
+          <button data-v="M">Männer</button>
+          <button data-v="F">Frauen</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-gap">Jahresabstand</label>
+        <select id="f-gap">
+          <option value="99">beliebig</option>
+          <option value="1">≤ 1 Jahr</option>
+          <option value="2">≤ 2 Jahre</option>
+          <option value="3">≤ 3 Jahre</option>
+          <option value="5">≤ 5 Jahre</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Reihenfolge</label>
+        <div class="seg" id="f-order" role="group">
+          <button data-v="all" aria-pressed="true">Alle</button>
+          <button data-v="zh">See zuerst</button>
+          <button data-v="ch">Kanal zuerst</button>
+        </div>
+      </div>
+    </div>
+    <div class="tablewrap">
+      <table><thead><tr id="thead-row"></tr></thead><tbody id="tbody"></tbody></table>
+    </div>
+    <div class="tfoot">
+      <span id="shown"></span>
+      <button id="copy" type="button">Auswahl als CSV kopieren</button>
+      <span id="copied" hidden></span>
+    </div>
+  </section>
+
+  <section class="panel">
+    <header><h2>Was die Zahl nicht sagt</h2></header>
+    <ul class="caveats">
+      <li><strong>Nur wer angekommen ist, steht in den Daten.</strong> Die Channel-Datenbank
+        verzeichnet ratifizierte Querungen — abgebrochene Versuche fehlen. Die Hochrechnung
+        gilt also unter der Bedingung, dass du ankommst. Über die Wahrscheinlichkeit dafür
+        sagt sie nichts.</li>
+      <li><strong>Der Aufschlag streut stark.</strong> Er reicht von gut anderthalb bis zu
+        knapp zehn Stunden. Gezeitenfenster, Wind, Wassertemperatur und die Route des Piloten
+        wirken sich mehr aus als die Tagesform. Das Ergebnis ist deshalb ein Bereich und keine
+        Punktprognose.</li>
+      <li><strong>Für sehr langsame Zeiten ist die Prognose am unsichersten.</strong> Über
+        11 Stunden Seezeit liegen nur 24 Paare vor, und ihre Kanalzeiten streuen breiter als
+        das Band abbildet. Ein Teil davon dürfte daran liegen, dass langsame Querungen häufiger
+        abgebrochen werden — und Abbrüche stehen nicht in den Daten.</li>
+      <li><strong>Zwei sehr verschiedene Strecken.</strong> 26 km Flachwasser im Süsswasser gegen
+        rund 33 km Luftlinie, real 40 km und mehr wegen der Gezeiten-S-Kurve, dazu Salzwasser,
+        Seegang und mehrere Grad kälter.</li>
+      <li><strong>Der Abgleich läuft über Namen.</strong> Geburtsjahr, Geschlecht und Nationalität
+        bestätigen jedes Paar, ein gemeinsamer Personenschlüssel existiert aber nicht.
+        Einzelne Fehlpaarungen sind nicht auszuschliessen.</li>
+    </ul>
+  </section>
+
+  <footer class="colophon">
+    Zürichsee: offizielle Ranglisten des Sri Chinmoy Marathon Team Schweiz, 2002–2026, nur
+    Einzelstarts ohne Neopren. Ärmelkanal: Channel Swimming Solo Database, nur einfache
+    Solo-Querungen. Modell: gewöhnliche Kleinste-Quadrate-Regression, Prognoseintervall für
+    eine einzelne neue Person.
+  </footer>
+</div>
+
+<div id="tip" role="status" aria-live="polite"></div>
+
+<script id="data" type="application/json">{"model":{"type":"additive_lognormal","n":167,"mu":1.3600276368268942,"sigma":0.47544813343001463,"median":3.896300981703001,"lo95":1.5344414083218445,"hi95":9.893607704853835,"lo90":1.7824429599424234,"hi90":8.517053101385168,"r":0.6823334730970937,"corr_surcharge_vs_time":0.05701940448105498,"xmin":6.685555555555555,"xmax":13.399166666666666},"alternatives":[{"label":"linear mit Achsenabschnitt","formula":"3.64 + 1.065·ZH","resid_sd":1.6334140035601283},{"label":"proportional (durch 0)","formula":"1.448·ZH","resid_sd":1.719699407066334},{"label":"Potenzgesetz","formula":"2.75·ZH^0.713","resid_sd":1.6382106100752571},{"label":"additiv (Steigung = 1)","formula":"ZH + 4.25","resid_sd":1.6311404006924577}],"bands":[{"label":"unter 8 h","n":36,"median":4.153333333333333,"ratio_median":1.5604660513507735},{"label":"8 – 9:30","n":62,"median":3.9362499999999994,"ratio_median":1.460118068013219},{"label":"9:30 – 11 h","n":45,"median":4.005277777777778,"ratio_median":1.4203667531558846},{"label":"über 11 h","n":24,"median":3.6166666666666663,"ratio_median":1.3170672205532612}],"pairs":[{"name":"Abhejali Bernardova","gender":"F","zh_year":2011,"zh_seconds":32085,"ch_year":2011,"ch_seconds":52662,"gap_years":0,"zh_first":true,"ratio":1.6413,"surcharge":5.7158,"grade":"A","zh_nat":"Czech","zh_club":"Sri Chinmoy Marathon Team"},{"name":"Aditya Santosh Raut","gender":"M","zh_year":2009,"zh_seconds":33185,"ch_year":2009,"ch_seconds":53700,"gap_years":0,"zh_first":true,"ratio":1.6182,"surcharge":5.6986,"grade":"A","zh_nat":"Indien","zh_club":"Champion Aquatics Club"},{"name":"Aditya Santosh Raut","gender":"M","zh_year":2009,"zh_seconds":33185,"ch_year":2009,"ch_seconds":53700,"gap_years":0,"zh_first":true,"ratio":1.6182,"surcharge":5.6986,"grade":"A","zh_nat":"Indien","zh_club":"Champion Aquatics Club"},{"name":"Adrian Brown","gender":"M","zh_year":2019,"zh_seconds":37324,"ch_year":2019,"ch_seconds":56220,"gap_years":0,"zh_first":true,"ratio":1.5063,"surcharge":5.2489,"grade":"A","zh_nat":"Great Britain","zh_club":"Sheerness"},{"name":"Adriano Passini","gender":"M","zh_year":2012,"zh_seconds":27723,"ch_year":2013,"ch_seconds":40183,"gap_years":1,"zh_first":true,"ratio":1.4494,"surcharge":3.4611,"grade":"A","zh_nat":"Brazilian","zh_club":"Sri Chinmoy Marathon Team"},{"name":"Aerin Kelly Bowers","gender":"F","zh_year":2022,"zh_seconds":41116,"ch_year":2025,"ch_seconds":59580,"gap_years":3,"zh_first":true,"ratio":1.4491,"surcharge":5.1289,"grade":"A","zh_nat":"Canada","zh_club":"Lower Columbia Swim Club"},{"name":"Alexander Begg","gender":"M","zh_year":2017,"zh_seconds":27598,"ch_year":2019,"ch_seconds":39600,"gap_years":2,"zh_first":true,"ratio":1.4349,"surcharge":3.3339,"grade":"A","zh_nat":"Great Britain","zh_club":"Red Top Swim"},{"name":"Alexandra Hardy","gender":"F","zh_year":2012,"zh_seconds":27056,"ch_year":2012,"ch_seconds":37200,"gap_years":0,"zh_first":true,"ratio":1.3749,"surcharge":2.8178,"grade":"A","zh_nat":"British","zh_club":"Royal Engineers"},{"name":"Alice Harvey","gender":"F","zh_year":2025,"zh_seconds":33709,"ch_year":2018,"ch_seconds":47460,"gap_years":7,"zh_first":false,"ratio":1.4079,"surcharge":3.8197,"grade":"A","zh_nat":"British","zh_club":"Jersey Long Distance Swimming Club"},{"name":"Alice Hubbard","gender":"F","zh_year":2014,"zh_seconds":39370,"ch_year":2012,"ch_seconds":50100,"gap_years":2,"zh_first":false,"ratio":1.2725,"surcharge":2.9806,"grade":"A","zh_nat":"British","zh_club":"Just Swim, Southbourne"},{"name":"Alison Streeter","gender":"F","zh_year":2004,"zh_seconds":33840,"ch_year":2004,"ch_seconds":45300,"gap_years":0,"zh_first":true,"ratio":1.3387,"surcharge":3.1833,"grade":"A","zh_nat":"Great Britain","zh_club":"CSPF"},{"name":"Alistair Cottle","gender":"M","zh_year":2008,"zh_seconds":26827,"ch_year":2008,"ch_seconds":52140,"gap_years":0,"zh_first":true,"ratio":1.9436,"surcharge":7.0314,"grade":"A","zh_nat":"New Zealand","zh_club":"N/A"},{"name":"Amy Ennion","gender":"F","zh_year":2022,"zh_seconds":35957,"ch_year":2021,"ch_seconds":48060,"gap_years":1,"zh_first":false,"ratio":1.3366,"surcharge":3.3619,"grade":"A","zh_nat":"Great Britain","zh_club":""},{"name":"Amy Mellor","gender":"F","zh_year":2025,"zh_seconds":39927,"ch_year":2019,"ch_seconds":51540,"gap_years":6,"zh_first":false,"ratio":1.2909,"surcharge":3.2258,"grade":"A","zh_nat":"English","zh_club":"Northampton"},{"name":"Andre Roberts","gender":"M","zh_year":2017,"zh_seconds":36517,"ch_year":2015,"ch_seconds":47460,"gap_years":2,"zh_first":false,"ratio":1.2997,"surcharge":3.0397,"grade":"A","zh_nat":"Great Britain","zh_club":"British Long Distance Swimming Assoc"},{"name":"André Wiersig","gender":"M","zh_year":2013,"zh_seconds":27800,"ch_year":2014,"ch_seconds":34980,"gap_years":1,"zh_first":true,"ratio":1.2583,"surcharge":1.9944,"grade":"A","zh_nat":"German","zh_club":""},{"name":"Andrew Keegan","gender":"M","zh_year":2010,"zh_seconds":27378,"ch_year":2011,"ch_seconds":41925,"gap_years":1,"zh_first":true,"ratio":1.5313,"surcharge":4.0408,"grade":"A","zh_nat":"Australia","zh_club":"Barbarians Masters Swim Team"},{"name":"Andrey Bozhko","gender":"M","zh_year":2025,"zh_seconds":31068,"ch_year":2021,"ch_seconds":49680,"gap_years":4,"zh_first":false,"ratio":1.5991,"surcharge":5.17,"grade":"A","zh_nat":"Russian","zh_club":"Stamina Swimming Club"},{"name":"Angela Wood","gender":"F","zh_year":2018,"zh_seconds":42099,"ch_year":2024,"ch_seconds":59400,"gap_years":6,"zh_first":true,"ratio":1.411,"surcharge":4.8058,"grade":"A","zh_nat":"Great Britain","zh_club":""},{"name":"Anke Höhne","gender":"F","zh_year":2019,"zh_seconds":38163,"ch_year":2022,"ch_seconds":55920,"gap_years":3,"zh_first":true,"ratio":1.4653,"surcharge":4.9325,"grade":"A","zh_nat":"Germany","zh_club":"SV Poseidon Hamburg"},{"name":"Anna-Carin Nordin","gender":"F","zh_year":2011,"zh_seconds":31525,"ch_year":2010,"ch_seconds":43259,"gap_years":1,"zh_first":false,"ratio":1.3722,"surcharge":3.2594,"grade":"A","zh_nat":"Swedish","zh_club":"IFK Lindings"},{"name":"Anna Ploszajski","gender":"F","zh_year":2017,"zh_seconds":33213,"ch_year":2018,"ch_seconds":56220,"gap_years":1,"zh_first":true,"ratio":1.6927,"surcharge":6.3908,"grade":"A","zh_nat":"Great Britain","zh_club":""},{"name":"Anna Torok","gender":"F","zh_year":2012,"zh_seconds":31650,"ch_year":2014,"ch_seconds":46752,"gap_years":2,"zh_first":true,"ratio":1.4772,"surcharge":4.195,"grade":"A","zh_nat":"Australian","zh_club":"The Spit ASC Australia"},{"name":"Anna-Carin Nordin","gender":"F","zh_year":2011,"zh_seconds":31525,"ch_year":2010,"ch_seconds":43259,"gap_years":1,"zh_first":false,"ratio":1.3722,"surcharge":3.2594,"grade":"A","zh_nat":"Swedish","zh_club":"IFK Lindings"},{"name":"Annette Stewart","gender":"F","zh_year":2004,"zh_seconds":41639,"ch_year":2005,"ch_seconds":71520,"gap_years":1,"zh_first":true,"ratio":1.7176,"surcharge":8.3003,"grade":"A","zh_nat":"Great Britain","zh_club":"Black Lion"},{"name":"Anthony Plant","gender":"M","zh_year":2017,"zh_seconds":31294,"ch_year":2014,"ch_seconds":53880,"gap_years":3,"zh_first":false,"ratio":1.7217,"surcharge":6.2739,"grade":"A","zh_nat":"Great Britain","zh_club":""},{"name":"Anton Floh","gender":"M","zh_year":2010,"zh_seconds":30860,"ch_year":2014,"ch_seconds":45000,"gap_years":4,"zh_first":true,"ratio":1.4582,"surcharge":3.9278,"grade":"A","zh_nat":"Austria","zh_club":"Tri Tulln"},{"name":"Aris Polizos","gender":"M","zh_year":2004,"zh_seconds":31922,"ch_year":2003,"ch_seconds":49080,"gap_years":1,"zh_first":false,"ratio":1.5375,"surcharge":4.7661,"grade":"A","zh_nat":"Greece","zh_club":"Neapoli swimming club"},{"name":"Armin-Johannes Wunder","gender":"M","zh_year":2010,"zh_seconds":28014,"ch_year":2010,"ch_seconds":40800,"gap_years":0,"zh_first":true,"ratio":1.4564,"surcharge":3.5517,"grade":"A","zh_nat":"Germany","zh_club":"Channel Swimming Association"},{"name":"Attila Manyoki","gender":"M","zh_year":2021,"zh_seconds":33472,"ch_year":2013,"ch_seconds":38820,"gap_years":8,"zh_first":false,"ratio":1.1598,"surcharge":1.4856,"grade":"A","zh_nat":"Hungary","zh_club":"2KSE"},{"name":"Barbara Held","gender":"F","zh_year":2013,"zh_seconds":29450,"ch_year":2012,"ch_seconds":43800,"gap_years":1,"zh_first":false,"ratio":1.4873,"surcharge":3.9861,"grade":"A","zh_nat":"American","zh_club":"La Jolla Cove Swim Club"},{"name":"Bhakti Sharma","gender":"F","zh_year":2006,"zh_seconds":38501,"ch_year":2006,"ch_seconds":50100,"gap_years":0,"zh_first":true,"ratio":1.3013,"surcharge":3.2219,"grade":"A","zh_nat":"India","zh_club":"Ozone Swimming Pool, Mumbai"},{"name":"Birgit Kempf","gender":"F","zh_year":2007,"zh_seconds":42095,"ch_year":2006,"ch_seconds":59040,"gap_years":1,"zh_first":false,"ratio":1.4025,"surcharge":4.7069,"grade":"A","zh_nat":"German","zh_club":""},{"name":"Boris Mavra","gender":"M","zh_year":2011,"zh_seconds":36786,"ch_year":2011,"ch_seconds":43145,"gap_years":0,"zh_first":true,"ratio":1.1729,"surcharge":1.7664,"grade":"A","zh_nat":"British","zh_club":"Serpentine Swimming Club"},{"name":"Brian Fergusson","gender":"M","zh_year":2016,"zh_seconds":31799,"ch_year":2012,"ch_seconds":49080,"gap_years":4,"zh_first":false,"ratio":1.5434,"surcharge":4.8003,"grade":"A","zh_nat":"Australia","zh_club":""},{"name":"Carol Cashell","gender":"F","zh_year":2012,"zh_seconds":27552,"ch_year":2017,"ch_seconds":37080,"gap_years":5,"zh_first":true,"ratio":1.3458,"surcharge":2.6467,"grade":"A","zh_nat":"Irish","zh_club":"Dolphin"},{"name":"Cathy Marco","gender":"F","zh_year":2006,"zh_seconds":31850,"ch_year":2002,"ch_seconds":46800,"gap_years":4,"zh_first":false,"ratio":1.4694,"surcharge":4.1528,"grade":"A","zh_nat":"France","zh_club":"CNC ALES"},{"name":"Christian Hübner","gender":"M","zh_year":2007,"zh_seconds":38605,"ch_year":2008,"ch_seconds":62160,"gap_years":1,"zh_first":true,"ratio":1.6102,"surcharge":6.5431,"grade":"A","zh_nat":"German","zh_club":"IFA Nonstop Bamberg"},{"name":"Christopher Jordinson","gender":"M","zh_year":2016,"zh_seconds":33187,"ch_year":2014,"ch_seconds":53700,"gap_years":2,"zh_first":false,"ratio":1.6181,"surcharge":5.6981,"grade":"A","zh_nat":"Great Britain","zh_club":"South London Swimming Club"},{"name":"Clifford GOLDING","gender":"M","zh_year":2003,"zh_seconds":36575,"ch_year":2003,"ch_seconds":52620,"gap_years":0,"zh_first":true,"ratio":1.4387,"surcharge":4.4569,"grade":"A","zh_nat":"Great Britain","zh_club":"Black Lion Masters"},{"name":"Daniel Hollas","gender":"M","zh_year":2019,"zh_seconds":38894,"ch_year":2024,"ch_seconds":56460,"gap_years":5,"zh_first":true,"ratio":1.4516,"surcharge":4.8794,"grade":"A","zh_nat":"Great Britain","zh_club":""},{"name":"Daniel Lobo","gender":"M","zh_year":2016,"zh_seconds":37298,"ch_year":2017,"ch_seconds":70708,"gap_years":1,"zh_first":true,"ratio":1.8958,"surcharge":9.2806,"grade":"A","zh_nat":"Spain","zh_club":"Serpentine Swimming Club"},{"name":"Dave Berry","gender":"M","zh_year":2026,"zh_seconds":33989,"ch_year":2022,"ch_seconds":45300,"gap_years":4,"zh_first":false,"ratio":1.3328,"surcharge":3.1419,"grade":"A","zh_nat":"Irish","zh_club":"Sandycove SC"},{"name":"David Buckley","gender":"M","zh_year":2025,"zh_seconds":29015,"ch_year":2024,"ch_seconds":39000,"gap_years":1,"zh_first":false,"ratio":1.3441,"surcharge":2.7736,"grade":"A","zh_nat":"Irish","zh_club":"Sandycove Island SC"},{"name":"David Cech","gender":"M","zh_year":2007,"zh_seconds":24830,"ch_year":2004,"ch_seconds":35100,"gap_years":3,"zh_first":false,"ratio":1.4136,"surcharge":2.8528,"grade":"A","zh_nat":"Czech","zh_club":"UNBR"},{"name":"David Granger","gender":"M","zh_year":2013,"zh_seconds":34213,"ch_year":2011,"ch_seconds":54180,"gap_years":2,"zh_first":false,"ratio":1.5836,"surcharge":5.5464,"grade":"A","zh_nat":"British","zh_club":"Gloucester Masters"},{"name":"David Owen","gender":"M","zh_year":2019,"zh_seconds":26098,"ch_year":2019,"ch_seconds":41280,"gap_years":0,"zh_first":true,"ratio":1.5817,"surcharge":4.2172,"grade":"A","zh_nat":"Great Britain","zh_club":""},{"name":"Deirdre Ward","gender":"F","zh_year":2010,"zh_seconds":30837,"ch_year":2012,"ch_seconds":52200,"gap_years":2,"zh_first":true,"ratio":1.6928,"surcharge":5.9342,"grade":"A","zh_nat":"Irish","zh_club":"Serpentine S.C."},{"name":"Didier Castagna","gender":"M","zh_year":2019,"zh_seconds":30582,"ch_year":2020,"ch_seconds":50220,"gap_years":1,"zh_first":true,"ratio":1.6421,"surcharge":5.455,"grade":"A","zh_nat":"France","zh_club":"PNWP"},{"name":"Dylan Haughton","gender":"M","zh_year":2015,"zh_seconds":43059,"ch_year":2017,"ch_seconds":46440,"gap_years":2,"zh_first":true,"ratio":1.0785,"surcharge":0.9392,"grade":"A","zh_nat":"Great Britain","zh_club":"Cally Masters"},{"name":"Edmond Irwin","gender":"M","zh_year":2009,"zh_seconds":33931,"ch_year":2008,"ch_seconds":49680,"gap_years":1,"zh_first":false,"ratio":1.4641,"surcharge":4.3747,"grade":"A","zh_nat":"Irland","zh_club":"Source"},{"name":"Elizabeth Price","gender":"F","zh_year":2011,"zh_seconds":30342,"ch_year":2017,"ch_seconds":43538,"gap_years":6,"zh_first":true,"ratio":1.4349,"surcharge":3.6656,"grade":"A","zh_nat":"British","zh_club":"Eastbourne"},{"name":"Emily Morris","gender":"F","zh_year":2009,"zh_seconds":40088,"ch_year":2006,"ch_seconds":55200,"gap_years":3,"zh_first":false,"ratio":1.377,"surcharge":4.1978,"grade":"A","zh_nat":"GB","zh_club":"Teddington"},{"name":"Emma France","gender":"F","zh_year":2017,"zh_seconds":38694,"ch_year":2018,"ch_seconds":57660,"gap_years":1,"zh_first":true,"ratio":1.4902,"surcharge":5.2683,"grade":"A","zh_nat":"Great Britain","zh_club":"Guildford City Swimming Club"},{"name":"Fernando Espina Velaz","gender":"M","zh_year":2019,"zh_seconds":25779,"ch_year":2023,"ch_seconds":38640,"gap_years":4,"zh_first":true,"ratio":1.4989,"surcharge":3.5725,"grade":"A","zh_nat":"Argentina","zh_club":"C.E. Mediterrani"},{"name":"Gabor Molnar","gender":"M","zh_year":2010,"zh_seconds":27807,"ch_year":2010,"ch_seconds":51495,"gap_years":0,"zh_first":true,"ratio":1.8519,"surcharge":6.58,"grade":"A","zh_nat":"Hungary","zh_club":"Cork Masters S.C."},{"name":"Gary Brickley","gender":"M","zh_year":2015,"zh_seconds":30105,"ch_year":2016,"ch_seconds":42450,"gap_years":1,"zh_first":true,"ratio":1.4101,"surcharge":3.4292,"grade":"A","zh_nat":"Great Britain","zh_club":"Eastbourne SC"},{"name":"Gary Bruce","gender":"M","zh_year":2012,"zh_seconds":39237,"ch_year":2013,"ch_seconds":49980,"gap_years":1,"zh_first":true,"ratio":1.2738,"surcharge":2.9842,"grade":"A","zh_nat":"British","zh_club":"South End Rowing Club"},{"name":"George Meenan","gender":"M","zh_year":2009,"zh_seconds":33049,"ch_year":2011,"ch_seconds":46631,"gap_years":2,"zh_first":true,"ratio":1.411,"surcharge":3.7728,"grade":"A","zh_nat":"Irland","zh_club":"City of Derry Masters"},{"name":"Giles Meyer","gender":"M","zh_year":2008,"zh_seconds":27055,"ch_year":2007,"ch_seconds":46260,"gap_years":1,"zh_first":false,"ratio":1.7099,"surcharge":5.3347,"grade":"A","zh_nat":"British","zh_club":"SLSC"},{"name":"Graeme Lowe","gender":"M","zh_year":2012,"zh_seconds":34555,"ch_year":2011,"ch_seconds":48900,"gap_years":1,"zh_first":false,"ratio":1.4151,"surcharge":3.9847,"grade":"A","zh_nat":"British","zh_club":"Jersey Long Distance Swimming Club"},{"name":"Graeme Schlachter","gender":"M","zh_year":2014,"zh_seconds":30029,"ch_year":2008,"ch_seconds":42300,"gap_years":6,"zh_first":false,"ratio":1.4086,"surcharge":3.4086,"grade":"A","zh_nat":"British","zh_club":""},{"name":"Graham Coleman","gender":"M","zh_year":2008,"zh_seconds":42633,"ch_year":2007,"ch_seconds":60120,"gap_years":1,"zh_first":false,"ratio":1.4102,"surcharge":4.8575,"grade":"A","zh_nat":"Irish","zh_club":""},{"name":"Guy Moar","gender":"M","zh_year":2010,"zh_seconds":28798,"ch_year":2010,"ch_seconds":39780,"gap_years":0,"zh_first":true,"ratio":1.3813,"surcharge":3.0506,"grade":"A","zh_nat":"Australia","zh_club":"Red Top Swim"},{"name":"Hannah Bennett","gender":"F","zh_year":2018,"zh_seconds":30802,"ch_year":2014,"ch_seconds":48960,"gap_years":4,"zh_first":false,"ratio":1.5895,"surcharge":5.0439,"grade":"A","zh_nat":"Great Britain","zh_club":"Hemel Hempstead SC"},{"name":"Hayley Chapman","gender":"F","zh_year":2022,"zh_seconds":36930,"ch_year":2019,"ch_seconds":48300,"gap_years":3,"zh_first":false,"ratio":1.3079,"surcharge":3.1583,"grade":"A","zh_nat":"Great Britain","zh_club":"Hoylake Swimming Club"},{"name":"Helen Conway","gender":"F","zh_year":2008,"zh_seconds":31760,"ch_year":2010,"ch_seconds":39954,"gap_years":2,"zh_first":true,"ratio":1.258,"surcharge":2.2761,"grade":"A","zh_nat":"Australia","zh_club":"Sea's the limit"},{"name":"Howard Keech","gender":"M","zh_year":2013,"zh_seconds":29103,"ch_year":2016,"ch_seconds":47580,"gap_years":3,"zh_first":true,"ratio":1.6349,"surcharge":5.1325,"grade":"A","zh_nat":"British","zh_club":"Deal Tri / BLDSA"},{"name":"Ian Jones","gender":"M","zh_year":2008,"zh_seconds":27567,"ch_year":2005,"ch_seconds":42592,"gap_years":3,"zh_first":false,"ratio":1.545,"surcharge":4.1736,"grade":"A","zh_nat":"British","zh_club":"Jersey LDSC"},{"name":"Ivan Gazdik","gender":"M","zh_year":2011,"zh_seconds":41178,"ch_year":2009,"ch_seconds":48540,"gap_years":2,"zh_first":false,"ratio":1.1788,"surcharge":2.045,"grade":"A","zh_nat":"Slovakia","zh_club":"Polar Bears Bratislava"},{"name":"Jackson Carroll","gender":"M","zh_year":2015,"zh_seconds":40613,"ch_year":2013,"ch_seconds":48780,"gap_years":2,"zh_first":false,"ratio":1.2011,"surcharge":2.2686,"grade":"A","zh_nat":"Australia","zh_club":"Serpentine Swimming Club"},{"name":"Jacqueline Kempfer","gender":"F","zh_year":2017,"zh_seconds":37799,"ch_year":2024,"ch_seconds":70080,"gap_years":7,"zh_first":true,"ratio":1.854,"surcharge":8.9669,"grade":"A","zh_nat":"Germany","zh_club":""},{"name":"Jacques Tuset","gender":"M","zh_year":2009,"zh_seconds":26252,"ch_year":2002,"ch_seconds":45600,"gap_years":7,"zh_first":false,"ratio":1.737,"surcharge":5.3744,"grade":"A","zh_nat":"Frankreich","zh_club":"Palavas Nat.Sauv."},{"name":"James Norton","gender":"M","zh_year":2013,"zh_seconds":31659,"ch_year":2014,"ch_seconds":53940,"gap_years":1,"zh_first":true,"ratio":1.7038,"surcharge":6.1892,"grade":"A","zh_nat":"British","zh_club":"Serpentine Swimming Club"},{"name":"James Penrose","gender":"M","zh_year":2017,"zh_seconds":34301,"ch_year":2012,"ch_seconds":48720,"gap_years":5,"zh_first":false,"ratio":1.4204,"surcharge":4.0053,"grade":"A","zh_nat":"USA","zh_club":"Red Top Swim"},{"name":"Janina Dowding","gender":"F","zh_year":2017,"zh_seconds":30807,"ch_year":2016,"ch_seconds":46080,"gap_years":1,"zh_first":false,"ratio":1.4958,"surcharge":4.2425,"grade":"A","zh_nat":"Great Britain","zh_club":"RTW Monson"},{"name":"Jenny Zwijnen","gender":"F","zh_year":2017,"zh_seconds":27892,"ch_year":2012,"ch_seconds":53580,"gap_years":5,"zh_first":false,"ratio":1.921,"surcharge":7.1356,"grade":"A","zh_nat":"Great Britain","zh_club":""},{"name":"John Daly","gender":"M","zh_year":2008,"zh_seconds":42193,"ch_year":2010,"ch_seconds":47640,"gap_years":2,"zh_first":true,"ratio":1.1291,"surcharge":1.5131,"grade":"A","zh_nat":"Irish","zh_club":"Estern Bay (Ireland)"},{"name":"John Zemaitis","gender":"M","zh_year":2015,"zh_seconds":27623,"ch_year":2017,"ch_seconds":40260,"gap_years":2,"zh_first":true,"ratio":1.4575,"surcharge":3.5103,"grade":"A","zh_nat":"America","zh_club":"Swim Neptune"},{"name":"Jonathan Ford","gender":"M","zh_year":2011,"zh_seconds":36690,"ch_year":2013,"ch_seconds":58024,"gap_years":2,"zh_first":true,"ratio":1.5815,"surcharge":5.9261,"grade":"A","zh_nat":"British","zh_club":""},{"name":"Jose Ramon Sanz Rodenas","gender":"M","zh_year":2022,"zh_seconds":34368,"ch_year":2018,"ch_seconds":46980,"gap_years":4,"zh_first":false,"ratio":1.367,"surcharge":3.5033,"grade":"A","zh_nat":"Spain","zh_club":"Galea Ur Irekiak"},{"name":"Jose Ramon Sanz Rodenas","gender":"M","zh_year":2022,"zh_seconds":34368,"ch_year":2018,"ch_seconds":46980,"gap_years":4,"zh_first":false,"ratio":1.367,"surcharge":3.5033,"grade":"A","zh_nat":"Spain","zh_club":"Galea Ur Irekiak"},{"name":"Jozef LENDACKY","gender":"M","zh_year":2003,"zh_seconds":43054,"ch_year":2004,"ch_seconds":52080,"gap_years":1,"zh_first":true,"ratio":1.2096,"surcharge":2.5072,"grade":"A","zh_nat":"Slovakia","zh_club":"SCMT"},{"name":"Kate MASON","gender":"F","zh_year":2003,"zh_seconds":33079,"ch_year":2001,"ch_seconds":50400,"gap_years":2,"zh_first":false,"ratio":1.5236,"surcharge":4.8114,"grade":"A","zh_nat":"Great Britain","zh_club":"Weyport Masters Swim Club"},{"name":"Kate Robarts","gender":"F","zh_year":2016,"zh_seconds":42317,"ch_year":2014,"ch_seconds":48000,"gap_years":2,"zh_first":false,"ratio":1.1343,"surcharge":1.5786,"grade":"A","zh_nat":"Great Britain","zh_club":"D.C.W.S"},{"name":"Kate Steels-Fryatt","gender":"F","zh_year":2014,"zh_seconds":33086,"ch_year":2016,"ch_seconds":47100,"gap_years":2,"zh_first":true,"ratio":1.4236,"surcharge":3.8928,"grade":"A","zh_nat":"British","zh_club":"Portmouth Triathletes"},{"name":"Kate Todd","gender":"F","zh_year":2012,"zh_seconds":38875,"ch_year":2014,"ch_seconds":55620,"gap_years":2,"zh_first":true,"ratio":1.4307,"surcharge":4.6514,"grade":"A","zh_nat":"English","zh_club":"East Dorset Open Water SC"},{"name":"Katherine Mearman","gender":"F","zh_year":2007,"zh_seconds":29252,"ch_year":2004,"ch_seconds":46440,"gap_years":3,"zh_first":false,"ratio":1.5876,"surcharge":4.7744,"grade":"A","zh_nat":"British","zh_club":"Otter"},{"name":"Katie Hope","gender":"F","zh_year":2007,"zh_seconds":35440,"ch_year":2006,"ch_seconds":49020,"gap_years":1,"zh_first":false,"ratio":1.3832,"surcharge":3.7722,"grade":"A","zh_nat":"British","zh_club":"Otter Swim Club"},{"name":"Kaveri THAKUR","gender":"F","zh_year":2002,"zh_seconds":39663,"ch_year":2000,"ch_seconds":50760,"gap_years":2,"zh_first":false,"ratio":1.2798,"surcharge":3.0825,"grade":"A","zh_nat":"India","zh_club":""},{"name":"Kevin Blick","gender":"M","zh_year":2022,"zh_seconds":39009,"ch_year":2013,"ch_seconds":63600,"gap_years":9,"zh_first":false,"ratio":1.6304,"surcharge":6.8308,"grade":"A","zh_nat":"Great Britain","zh_club":"Serpentine Swimming Club"},{"name":"Kristy McIntyre","gender":"F","zh_year":2014,"zh_seconds":36331,"ch_year":2012,"ch_seconds":47820,"gap_years":2,"zh_first":false,"ratio":1.3162,"surcharge":3.1914,"grade":"A","zh_nat":"Australian","zh_club":"Serpentine Swimming Club"},{"name":"Laura LOPEZ-BONILLA","gender":"F","zh_year":2003,"zh_seconds":39105,"ch_year":2002,"ch_seconds":56340,"gap_years":1,"zh_first":false,"ratio":1.4407,"surcharge":4.7875,"grade":"A","zh_nat":"Spain","zh_club":""},{"name":"Laura Sharpe","gender":"F","zh_year":2026,"zh_seconds":40922,"ch_year":2023,"ch_seconds":55560,"gap_years":3,"zh_first":false,"ratio":1.3577,"surcharge":4.0661,"grade":"A","zh_nat":"British","zh_club":"London Fields Triathlon Club"},{"name":"Liam Maher","gender":"M","zh_year":2009,"zh_seconds":32441,"ch_year":2010,"ch_seconds":47460,"gap_years":1,"zh_first":true,"ratio":1.463,"surcharge":4.1719,"grade":"A","zh_nat":"Irland","zh_club":"N/A"},{"name":"Linda Ashmore","gender":"F","zh_year":2008,"zh_seconds":35725,"ch_year":2007,"ch_seconds":54660,"gap_years":1,"zh_first":false,"ratio":1.53,"surcharge":5.2597,"grade":"A","zh_nat":"British","zh_club":"Weyport Masters"},{"name":"Liz Rycroft","gender":"F","zh_year":2007,"zh_seconds":36020,"ch_year":2009,"ch_seconds":42246,"gap_years":2,"zh_first":true,"ratio":1.1728,"surcharge":1.7294,"grade":"A","zh_nat":"British","zh_club":"Black Lion Swimming Club"},{"name":"Lucy Roper","gender":"F","zh_year":2009,"zh_seconds":35535,"ch_year":2011,"ch_seconds":52200,"gap_years":2,"zh_first":true,"ratio":1.469,"surcharge":4.6292,"grade":"A","zh_nat":"GB","zh_club":"Reading"},{"name":"Marcel Degreef","gender":"M","zh_year":2008,"zh_seconds":37750,"ch_year":2008,"ch_seconds":71400,"gap_years":0,"zh_first":true,"ratio":1.8914,"surcharge":9.3472,"grade":"A","zh_nat":"Netherland","zh_club":"Dutch Channel Swimming Team"},{"name":"Margit Bohnhoff","gender":"F","zh_year":2008,"zh_seconds":29103,"ch_year":2007,"ch_seconds":42012,"gap_years":1,"zh_first":false,"ratio":1.4436,"surcharge":3.5858,"grade":"A","zh_nat":"German","zh_club":""},{"name":"Mark Bayliss","gender":"M","zh_year":2008,"zh_seconds":30305,"ch_year":2007,"ch_seconds":41520,"gap_years":1,"zh_first":false,"ratio":1.3701,"surcharge":3.1153,"grade":"A","zh_nat":"English","zh_club":"Croydon Amphibian Swimming Club"},{"name":"Mark Fabik","gender":"M","zh_year":2012,"zh_seconds":31961,"ch_year":2013,"ch_seconds":43260,"gap_years":1,"zh_first":true,"ratio":1.3535,"surcharge":3.1386,"grade":"A","zh_nat":"British","zh_club":"Serpentine Swimming Club"},{"name":"Mark Faure Walker","gender":"M","zh_year":2009,"zh_seconds":29389,"ch_year":2013,"ch_seconds":40500,"gap_years":4,"zh_first":true,"ratio":1.3781,"surcharge":3.0864,"grade":"A","zh_nat":"GB","zh_club":"Serpentine"},{"name":"Mark Hannigan","gender":"M","zh_year":2015,"zh_seconds":42047,"ch_year":2021,"ch_seconds":53220,"gap_years":6,"zh_first":true,"ratio":1.2657,"surcharge":3.1036,"grade":"A","zh_nat":"Ireland","zh_club":"Limerick Masters"},{"name":"Martyn Webster","gender":"M","zh_year":2018,"zh_seconds":31887,"ch_year":2018,"ch_seconds":46620,"gap_years":0,"zh_first":true,"ratio":1.462,"surcharge":4.0925,"grade":"A","zh_nat":"Great Britain","zh_club":""},{"name":"Mate Szekely","gender":"M","zh_year":2006,"zh_seconds":30380,"ch_year":2003,"ch_seconds":47100,"gap_years":3,"zh_first":false,"ratio":1.5504,"surcharge":4.6444,"grade":"A","zh_nat":"Hungary","zh_club":"Sri Chinmoy Marathon Team"},{"name":"Matthew JOHNSON","gender":"M","zh_year":2003,"zh_seconds":33393,"ch_year":2003,"ch_seconds":48300,"gap_years":0,"zh_first":true,"ratio":1.4464,"surcharge":4.1408,"grade":"A","zh_nat":"USA","zh_club":"MTV-Kronberg"},{"name":"Mäx Beer","gender":"M","zh_year":2014,"zh_seconds":30209,"ch_year":2016,"ch_seconds":43380,"gap_years":2,"zh_first":true,"ratio":1.436,"surcharge":3.6586,"grade":"A","zh_nat":"Austrian","zh_club":""},{"name":"Michael Garnett","gender":"M","zh_year":2015,"zh_seconds":33966,"ch_year":2022,"ch_seconds":45420,"gap_years":7,"zh_first":true,"ratio":1.3372,"surcharge":3.1817,"grade":"A","zh_nat":"Great Britain","zh_club":"Serpentine Swimming Club"},{"name":"Michael Helps","gender":"M","zh_year":2008,"zh_seconds":34780,"ch_year":2007,"ch_seconds":48957,"gap_years":1,"zh_first":false,"ratio":1.4076,"surcharge":3.9381,"grade":"A","zh_nat":"English","zh_club":"Sotton & Cheam Swimming Club"},{"name":"Michal Brauner","gender":"M","zh_year":2019,"zh_seconds":32277,"ch_year":2022,"ch_seconds":42420,"gap_years":3,"zh_first":true,"ratio":1.3142,"surcharge":2.8175,"grade":"A","zh_nat":"Czech Republic","zh_club":""},{"name":"Miles Worling","gender":"M","zh_year":2019,"zh_seconds":28678,"ch_year":2019,"ch_seconds":48660,"gap_years":0,"zh_first":true,"ratio":1.6968,"surcharge":5.5506,"grade":"A","zh_nat":"South Africa","zh_club":"South London Swimming Club"},{"name":"Mo Siegel","gender":"M","zh_year":2009,"zh_seconds":39533,"ch_year":2010,"ch_seconds":51480,"gap_years":1,"zh_first":true,"ratio":1.3022,"surcharge":3.3186,"grade":"A","zh_nat":"USA","zh_club":"N.Y. Harbour Seals"},{"name":"Monika Mittaz","gender":"F","zh_year":2019,"zh_seconds":27158,"ch_year":2025,"ch_seconds":49080,"gap_years":6,"zh_first":true,"ratio":1.8072,"surcharge":6.0894,"grade":"A","zh_nat":"Switzerland","zh_club":"Spartak"},{"name":"Nancy Douglas","gender":"F","zh_year":2007,"zh_seconds":25625,"ch_year":2006,"ch_seconds":40574,"gap_years":1,"zh_first":false,"ratio":1.5834,"surcharge":4.1525,"grade":"A","zh_nat":"British","zh_club":"South London Swimming Club"},{"name":"Nathalie Pohl","gender":"F","zh_year":2014,"zh_seconds":27796,"ch_year":2016,"ch_seconds":40200,"gap_years":2,"zh_first":true,"ratio":1.4463,"surcharge":3.4456,"grade":"A","zh_nat":"German","zh_club":"TV Dillenburg"},{"name":"Ned Denison","gender":"M","zh_year":2008,"zh_seconds":27373,"ch_year":2005,"ch_seconds":46020,"gap_years":3,"zh_first":false,"ratio":1.6812,"surcharge":5.1797,"grade":"A","zh_nat":"Ireland","zh_club":"Cork Maters"},{"name":"Nick Owen","gender":"M","zh_year":2011,"zh_seconds":28921,"ch_year":2013,"ch_seconds":41760,"gap_years":2,"zh_first":true,"ratio":1.4439,"surcharge":3.5664,"grade":"A","zh_nat":"Australia","zh_club":"Brighton Ice Bergers"},{"name":"Nuala Muir-Cochrane","gender":"F","zh_year":2009,"zh_seconds":29064,"ch_year":2008,"ch_seconds":46500,"gap_years":1,"zh_first":false,"ratio":1.5999,"surcharge":4.8433,"grade":"A","zh_nat":"Irland","zh_club":"Camden"},{"name":"Oliver Turner","gender":"M","zh_year":2008,"zh_seconds":36595,"ch_year":1995,"ch_seconds":46380,"gap_years":13,"zh_first":false,"ratio":1.2674,"surcharge":2.7181,"grade":"A","zh_nat":"USA","zh_club":""},{"name":"Oliver Wilkinson","gender":"M","zh_year":2013,"zh_seconds":24996,"ch_year":2009,"ch_seconds":39960,"gap_years":4,"zh_first":false,"ratio":1.5987,"surcharge":4.1567,"grade":"A","zh_nat":"Australian/English","zh_club":"C.S.W.P.C"},{"name":"Patrick Corkery","gender":"M","zh_year":2013,"zh_seconds":33319,"ch_year":2017,"ch_seconds":47520,"gap_years":4,"zh_first":true,"ratio":1.4262,"surcharge":3.9447,"grade":"A","zh_nat":"Irish","zh_club":"NAC Masters"},{"name":"Patrick Cray","gender":"M","zh_year":2014,"zh_seconds":37505,"ch_year":2016,"ch_seconds":54420,"gap_years":2,"zh_first":true,"ratio":1.451,"surcharge":4.6986,"grade":"A","zh_nat":"British","zh_club":"Weyport Masters Swimming Club"},{"name":"Patti Bauernfeind","gender":"F","zh_year":2013,"zh_seconds":28414,"ch_year":2015,"ch_seconds":38700,"gap_years":2,"zh_first":true,"ratio":1.362,"surcharge":2.8572,"grade":"A","zh_nat":"American","zh_club":"Loch Ness Masters"},{"name":"Paul Eugen Dorin Georgescu","gender":"M","zh_year":2017,"zh_seconds":25897,"ch_year":2016,"ch_seconds":48960,"gap_years":1,"zh_first":false,"ratio":1.8906,"surcharge":6.4064,"grade":"A","zh_nat":"Romania","zh_club":""},{"name":"Paul Leonard","gender":"M","zh_year":2026,"zh_seconds":30876,"ch_year":2022,"ch_seconds":45540,"gap_years":4,"zh_first":false,"ratio":1.4749,"surcharge":4.0733,"grade":"A","zh_nat":"British","zh_club":"Winsford ASC"},{"name":"Paul Massey","gender":"M","zh_year":2011,"zh_seconds":35044,"ch_year":2010,"ch_seconds":65940,"gap_years":1,"zh_first":false,"ratio":1.8816,"surcharge":8.5822,"grade":"A","zh_nat":"British","zh_club":"Deal Tri"},{"name":"Paule Kremer","gender":"F","zh_year":2026,"zh_seconds":36240,"ch_year":2017,"ch_seconds":50040,"gap_years":9,"zh_first":false,"ratio":1.3808,"surcharge":3.8333,"grade":"A","zh_nat":"Luxemburgish","zh_club":""},{"name":"Peter Dolnik","gender":"M","zh_year":2012,"zh_seconds":41799,"ch_year":2013,"ch_seconds":42180,"gap_years":1,"zh_first":true,"ratio":1.0091,"surcharge":0.1058,"grade":"A","zh_nat":"Australian","zh_club":"Vodnik"},{"name":"Petr MIHOLA","gender":"M","zh_year":2005,"zh_seconds":37444,"ch_year":2006,"ch_seconds":58440,"gap_years":1,"zh_first":true,"ratio":1.5607,"surcharge":5.8322,"grade":"A","zh_nat":"Czech","zh_club":"Fides Brno"},{"name":"Philippe Fort","gender":"M","zh_year":2015,"zh_seconds":36415,"ch_year":2016,"ch_seconds":49860,"gap_years":1,"zh_first":true,"ratio":1.3692,"surcharge":3.7347,"grade":"A","zh_nat":"France","zh_club":"L'ois'eau Libre"},{"name":"Pippa Harrold","gender":"F","zh_year":2004,"zh_seconds":40319,"ch_year":2002,"ch_seconds":52680,"gap_years":2,"zh_first":false,"ratio":1.3066,"surcharge":3.4336,"grade":"A","zh_nat":"UK","zh_club":"J.L.D.S.C."},{"name":"Piyush Sharma","gender":"M","zh_year":2006,"zh_seconds":36520,"ch_year":2006,"ch_seconds":54240,"gap_years":0,"zh_first":true,"ratio":1.4852,"surcharge":4.9222,"grade":"A","zh_nat":"India","zh_club":""},{"name":"Rachael Lee","gender":"F","zh_year":2014,"zh_seconds":25335,"ch_year":2016,"ch_seconds":34800,"gap_years":2,"zh_first":true,"ratio":1.3736,"surcharge":2.6292,"grade":"A","zh_nat":"Irish","zh_club":"Guinness Swim Club"},{"name":"Richard Haan","gender":"M","zh_year":2004,"zh_seconds":39898,"ch_year":2005,"ch_seconds":50820,"gap_years":1,"zh_first":true,"ratio":1.2737,"surcharge":3.0339,"grade":"A","zh_nat":"Czech Rep.","zh_club":"Fides Brno Czech Republic"},{"name":"Richard Nyary","gender":"M","zh_year":2022,"zh_seconds":33555,"ch_year":2021,"ch_seconds":57420,"gap_years":1,"zh_first":false,"ratio":1.7112,"surcharge":6.6292,"grade":"A","zh_nat":"Slovakia","zh_club":"Top Run DS"},{"name":"Ritu Kedia","gender":"F","zh_year":2007,"zh_seconds":39042,"ch_year":2007,"ch_seconds":57000,"gap_years":0,"zh_first":true,"ratio":1.46,"surcharge":4.9883,"grade":"A","zh_nat":"India","zh_club":""},{"name":"Roberta BERNET","gender":"F","zh_year":2005,"zh_seconds":28120,"ch_year":2006,"ch_seconds":35670,"gap_years":1,"zh_first":true,"ratio":1.2685,"surcharge":2.0972,"grade":"A","zh_nat":"Wädenswil","zh_club":"Aquatic Masters Team Zürich"},{"name":"Roger Finch","gender":"M","zh_year":2013,"zh_seconds":31657,"ch_year":2011,"ch_seconds":45540,"gap_years":2,"zh_first":false,"ratio":1.4385,"surcharge":3.8564,"grade":"A","zh_nat":"South African","zh_club":"Wahoo Masters"},{"name":"Ross Reichard","gender":"M","zh_year":2009,"zh_seconds":30466,"ch_year":2006,"ch_seconds":44580,"gap_years":3,"zh_first":false,"ratio":1.4633,"surcharge":3.9206,"grade":"A","zh_nat":"USA","zh_club":""},{"name":"Roy Harding","gender":"M","zh_year":2004,"zh_seconds":32168,"ch_year":2005,"ch_seconds":40800,"gap_years":1,"zh_first":true,"ratio":1.2683,"surcharge":2.3978,"grade":"A","zh_nat":"Great Britain","zh_club":""},{"name":"Sakura Adams","gender":"F","zh_year":2017,"zh_seconds":30165,"ch_year":2005,"ch_seconds":40080,"gap_years":12,"zh_first":false,"ratio":1.3287,"surcharge":2.7542,"grade":"A","zh_nat":"Great Britain","zh_club":""},{"name":"Sami Robertson","gender":"M","zh_year":2019,"zh_seconds":31273,"ch_year":2014,"ch_seconds":42240,"gap_years":5,"zh_first":false,"ratio":1.3507,"surcharge":3.0464,"grade":"A","zh_nat":"Great Britain","zh_club":"Serpentine Swimming Club"},{"name":"Sara Marley","gender":"F","zh_year":2016,"zh_seconds":37096,"ch_year":2014,"ch_seconds":49620,"gap_years":2,"zh_first":false,"ratio":1.3376,"surcharge":3.4789,"grade":"A","zh_nat":"USA/Ireland","zh_club":"Red Top Swim"},{"name":"Sean Paul Breslin","gender":"M","zh_year":2026,"zh_seconds":27946,"ch_year":2024,"ch_seconds":44040,"gap_years":2,"zh_first":false,"ratio":1.5759,"surcharge":4.4706,"grade":"A","zh_nat":"Irish","zh_club":""},{"name":"Sean Paul Breslin","gender":"M","zh_year":2026,"zh_seconds":27946,"ch_year":2024,"ch_seconds":44040,"gap_years":2,"zh_first":false,"ratio":1.5759,"surcharge":4.4706,"grade":"A","zh_nat":"Irish","zh_club":""},{"name":"Sian Williams","gender":"F","zh_year":2012,"zh_seconds":40918,"ch_year":2013,"ch_seconds":61440,"gap_years":1,"zh_first":true,"ratio":1.5015,"surcharge":5.7006,"grade":"A","zh_nat":"British","zh_club":"Chester Triathlon Club"},{"name":"Sorcha Barry","gender":"F","zh_year":2010,"zh_seconds":26225,"ch_year":2011,"ch_seconds":43320,"gap_years":1,"zh_first":true,"ratio":1.6519,"surcharge":4.7486,"grade":"A","zh_nat":"Irish","zh_club":"Glenalbyn Masters"},{"name":"Stuart Bowman","gender":"M","zh_year":2013,"zh_seconds":41761,"ch_year":2014,"ch_seconds":55440,"gap_years":1,"zh_first":true,"ratio":1.3276,"surcharge":3.7997,"grade":"A","zh_nat":"British","zh_club":"Serpentine Swimming Club"},{"name":"Suzanne Dods","gender":"F","zh_year":2004,"zh_seconds":38067,"ch_year":2000,"ch_seconds":45420,"gap_years":4,"zh_first":false,"ratio":1.1932,"surcharge":2.0425,"grade":"A","zh_nat":"USA","zh_club":"Dolphin Club, San Francisco"},{"name":"Sylvain Estadieu","gender":"M","zh_year":2009,"zh_seconds":33682,"ch_year":2009,"ch_seconds":53040,"gap_years":0,"zh_first":true,"ratio":1.5747,"surcharge":5.3772,"grade":"A","zh_nat":"Frankreich","zh_club":""},{"name":"Thomas Ladurner","gender":"M","zh_year":2011,"zh_seconds":24885,"ch_year":2012,"ch_seconds":39840,"gap_years":1,"zh_first":true,"ratio":1.601,"surcharge":4.1542,"grade":"A","zh_nat":"Italy","zh_club":"Sport Club Meran"},{"name":"Thomas Van Every","gender":"M","zh_year":2015,"zh_seconds":36395,"ch_year":2014,"ch_seconds":50801,"gap_years":1,"zh_first":false,"ratio":1.3958,"surcharge":4.0017,"grade":"A","zh_nat":"Great Britain","zh_club":"South London Swimming Club"},{"name":"Tim Denyer","gender":"M","zh_year":2010,"zh_seconds":35272,"ch_year":2005,"ch_seconds":45600,"gap_years":5,"zh_first":false,"ratio":1.2928,"surcharge":2.8689,"grade":"A","zh_nat":"British","zh_club":"Red Top Swim"},{"name":"Timothy Donovan","gender":"M","zh_year":2014,"zh_seconds":31032,"ch_year":2012,"ch_seconds":42000,"gap_years":2,"zh_first":false,"ratio":1.3534,"surcharge":3.0467,"grade":"A","zh_nat":"Australian","zh_club":"Barnes Swimming Club"},{"name":"Tina Neill","gender":"F","zh_year":2006,"zh_seconds":28922,"ch_year":2005,"ch_seconds":48120,"gap_years":1,"zh_first":false,"ratio":1.6638,"surcharge":5.3328,"grade":"A","zh_nat":"USA","zh_club":"Macalester"},{"name":"Tom Healy","gender":"M","zh_year":2011,"zh_seconds":25248,"ch_year":2012,"ch_seconds":35460,"gap_years":1,"zh_first":true,"ratio":1.4045,"surcharge":2.8367,"grade":"A","zh_nat":"Irish","zh_club":"Glenalbyn Masters"},{"name":"Tom Knight","gender":"M","zh_year":2022,"zh_seconds":32276,"ch_year":2019,"ch_seconds":36960,"gap_years":3,"zh_first":false,"ratio":1.1451,"surcharge":1.3011,"grade":"A","zh_nat":"Great Britain","zh_club":"Serpentine Swimming Club"},{"name":"Tom Rutter","gender":"M","zh_year":2017,"zh_seconds":40717,"ch_year":2019,"ch_seconds":71160,"gap_years":2,"zh_first":true,"ratio":1.7477,"surcharge":8.4564,"grade":"A","zh_nat":"Great Britain","zh_club":""},{"name":"Toni PAVICIC-DONKIC","gender":"M","zh_year":2005,"zh_seconds":24068,"ch_year":2006,"ch_seconds":35100,"gap_years":1,"zh_first":true,"ratio":1.4584,"surcharge":3.0644,"grade":"A","zh_nat":"Zürich","zh_club":""},{"name":"Trevor Colman","gender":"M","zh_year":2007,"zh_seconds":45387,"ch_year":2009,"ch_seconds":62361,"gap_years":2,"zh_first":true,"ratio":1.374,"surcharge":4.715,"grade":"A","zh_nat":"British","zh_club":"Ruislip Northwood Masters"},{"name":"Trevor Malone","gender":"M","zh_year":2014,"zh_seconds":27028,"ch_year":2015,"ch_seconds":47580,"gap_years":1,"zh_first":true,"ratio":1.7604,"surcharge":5.7089,"grade":"A","zh_nat":"Irish","zh_club":"Sandycove Island Swim Club"},{"name":"Tullio Salvatore","gender":"M","zh_year":2012,"zh_seconds":29707,"ch_year":2010,"ch_seconds":43664,"gap_years":2,"zh_first":false,"ratio":1.4698,"surcharge":3.8769,"grade":"A","zh_nat":"Italian","zh_club":"Otter SC, Serpentine SC, CS&PF"},{"name":"Vasanti Niemz","gender":"F","zh_year":2010,"zh_seconds":35288,"ch_year":2010,"ch_seconds":60658,"gap_years":0,"zh_first":true,"ratio":1.7189,"surcharge":7.0472,"grade":"A","zh_nat":"Germany","zh_club":"Sri Chinmoy Marathon Team"},{"name":"Vedika BOLLIGER","gender":"F","zh_year":2002,"zh_seconds":48237,"ch_year":2002,"ch_seconds":84000,"gap_years":0,"zh_first":true,"ratio":1.7414,"surcharge":9.9342,"grade":"A","zh_nat":"Switzerland","zh_club":"Sri Chinmoy Marathon Team"},{"name":"Victoria Thorpe","gender":"F","zh_year":2010,"zh_seconds":31546,"ch_year":2012,"ch_seconds":44040,"gap_years":2,"zh_first":true,"ratio":1.3961,"surcharge":3.4706,"grade":"A","zh_nat":"British","zh_club":"Serpentine S.C."},{"name":"William Ellis","gender":"M","zh_year":2014,"zh_seconds":25486,"ch_year":2024,"ch_seconds":44220,"gap_years":10,"zh_first":true,"ratio":1.7351,"surcharge":5.2039,"grade":"A","zh_nat":"British","zh_club":"Kingston Royals"}]}</script>
+<script>
+(function () {
+  "use strict";
+
+  var D = JSON.parse(document.getElementById("data").textContent);
+  var M = D.model;
+  var PAIRS = D.pairs;
+
+  var C_M = "var(--s1)", C_F = "var(--s2)";
+
+  // ---------- formatting ----------
+  function hm(hours) {
+    if (hours == null || !isFinite(hours)) return "–";
+    var s = Math.round(hours * 3600);
+    return Math.floor(s / 3600) + ":" + String(Math.floor((s % 3600) / 60)).padStart(2, "0");
+  }
+  function hms(sec) {
+    return Math.floor(sec / 3600) + ":" + String(Math.floor((sec % 3600) / 60)).padStart(2, "0")
+      + ":" + String(sec % 60).padStart(2, "0");
+  }
+  function num(v, d) { return v.toFixed(d).replace(".", ","); }
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+
+  // ---------- model ----------
+  // Additive: the Channel costs a surcharge that does not depend on the lake time.
+  // The surcharge is strictly positive and right-skewed, hence log-normal — which is why
+  // the interval is asymmetric rather than a symmetric ± band.
+  function fit(x) { return x + M.median; }
+  function loBound(x) { return x + M.lo95; }
+  function hiBound(x) { return x + M.hi95; }
+
+  // ---------- calculator ----------
+  var timeEl = document.getElementById("zh-time");
+  var rangeEl = document.getElementById("zh-range");
+
+  function parseTime(str) {
+    var t = String(str).trim().replace(",", ".");
+    // "9:30" and "9h30" are always hours and minutes.
+    var m = t.match(/^(\d{1,2})\s*[:h]\s*(\d{1,2})$/i);
+    if (m) return +m[1] + +m[2] / 60;
+    // A dot is ambiguous: "9.5" means nine and a half, "9.30" means half past nine.
+    // One digit after the dot is a fraction, two digits are minutes.
+    m = t.match(/^(\d{1,2})\.(\d{1,2})$/);
+    if (m) return m[2].length === 1 ? +m[1] + +m[2] / 10 : +m[1] + +m[2] / 60;
+    m = t.match(/^(\d{1,2})\s*h?$/i);
+    if (m) return +m[1];
+    return null;
+  }
+
+  function renderCalc(hours) {
+    var mid = fit(hours), lo = loBound(hours), hi = hiBound(hours);
+    document.getElementById("out-mid").innerHTML =
+      hm(mid) + " <span>erwartete Kanalzeit</span>";
+    document.getElementById("out-range").textContent =
+      "95 % der Vergleichbaren zwischen " + hm(lo) + " und " + hm(hi) + " h";
+
+    var g = document.getElementById("gauge");
+    g.querySelectorAll(".tick").forEach(function (n) { n.remove(); });
+    g.querySelector(".mid").style.left = ((mid - lo) / (hi - lo) * 100) + "%";
+    [[0, hm(lo)], [100, hm(hi)]].forEach(function (t) {
+      var n = document.createElement("div");
+      n.className = "tick";
+      n.style.left = t[0] + "%";
+      n.textContent = t[1];
+      g.appendChild(n);
+    });
+
+    document.getElementById("calc-caption").textContent =
+      "Rund " + hm(M.median) + " h Aufschlag auf deine Seezeit — das entspricht hier dem "
+      + num(mid / hours, 2) + "-fachen, bei einer anderen Seezeit wäre der Faktor ein anderer, "
+      + "der Aufschlag aber derselbe. Nach oben ist die Spanne länger als nach unten: "
+      + "ungünstige Gezeiten kosten Stunden, schneller als das eigene Tempo geht es nicht.";
+
+    drawMarker(hours);
+  }
+
+  function setFromHours(h, updateText) {
+    h = Math.min(13.5, Math.max(6, h));
+    rangeEl.value = Math.round(h * 60);
+    if (updateText) timeEl.value = hm(h);
+    renderCalc(h);
+  }
+
+  timeEl.addEventListener("input", function () {
+    var h = parseTime(timeEl.value);
+    if (h != null && h >= 4 && h <= 20) {
+      rangeEl.value = Math.round(Math.min(13.5, Math.max(6, h)) * 60);
+      renderCalc(h);
+    }
+  });
+  timeEl.addEventListener("blur", function () {
+    var h = parseTime(timeEl.value);
+    setFromHours(h == null ? 9 : h, true);
+  });
+  rangeEl.addEventListener("input", function () {
+    setFromHours(+rangeEl.value / 60, true);
+  });
+
+  // ---------- shared svg helpers ----------
+  var NS = "http://www.w3.org/2000/svg";
+  function el(name, attrs, text) {
+    var n = document.createElementNS(NS, name);
+    for (var k in attrs) if (attrs[k] != null) n.setAttribute(k, attrs[k]);
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  var tip = document.getElementById("tip");
+  function showTip(evt, html) {
+    tip.innerHTML = html;
+    tip.style.opacity = "1";
+    var r = tip.getBoundingClientRect();
+    tip.style.left = Math.min(evt.clientX + 14, window.innerWidth - r.width - 8) + "px";
+    tip.style.top = Math.max(8, evt.clientY - r.height - 12) + "px";
+  }
+  function hideTip() { tip.style.opacity = "0"; }
+
+  // ---------- scatter ----------
+  var SC = { W: 760, H: 440, m: { l: 54, r: 16, t: 14, b: 46 } };
+  var xLo = 6, xHi = 13.5, yLo = 7, yHi = 21;
+  function sx(v) { return SC.m.l + (v - xLo) / (xHi - xLo) * (SC.W - SC.m.l - SC.m.r); }
+  function sy(v) { return SC.m.t + (yHi - v) / (yHi - yLo) * (SC.H - SC.m.t - SC.m.b); }
+  var marker = null;
+
+  function drawScatter() {
+    var svg = document.getElementById("scatter");
+    svg.textContent = "";
+    var iw = SC.W - SC.m.l - SC.m.r, ih = SC.H - SC.m.t - SC.m.b;
+
+    var g = el("g", { class: "axis" });
+    for (var yv = 8; yv <= yHi; yv += 2) {
+      g.appendChild(el("line", { x1: SC.m.l, x2: SC.W - SC.m.r, y1: sy(yv), y2: sy(yv) }));
+      g.appendChild(el("text", { x: SC.m.l - 8, y: sy(yv) + 3.5, "text-anchor": "end" }, yv + " h"));
+    }
+    for (var xv = 6; xv <= xHi; xv += 1) {
+      g.appendChild(el("line", { x1: sx(xv), x2: sx(xv), y1: SC.m.t, y2: SC.m.t + ih,
+        stroke: "var(--grid)" }));
+      g.appendChild(el("text", { x: sx(xv), y: SC.H - SC.m.b + 16, "text-anchor": "middle" },
+        xv + " h"));
+    }
+    g.appendChild(el("line", { class: "domain", x1: SC.m.l, x2: SC.W - SC.m.r,
+      y1: SC.m.t + ih, y2: SC.m.t + ih }));
+    svg.appendChild(g);
+    svg.appendChild(el("text", { class: "axis-title", x: SC.m.l + iw / 2, y: SC.H - 6,
+      "text-anchor": "middle" }, "Zürichsee 26 km"));
+    svg.appendChild(el("text", { class: "axis-title", x: 12, y: SC.m.t + ih / 2,
+      "text-anchor": "middle", transform: "rotate(-90 12 " + (SC.m.t + ih / 2) + ")" },
+      "Ärmelkanal"));
+
+    // prediction band — parallel to the diagonal, clipped to the plot area
+    var defs = el("defs", null);
+    var clip = el("clipPath", { id: "plotclip" });
+    clip.appendChild(el("rect", { x: SC.m.l, y: SC.m.t, width: iw, height: ih }));
+    defs.appendChild(clip);
+    svg.appendChild(defs);
+    svg.appendChild(el("path", {
+      d: "M" + sx(xLo) + " " + sy(hiBound(xLo)) + "L" + sx(xHi) + " " + sy(hiBound(xHi))
+        + "L" + sx(xHi) + " " + sy(loBound(xHi)) + "L" + sx(xLo) + " " + sy(loBound(xLo)) + "Z",
+      fill: "var(--band)", stroke: "none", "clip-path": "url(#plotclip)"
+    }));
+
+    // identity line
+    svg.appendChild(el("line", { x1: sx(xLo), y1: sy(xLo), x2: sx(xHi), y2: sy(xHi),
+      stroke: "var(--ink-3)", "stroke-width": 2, "stroke-dasharray": "5 5", opacity: .7 }));
+
+    // model line: identity shifted up by the median surcharge
+    svg.appendChild(el("line", { x1: sx(xLo), y1: sy(fit(xLo)), x2: sx(xHi), y2: sy(fit(xHi)),
+      stroke: "var(--ink-2)", "stroke-width": 2, "stroke-linecap": "round",
+      "clip-path": "url(#plotclip)" }));
+
+    PAIRS.forEach(function (p) {
+      p._x = sx(p.zh_seconds / 3600);
+      p._y = sy(p.ch_seconds / 3600);
+      svg.appendChild(el("circle", {
+        cx: p._x, cy: p._y, r: 4.2, fill: p.gender === "F" ? C_F : C_M,
+        "fill-opacity": .72, stroke: "var(--surface)", "stroke-width": 1
+      }));
+    });
+
+    marker = el("g", { opacity: 0, "pointer-events": "none" });
+    marker.appendChild(el("line", { class: "mk-v", stroke: "var(--accent)", "stroke-width": 2 }));
+    marker.appendChild(el("circle", { class: "mk-c", r: 6, fill: "none",
+      stroke: "var(--accent)", "stroke-width": 2.5 }));
+    svg.appendChild(marker);
+
+    var hover = el("circle", { r: 7, fill: "none", stroke: "var(--ink)", "stroke-width": 2,
+      opacity: 0, "pointer-events": "none" });
+    svg.appendChild(hover);
+
+    svg.onmousemove = function (evt) {
+      var r = svg.getBoundingClientRect();
+      var px = (evt.clientX - r.left) / r.width * SC.W;
+      var py = (evt.clientY - r.top) / r.height * SC.H;
+      var best = null, bd = 1e9;
+      PAIRS.forEach(function (p) {
+        var d = Math.pow(p._x - px, 2) + Math.pow(p._y - py, 2);
+        if (d < bd) { bd = d; best = p; }
+      });
+      if (!best || bd > 500) { hover.setAttribute("opacity", 0); hideTip(); return; }
+      hover.setAttribute("cx", best._x);
+      hover.setAttribute("cy", best._y);
+      hover.setAttribute("opacity", 1);
+      showTip(evt, '<div class="t-name">' + esc(best.name) + "</div>" +
+        '<div class="t-row">Zürichsee ' + best.zh_year + " · " + hms(best.zh_seconds) + "</div>" +
+        '<div class="t-row">Kanal ' + best.ch_year + " · " + hms(best.ch_seconds) + "</div>" +
+        '<div class="t-row">Faktor ' + num(best.ratio, 2) + "</div>");
+    };
+    svg.onmouseleave = function () { hover.setAttribute("opacity", 0); hideTip(); };
+
+    document.getElementById("legend").innerHTML =
+      '<span><i style="background:' + C_M + '"></i>Männer</span>' +
+      '<span><i style="background:' + C_F + '"></i>Frauen</span>' +
+      '<span><i class="line" style="background:var(--ink-2)"></i>Seezeit + ' +
+        hm(M.median) + " h</span>" +
+      '<span><i class="area" style="background:var(--band)"></i>95 % der Ergebnisse</span>' +
+      '<span><i class="dash"></i>gleiche Zeit</span>';
+  }
+
+  function drawMarker(hours) {
+    if (!marker) return;
+    var x = Math.min(xHi, Math.max(xLo, hours));
+    marker.querySelector(".mk-v").setAttribute("x1", sx(x));
+    marker.querySelector(".mk-v").setAttribute("x2", sx(x));
+    marker.querySelector(".mk-v").setAttribute("y1", sy(Math.min(yHi, hiBound(x))));
+    marker.querySelector(".mk-v").setAttribute("y2", sy(loBound(x)));
+    marker.querySelector(".mk-c").setAttribute("cx", sx(x));
+    marker.querySelector(".mk-c").setAttribute("cy", sy(fit(x)));
+    marker.setAttribute("opacity", 1);
+  }
+
+  // ---------- facts ----------
+  function renderFacts() {
+    var items = [
+      ["Paare", String(M.n), "Personen mit beiden Zeiten"],
+      ["Modell", "Seezeit + " + hm(M.median), "Median-Aufschlag für den Kanal"],
+      ["Bandbreite", hm(M.lo95) + " – " + hm(M.hi95), "Aufschlag bei 95 % der Ergebnisse"],
+      ["Aufschlag ↔ Tempo", num(M.corr_surcharge_vs_time, 2).replace("-", "−"),
+        "Korrelation ≈ 0, also unabhängig vom Tempo"],
+      ["Zusammenhang", "r = " + num(M.r, 2), "Seezeit gegen Kanalzeit"]
+    ];
+    document.getElementById("facts").innerHTML = items.map(function (it) {
+      return '<div class="fact"><dt>' + esc(it[0]) + "</dt><dd>" + esc(it[1]) +
+        "<small>" + esc(it[2]) + "</small></dd></div>";
+    }).join("");
+  }
+
+  // ---------- surcharge by speed band ----------
+  function renderBands() {
+    var defs = [[0, 8, "unter 8 h"], [8, 9.5, "8 – 9:30"], [9.5, 11, "9:30 – 11 h"],
+      [11, 99, "über 11 h"]];
+    var rows = defs.map(function (d) {
+      var sel = PAIRS.filter(function (p) {
+        var h = p.zh_seconds / 3600;
+        return h >= d[0] && h < d[1];
+      });
+      var sur = sel.map(function (p) { return p.surcharge; })
+        .sort(function (a, b) { return a - b; });
+      var rat = sel.map(function (p) { return p.ratio; })
+        .sort(function (a, b) { return a - b; });
+      return { label: d[2], n: sur.length,
+        med: sur[sur.length >> 1],
+        lo: sur[Math.floor(sur.length * 0.25)],
+        hi: sur[Math.floor(sur.length * 0.75)],
+        ratio: rat[rat.length >> 1] };
+    });
+
+    var svg = document.getElementById("bands");
+    svg.textContent = "";
+    var W = 760, H = 200, m = { l: 106, r: 96, t: 10, b: 34 };
+    var iw = W - m.l - m.r;
+    var lo = 0, hi = 8;
+    function X(v) { return m.l + (v - lo) / (hi - lo) * iw; }
+
+    var g = el("g", { class: "axis" });
+    for (var v = 0; v <= hi + 1e-9; v += 1) {
+      g.appendChild(el("line", { x1: X(v), x2: X(v), y1: m.t, y2: H - m.b }));
+      g.appendChild(el("text", { x: X(v), y: H - m.b + 15, "text-anchor": "middle" },
+        "+" + v + " h"));
+    }
+    g.appendChild(el("line", { class: "domain", x1: m.l, x2: W - m.r, y1: H - m.b, y2: H - m.b }));
+    svg.appendChild(g);
+    svg.appendChild(el("text", { class: "axis-title", x: m.l + iw / 2, y: H - 4,
+      "text-anchor": "middle" }, "Aufschlag gegenüber der Seezeit"));
+
+    // the model's median, as a reference the bars should all sit on
+    svg.appendChild(el("line", { x1: X(M.median), x2: X(M.median), y1: m.t, y2: H - m.b,
+      stroke: "var(--accent)", "stroke-width": 2, "stroke-dasharray": "4 4", opacity: .55 }));
+
+    var rowH = (H - m.t - m.b) / rows.length;
+    rows.forEach(function (r, i) {
+      var cy = m.t + rowH * (i + 0.5);
+      svg.appendChild(el("text", { x: m.l - 12, y: cy + 4, "text-anchor": "end",
+        "font-size": 12.5, fill: "var(--ink-2)", "font-family": "var(--sans)" }, r.label));
+      svg.appendChild(el("line", { x1: X(r.lo), x2: X(r.hi), y1: cy, y2: cy,
+        stroke: "var(--band)", "stroke-width": 12, "stroke-linecap": "round" }));
+      svg.appendChild(el("circle", { cx: X(r.med), cy: cy, r: 5.5, fill: "var(--accent)",
+        stroke: "var(--surface)", "stroke-width": 1.5 }));
+      svg.appendChild(el("text", { x: X(r.med), y: cy - 13, "text-anchor": "middle",
+        "font-size": 11.5, fill: "var(--ink)", "font-family": "var(--mono)" },
+        "+" + hm(r.med) + " h"));
+      svg.appendChild(el("text", { x: W - m.r + 10, y: cy + 4, "font-size": 11.5,
+        fill: "var(--ink-3)", "font-family": "var(--mono)" },
+        "n=" + r.n + " · ×" + num(r.ratio, 2)));
+    });
+  }
+
+  // ---------- table ----------
+  var COLS = [
+    { k: null, t: "#" },
+    { k: "name", t: "Name" },
+    { k: "zh_year", t: "See", cls: "num" },
+    { k: "zh_seconds", t: "Zürichsee", cls: "num" },
+    { k: "ch_year", t: "Kanal", cls: "num" },
+    { k: "ch_seconds", t: "Ärmelkanal", cls: "num" },
+    { k: "surcharge", t: "Aufschlag", cls: "num" },
+    { k: "ratio", t: "Faktor", cls: "num" },
+    { k: "gap_years", t: "Abstand", cls: "num" },
+    { k: "zh_nat", t: "Nation" }
+  ];
+  var S = { q: "", gender: "all", gap: 99, order: "all" };
+  var sortKey = "ratio", sortDir = 1, view = [];
+
+  PAIRS.forEach(function (p) {
+    // The source uses "N/A" as an empty club — don't render it as a value.
+    if (/^(n\/a|na|-|\?)$/i.test((p.zh_club || "").trim())) p.zh_club = "";
+    p.hay = (p.name + " " + p.zh_nat + " " + p.zh_club).toLowerCase();
+  });
+
+  function applyTable() {
+    view = PAIRS.filter(function (p) {
+      if (S.gender !== "all" && p.gender !== S.gender) return false;
+      if (p.gap_years > S.gap) return false;
+      if (S.order === "zh" && !p.zh_first) return false;
+      if (S.order === "ch" && p.zh_first) return false;
+      if (S.q && p.hay.indexOf(S.q) === -1) return false;
+      return true;
+    });
+    view.sort(function (a, b) {
+      var x = a[sortKey], y = b[sortKey];
+      if (typeof x === "string") return sortDir * x.localeCompare(y, "de");
+      return sortDir * (x - y);
+    });
+    renderRows();
+  }
+
+  function renderHead() {
+    document.getElementById("thead-row").innerHTML = COLS.map(function (c) {
+      if (!c.k) return '<th class="static" scope="col">#</th>';
+      var active = sortKey === c.k;
+      return '<th data-k="' + c.k + '" scope="col" aria-sort="' +
+        (active ? (sortDir === 1 ? "ascending" : "descending") : "none") + '">' +
+        esc(c.t) + (active ? " " + (sortDir === 1 ? "▲" : "▼") : "") + "</th>";
+    }).join("");
+    document.querySelectorAll("#thead-row th[data-k]").forEach(function (th) {
+      th.addEventListener("click", function () {
+        var k = th.dataset.k;
+        if (sortKey === k) sortDir = -sortDir;
+        else { sortKey = k; sortDir = (k === "name" || k === "zh_nat") ? 1 : 1; }
+        renderHead(); applyTable();
+      });
+    });
+  }
+
+  function renderRows() {
+    document.getElementById("tbody").innerHTML = view.map(function (p, i) {
+      return "<tr>" +
+        '<td class="num pos">' + (i + 1) + "</td>" +
+        '<td><span class="dot" style="background:' + (p.gender === "F" ? C_F : C_M) + '"></span>' +
+        '<span class="name">' + esc(p.name) + "</span>" +
+        (p.zh_club ? '<div class="sub">' + esc(p.zh_club) + "</div>" : "") + "</td>" +
+        '<td class="num">' + p.zh_year + "</td>" +
+        '<td class="num">' + hms(p.zh_seconds) + "</td>" +
+        '<td class="num">' + p.ch_year + "</td>" +
+        '<td class="num">' + hms(p.ch_seconds) + "</td>" +
+        '<td class="num">+' + hm(p.surcharge) + "</td>" +
+        '<td class="num">' + num(p.ratio, 2) + "</td>" +
+        '<td class="num">' + p.gap_years + "</td>" +
+        "<td>" + esc(p.zh_nat) + "</td>" +
+        "</tr>";
+    }).join("");
+    document.getElementById("shown").textContent = view.length + " von " + PAIRS.length + " Paaren";
+  }
+
+  document.getElementById("q").addEventListener("input", function (e) {
+    S.q = e.target.value.trim().toLowerCase(); applyTable();
+  });
+  document.getElementById("f-gap").addEventListener("change", function (e) {
+    S.gap = +e.target.value; applyTable();
+  });
+  [["f-gender", "gender"], ["f-order", "order"]].forEach(function (pair) {
+    var box = document.getElementById(pair[0]);
+    box.addEventListener("click", function (e) {
+      var btn = e.target.closest("button");
+      if (!btn) return;
+      box.querySelectorAll("button").forEach(function (b) {
+        b.setAttribute("aria-pressed", String(b === btn));
+      });
+      S[pair[1]] = btn.dataset.v;
+      applyTable();
+    });
+  });
+
+  document.getElementById("copy").addEventListener("click", function () {
+    var head = ["Name", "Geschlecht", "Zuerichsee_Jahr", "Zuerichsee_Zeit", "Zuerichsee_s",
+      "Kanal_Jahr", "Kanal_Zeit", "Kanal_s", "Aufschlag_h", "Faktor", "Abstand_Jahre",
+      "Nation", "Club"];
+    var lines = [head.join(";")].concat(view.map(function (p) {
+      return [p.name, p.gender, p.zh_year, hms(p.zh_seconds), p.zh_seconds,
+        p.ch_year, hms(p.ch_seconds), p.ch_seconds, num(p.surcharge, 3), num(p.ratio, 3),
+        p.gap_years, p.zh_nat, p.zh_club].map(function (v) {
+          v = v == null ? "" : String(v);
+          return /[;"\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+        }).join(";");
+    }));
+    var note = document.getElementById("copied");
+    function flash(msg) {
+      note.textContent = msg; note.hidden = false;
+      setTimeout(function () { note.hidden = true; }, 2600);
+    }
+    var text = lines.join("\n");
+    (navigator.clipboard && navigator.clipboard.writeText
+      ? navigator.clipboard.writeText(text) : Promise.reject())
+      .then(function () { flash(view.length + " Zeilen kopiert."); },
+            function () { flash("Die Zwischenablage ist hier gesperrt."); });
+  });
+
+  // ---------- go ----------
+  drawScatter();
+  renderFacts();
+  renderBands();
+  renderHead();
+  applyTable();
+  setFromHours(9, true);
+})();
+
+</script>
+</body>
+</html>

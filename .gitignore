@@ -1,0 +1,24 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Editor- und Tooling-Verzeichnisse, die Secrets einsammeln können
+.history/
+.omc/
+.idea/
+.vscode/
+
+# Fremde Datensätze — nicht unsere, nicht zum Weiterverbreiten.
+# Bezugsquelle steht im README.
+channel_swims.xlsx
+
+# Rohdaten: ~22 MB heruntergeladene Quellen, jederzeit reproduzierbar
+# über srichinmoy/links.json bzw. download.sh
+srichinmoy/pdf/
+srichinmoy/raw/
+srichinmoy/txt/
+
+# Arbeitsdateien
+*.log
+.DS_Store

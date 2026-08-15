@@ -1,0 +1,352 @@
+<title>Zürichsee Marathon Swim</title>
+
+<style>
+:root {
+  --ground: #eef2f1;
+  --surface: #f9fbfa;
+  --surface-2: #ffffff;
+  --ink: #0f1f1d;
+  --ink-2: #3d5350;
+  --ink-3: #6b807d;
+  --rule: #d2dedb;
+  --rule-strong: #b4c5c1;
+  --accent: #0a6e9e;
+  --accent-soft: rgba(10, 110, 158, 0.12);
+  --s1: #0a6e9e;
+  --s2: #d65a18;
+  --s3: #0e9273;
+  --s4: #8b4fc0;
+  --s5: #a8871b;
+  --grid: rgba(15, 31, 29, 0.09);
+  --shadow: 0 1px 2px rgba(15, 31, 29, .06), 0 8px 24px -16px rgba(15, 31, 29, .3);
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0c1214;
+    --surface: #131b1e;
+    --surface-2: #182226;
+    --ink: #e6efec;
+    --ink-2: #a9bcb8;
+    --ink-3: #7d918e;
+    --rule: #253236;
+    --rule-strong: #35474c;
+    --accent: #2e8fc4;
+    --accent-soft: rgba(46, 143, 196, 0.16);
+    --s1: #2e8fc4;
+    --s2: #e06b36;
+    --s3: #20a382;
+    --s4: #a063d8;
+    --s5: #ae9020;
+    --grid: rgba(230, 239, 236, 0.10);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0c1214;
+  --surface: #131b1e;
+  --surface-2: #182226;
+  --ink: #e6efec;
+  --ink-2: #a9bcb8;
+  --ink-3: #7d918e;
+  --rule: #253236;
+  --rule-strong: #35474c;
+  --accent: #2e8fc4;
+  --accent-soft: rgba(46, 143, 196, 0.16);
+  --s1: #2e8fc4;
+  --s2: #e06b36;
+  --s3: #20a382;
+  --s4: #a063d8;
+  --s5: #ae9020;
+  --grid: rgba(230, 239, 236, 0.10);
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px 72px; }
+
+/* ---------- masthead ---------- */
+.masthead { padding: 44px 0 24px; border-bottom: 1px solid var(--rule); }
+.eyebrow {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--ink-3); margin: 0 0 12px;
+}
+h1 {
+  font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 5.5vw, 56px);
+  line-height: 1.04; letter-spacing: -0.015em; margin: 0 0 14px; text-wrap: balance;
+}
+h1 em { font-style: italic; color: var(--accent); }
+.lede { max-width: 62ch; color: var(--ink-2); margin: 0; font-size: 16px; }
+
+/* ---------- stat row ---------- */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px;
+  background: var(--rule); border: 1px solid var(--rule); border-radius: 3px;
+  margin: 28px 0 0; overflow: hidden; }
+.stat { background: var(--surface); padding: 14px 16px 15px; }
+.stat dt { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-3); margin: 0 0 5px; }
+.stat dd { margin: 0; font-family: var(--serif); font-size: 27px; line-height: 1.1;
+  font-variant-numeric: tabular-nums; }
+.stat dd small { font-family: var(--sans); font-size: 12px; color: var(--ink-3); margin-left: 3px; }
+
+/* ---------- filters ---------- */
+.filters {
+  position: sticky; top: 0; z-index: 20; margin: 26px 0 0;
+  background: color-mix(in srgb, var(--ground) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--rule); border-radius: 3px; padding: 12px 14px;
+  display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: flex-end;
+}
+.field { display: flex; flex-direction: column; gap: 4px; }
+.field > label { font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-3); }
+input[type="search"], select {
+  font: inherit; font-size: 14px; color: var(--ink); background: var(--surface-2);
+  border: 1px solid var(--rule-strong); border-radius: 2px; padding: 6px 9px;
+  min-height: 34px;
+}
+input[type="search"] { width: 232px; }
+input[type="search"]::placeholder { color: var(--ink-3); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.years { display: flex; align-items: center; gap: 6px; }
+.years select { width: 84px; }
+.years span { color: var(--ink-3); }
+.seg { display: flex; border: 1px solid var(--rule-strong); border-radius: 2px; overflow: hidden; }
+.seg button {
+  font: inherit; font-size: 13px; color: var(--ink-2); background: var(--surface-2);
+  border: 0; border-right: 1px solid var(--rule-strong); padding: 7px 11px; cursor: pointer;
+  min-height: 34px;
+}
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+:root[data-theme="dark"] .seg button[aria-pressed="true"],
+:root:not([data-theme="light"]) .seg button[aria-pressed="true"] { color: #08121a; }
+.reset { margin-left: auto; align-self: flex-end; }
+.reset button {
+  font: inherit; font-size: 13px; background: none; border: 1px solid var(--rule-strong);
+  color: var(--ink-2); border-radius: 2px; padding: 7px 12px; min-height: 34px; cursor: pointer;
+}
+.reset button:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- panels ---------- */
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 3px;
+  margin-top: 22px; box-shadow: var(--shadow); }
+.panel > header { padding: 15px 18px 0; }
+.panel h2 { font-family: var(--serif); font-weight: 400; font-size: 20px; margin: 0 0 2px;
+  letter-spacing: -0.01em; }
+.panel p.note { margin: 0; color: var(--ink-3); font-size: 13px; }
+.charts { display: grid; gap: 22px; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .charts { grid-template-columns: 3fr 2fr; } }
+.plot { padding: 8px 10px 12px; }
+.plot svg { display: block; width: 100%; height: auto; overflow: visible; }
+.axis text { font-family: var(--mono); font-size: 10px; fill: var(--ink-3); }
+.axis line { stroke: var(--grid); }
+.axis .domain { stroke: var(--rule-strong); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; padding: 0 18px 14px;
+  font-size: 12.5px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+/* ---------- table ---------- */
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+thead th {
+  position: sticky; top: 0; background: var(--surface-2); text-align: left;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-3); font-weight: 400; padding: 9px 10px; border-bottom: 1px solid var(--rule-strong);
+  white-space: nowrap; cursor: pointer; user-select: none;
+}
+thead th[aria-sort="ascending"], thead th[aria-sort="descending"] { color: var(--accent); }
+thead th .arrow { opacity: .55; }
+thead th.static { cursor: default; }
+tbody td.pos { color: var(--ink-3); }
+tbody td { padding: 7px 10px; border-bottom: 1px solid var(--rule); vertical-align: baseline; }
+tbody tr:hover { background: var(--accent-soft); }
+tbody tr { cursor: pointer; }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.name { font-weight: 600; }
+.sub { color: var(--ink-3); font-size: 12px; }
+.pill { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: .06em;
+  padding: 1px 6px; border-radius: 2px; border: 1px solid currentColor; white-space: nowrap; }
+.pill.dnf { color: var(--s2); }
+.pill.dns, .pill.other, .pill.hc { color: var(--ink-3); }
+.tfoot { padding: 12px 18px 16px; display: flex; gap: 14px; align-items: center;
+  color: var(--ink-3); font-size: 13px; flex-wrap: wrap; }
+.tfoot button { font: inherit; font-size: 13px; background: none; border: 1px solid var(--rule-strong);
+  color: var(--ink-2); border-radius: 2px; padding: 6px 12px; cursor: pointer; }
+.tfoot button:hover { border-color: var(--accent); color: var(--accent); }
+.empty { padding: 40px 18px; text-align: center; color: var(--ink-3); }
+
+/* ---------- tooltip ---------- */
+#tip {
+  position: fixed; z-index: 60; pointer-events: none; opacity: 0; transition: opacity .1s;
+  background: var(--surface-2); border: 1px solid var(--rule-strong); border-radius: 3px;
+  box-shadow: var(--shadow); padding: 8px 10px; font-size: 12.5px; max-width: 260px;
+}
+#tip .t-name { font-weight: 600; }
+#tip .t-row { color: var(--ink-2); font-family: var(--mono); font-size: 11.5px;
+  font-variant-numeric: tabular-nums; }
+
+/* ---------- drawer ---------- */
+#drawer[hidden] { display: none; }
+#drawer { position: fixed; inset: 0; z-index: 80; display: grid; grid-template-columns: 1fr min(520px, 100%); }
+#drawer .scrim { background: rgba(8, 16, 18, .45); border: 0; padding: 0; cursor: pointer; }
+#drawer .sheet { background: var(--surface); border-left: 1px solid var(--rule-strong);
+  overflow-y: auto; padding: 22px 24px 40px; }
+#drawer h3 { font-family: var(--serif); font-weight: 400; font-size: 25px; margin: 0 0 2px; }
+#drawer .close { position: absolute; top: 14px; right: 18px; font: inherit; background: var(--surface-2);
+  border: 1px solid var(--rule-strong); color: var(--ink-2); border-radius: 2px; padding: 5px 10px; cursor: pointer; }
+.hist { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 1px; }
+.hist li { display: grid; grid-template-columns: 52px 1fr auto; gap: 12px; padding: 9px 0;
+  border-top: 1px solid var(--rule); align-items: baseline; }
+.hist .y { font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--ink-3); }
+.bars { margin-top: 6px; height: 5px; background: var(--rule); border-radius: 3px; overflow: hidden; }
+.bars i { display: block; height: 100%; background: var(--accent); }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 3px 14px; margin: 14px 0 0;
+  font-size: 13.5px; }
+.kv dt { color: var(--ink-3); }
+.kv dd { margin: 0; }
+footer.colophon { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--rule);
+  color: var(--ink-3); font-size: 12.5px; max-width: 70ch; }
+footer.colophon a { color: var(--accent); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="eyebrow">Sri Chinmoy Marathon-Schwimmen · Rapperswil – Zürich · 26 km</p>
+    <h1>23 Sommer auf dem <em>Zürichsee</em></h1>
+    <p class="lede">Jede offizielle Rangliste von 2002 bis 2026, aus den PDFs des Veranstalters
+      extrahiert: 2015 Ergebnisse von Einzelschwimmerinnen, Masters und Staffeln — durchsuchbar,
+      filterbar und auf Tempo umgerechnet.</p>
+    <dl class="stats" id="stats"></dl>
+  </header>
+
+  <section class="filters" aria-label="Filter">
+    <div class="field">
+      <label for="q">Suche</label>
+      <input type="search" id="q" placeholder="Name, Club, Ort, Nation, Team…" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="y1">Jahre</label>
+      <div class="years">
+        <select id="y1"></select><span>–</span><select id="y2"></select>
+      </div>
+    </div>
+    <div class="field">
+      <label>Kategorie</label>
+      <div class="seg" id="f-gender" role="group">
+        <button data-v="all" aria-pressed="true">Alle</button>
+        <button data-v="M">Männer</button>
+        <button data-v="F">Frauen</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="f-class">Altersklasse</label>
+      <select id="f-class">
+        <option value="all">Alle</option>
+        <option value="MAIN">Hauptklasse</option>
+        <option value="MASTERS">Masters</option>
+        <option value="JUNIORS">Junioren</option>
+        <option value="OPEN">Offene Kategorie</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Startform</label>
+      <div class="seg" id="f-type" role="group">
+        <button data-v="all" aria-pressed="true">Alle</button>
+        <button data-v="solo">Einzel</button>
+        <button data-v="relay">Staffel</button>
+      </div>
+    </div>
+    <div class="field">
+      <label>Neopren</label>
+      <div class="seg" id="f-suit" role="group">
+        <button data-v="all" aria-pressed="true">Alle</button>
+        <button data-v="0">Ohne</button>
+        <button data-v="1">Mit</button>
+      </div>
+    </div>
+    <div class="field">
+      <label>Wertung</label>
+      <div class="seg" id="f-status" role="group">
+        <button data-v="fin" aria-pressed="true">Finisher</button>
+        <button data-v="all">Alle</button>
+      </div>
+    </div>
+    <div class="reset"><button id="reset" type="button">Zurücksetzen</button></div>
+  </section>
+
+  <div class="charts">
+    <section class="panel">
+      <header>
+        <h2>Endzeiten pro Jahrgang</h2>
+        <p class="note">Ein Punkt je Finisher. Die Linie verbindet den Median des jeweiligen Jahres.</p>
+      </header>
+      <div class="plot"><svg id="chart-times" viewBox="0 0 720 340" role="img"
+        aria-label="Streudiagramm der Endzeiten pro Jahr"></svg></div>
+      <div class="legend" id="legend-times"></div>
+    </section>
+
+    <section class="panel">
+      <header>
+        <h2>Teilnehmende</h2>
+        <p class="note">Gewertete Starts pro Jahr, aufgeteilt nach Startform.</p>
+      </header>
+      <div class="plot"><svg id="chart-count" viewBox="0 0 460 340" role="img"
+        aria-label="Balkendiagramm der Teilnehmenden pro Jahr"></svg></div>
+      <div class="legend" id="legend-count"></div>
+    </section>
+  </div>
+
+  <section class="panel">
+    <header>
+      <h2>Ergebnisse</h2>
+      <p class="note" id="table-note"></p>
+    </header>
+    <div class="tablewrap">
+      <table id="tbl">
+        <thead><tr id="thead-row"></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="empty" hidden>Keine Ergebnisse für diese Filter.</div>
+    <div class="tfoot">
+      <button id="more" type="button" hidden>Weitere 200 anzeigen</button>
+      <span id="shown"></span>
+      <button id="copy" type="button">Auswahl als CSV kopieren</button>
+      <span id="copied" hidden>In die Zwischenablage kopiert.</span>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    Quelle: offizielle Ranglisten des Sri Chinmoy Marathon Team Schweiz
+    (<a href="https://ch.srichinmoyraces.org/z%C3%BCrichsee-schwimmen-marathon-swim">ch.srichinmoyraces.org</a>),
+    aus den Original-PDFs extrahiert. Erfasst sind 2002–2026; 1987–2001 liegen nur als Scans ohne
+    Textlayer vor, 1997 und 2020 fanden nicht statt, 2023 wurde nach dem Start wegen Sturm
+    abgebrochen. Geschwindigkeit = 26 km ÷ Endzeit, nur für gewertete Finisher über die volle
+    Distanz. Staffeln erscheinen mit einer Zeile pro Schwimmerin oder Schwimmer.
+  </footer>
+</div>
+
+<div id="tip" role="status" aria-live="polite"></div>
+
+<div id="drawer" hidden>
+  <button class="scrim" id="scrim" aria-label="Schliessen"></button>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="d-name">
+    <button class="close" id="d-close" type="button">Schliessen</button>
+    <h3 id="d-name"></h3>
+    <div id="d-body"></div>
+  </div>
+</div>

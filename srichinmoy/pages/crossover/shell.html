@@ -1,0 +1,325 @@
+<title>Vom Zürichsee zum Ärmelkanal</title>
+
+<style>
+:root {
+  --ground: #eef2f1;
+  --surface: #f9fbfa;
+  --surface-2: #ffffff;
+  --ink: #0f1f1d;
+  --ink-2: #3d5350;
+  --ink-3: #6b807d;
+  --rule: #d2dedb;
+  --rule-strong: #b4c5c1;
+  --accent: #0a6e9e;
+  --accent-soft: rgba(10, 110, 158, 0.12);
+  --band: rgba(10, 110, 158, 0.10);
+  --s1: #0a6e9e;
+  --s2: #d65a18;
+  --grid: rgba(15, 31, 29, 0.09);
+  --shadow: 0 1px 2px rgba(15, 31, 29, .06), 0 8px 24px -16px rgba(15, 31, 29, .3);
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0c1214; --surface: #131b1e; --surface-2: #182226;
+    --ink: #e6efec; --ink-2: #a9bcb8; --ink-3: #7d918e;
+    --rule: #253236; --rule-strong: #35474c;
+    --accent: #2e8fc4; --accent-soft: rgba(46, 143, 196, 0.16);
+    --band: rgba(46, 143, 196, 0.14);
+    --s1: #2e8fc4; --s2: #e06b36;
+    --grid: rgba(230, 239, 236, 0.10);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0c1214; --surface: #131b1e; --surface-2: #182226;
+  --ink: #e6efec; --ink-2: #a9bcb8; --ink-3: #7d918e;
+  --rule: #253236; --rule-strong: #35474c;
+  --accent: #2e8fc4; --accent-soft: rgba(46, 143, 196, 0.16);
+  --band: rgba(46, 143, 196, 0.14);
+  --s1: #2e8fc4; --s2: #e06b36;
+  --grid: rgba(230, 239, 236, 0.10);
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--sans);
+  font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px 72px; }
+
+.masthead { padding: 44px 0 26px; border-bottom: 1px solid var(--rule); }
+.eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--ink-3); margin: 0 0 12px; }
+h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 14px; text-wrap: balance; }
+h1 em { font-style: italic; color: var(--accent); }
+.lede { max-width: 64ch; color: var(--ink-2); margin: 0; font-size: 16px; }
+
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 3px;
+  margin-top: 22px; box-shadow: var(--shadow); }
+.panel > header { padding: 16px 20px 0; }
+.panel h2 { font-family: var(--serif); font-weight: 400; font-size: 21px; margin: 0 0 3px;
+  letter-spacing: -0.01em; }
+.panel p.note { margin: 0; color: var(--ink-3); font-size: 13px; max-width: 72ch; }
+
+/* ---------- calculator ---------- */
+.calc { display: grid; gap: 0; grid-template-columns: 1fr; }
+@media (min-width: 820px) { .calc { grid-template-columns: 300px 1fr; } }
+.calc-in { padding: 20px; border-bottom: 1px solid var(--rule); }
+@media (min-width: 820px) { .calc-in { border-bottom: 0; border-right: 1px solid var(--rule); } }
+.calc-in label { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-3); margin-bottom: 7px; }
+#zh-time { font-family: var(--serif); font-size: 40px; width: 100%; text-align: center;
+  padding: 6px 8px; color: var(--ink); background: var(--surface-2);
+  border: 1px solid var(--rule-strong); border-radius: 2px; font-variant-numeric: tabular-nums; }
+#zh-range { width: 100%; margin-top: 14px; accent-color: var(--accent); }
+.rangelabels { display: flex; justify-content: space-between; font-family: var(--mono);
+  font-size: 10.5px; color: var(--ink-3); margin-top: 2px; }
+.calc-out { padding: 20px; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+.calc-out .big { font-family: var(--serif); font-size: clamp(38px, 7vw, 60px); line-height: 1;
+  font-variant-numeric: tabular-nums; }
+.calc-out .big span { font-size: .42em; color: var(--ink-3); margin-left: 6px; font-family: var(--sans); }
+.calc-out .range { font-family: var(--mono); font-size: 14px; color: var(--ink-2);
+  font-variant-numeric: tabular-nums; }
+.calc-out .caption { color: var(--ink-3); font-size: 13px; margin-top: 8px; max-width: 54ch; }
+.gauge { margin-top: 14px; height: 34px; position: relative; }
+.gauge .track { position: absolute; left: 0; right: 0; top: 13px; height: 8px;
+  background: var(--band); border-radius: 4px; }
+.gauge .mid { position: absolute; top: 8px; width: 3px; height: 18px; background: var(--accent);
+  border-radius: 2px; transform: translateX(-1.5px); }
+.gauge .tick { position: absolute; top: 26px; font-family: var(--mono); font-size: 10.5px;
+  color: var(--ink-3); transform: translateX(-50%); white-space: nowrap; }
+
+/* ---------- charts ---------- */
+.plot { padding: 10px 12px 4px; }
+.plot svg { display: block; width: 100%; height: auto; overflow: visible; }
+.axis text { font-family: var(--mono); font-size: 10px; fill: var(--ink-3); }
+.axis line { stroke: var(--grid); }
+.axis .domain { stroke: var(--rule-strong); }
+.axis-title { font-family: var(--mono); font-size: 10px; letter-spacing: .08em;
+  text-transform: uppercase; fill: var(--ink-3); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 4px 20px 16px;
+  font-size: 12.5px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.legend i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+.legend i.line { width: 16px; height: 3px; border-radius: 2px; }
+.legend i.dash { width: 16px; height: 0; border-radius: 0; border-top: 2px dashed var(--ink-3); }
+.legend i.area { width: 16px; height: 11px; border-radius: 2px; }
+
+/* ---------- findings ---------- */
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px;
+  background: var(--rule); border-top: 1px solid var(--rule); }
+.fact { background: var(--surface); padding: 14px 20px 16px; }
+.fact dt { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-3); margin: 0 0 5px; }
+.fact dd { margin: 0; font-family: var(--serif); font-size: 26px; line-height: 1.1;
+  font-variant-numeric: tabular-nums; }
+.fact dd small { font-family: var(--sans); font-size: 12px; color: var(--ink-3); display: block;
+  line-height: 1.35; margin-top: 3px; }
+
+/* ---------- table ---------- */
+.controls { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: flex-end;
+  padding: 14px 20px 0; }
+.field { display: flex; flex-direction: column; gap: 4px; }
+.field > label { font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-3); }
+select, input[type="search"] { font: inherit; font-size: 14px; color: var(--ink);
+  background: var(--surface-2); border: 1px solid var(--rule-strong); border-radius: 2px;
+  padding: 6px 9px; min-height: 34px; }
+input[type="search"] { width: 210px; }
+.seg { display: flex; border: 1px solid var(--rule-strong); border-radius: 2px; overflow: hidden; }
+.seg button { font: inherit; font-size: 13px; color: var(--ink-2); background: var(--surface-2);
+  border: 0; border-right: 1px solid var(--rule-strong); padding: 7px 11px; cursor: pointer;
+  min-height: 34px; }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+:root[data-theme="dark"] .seg button[aria-pressed="true"],
+:root:not([data-theme="light"]) .seg button[aria-pressed="true"] { color: #08121a; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.tablewrap { overflow-x: auto; margin-top: 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+thead th { position: sticky; top: 0; background: var(--surface-2); text-align: left;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-3); font-weight: 400; padding: 9px 10px;
+  border-bottom: 1px solid var(--rule-strong); white-space: nowrap; cursor: pointer;
+  user-select: none; }
+thead th.static { cursor: default; }
+thead th[aria-sort="ascending"], thead th[aria-sort="descending"] { color: var(--accent); }
+tbody td { padding: 7px 10px; border-bottom: 1px solid var(--rule); vertical-align: baseline; }
+tbody tr:hover { background: var(--accent-soft); }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.pos { color: var(--ink-3); }
+.name { font-weight: 600; }
+.sub { color: var(--ink-3); font-size: 12px; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px;
+  vertical-align: 1px; }
+.tfoot { padding: 12px 20px 16px; display: flex; gap: 14px; align-items: center;
+  color: var(--ink-3); font-size: 13px; flex-wrap: wrap; }
+.tfoot button { font: inherit; font-size: 13px; background: none;
+  border: 1px solid var(--rule-strong); color: var(--ink-2); border-radius: 2px;
+  padding: 6px 12px; cursor: pointer; }
+.tfoot button:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- caveats ---------- */
+.caveats { padding: 4px 20px 20px; }
+.caveats li { margin: 0 0 10px; color: var(--ink-2); max-width: 78ch; }
+.caveats strong { color: var(--ink); font-weight: 600; }
+
+#tip { position: fixed; z-index: 60; pointer-events: none; opacity: 0; transition: opacity .1s;
+  background: var(--surface-2); border: 1px solid var(--rule-strong); border-radius: 3px;
+  box-shadow: var(--shadow); padding: 8px 10px; font-size: 12.5px; max-width: 260px; }
+#tip .t-name { font-weight: 600; }
+#tip .t-row { color: var(--ink-2); font-family: var(--mono); font-size: 11.5px;
+  font-variant-numeric: tabular-nums; }
+
+footer.colophon { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--rule);
+  color: var(--ink-3); font-size: 12.5px; max-width: 76ch; }
+footer.colophon a { color: var(--accent); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="eyebrow">167 Schwimmerinnen und Schwimmer, die beides gemacht haben</p>
+    <h1>Vom Zürichsee zum <em>Ärmelkanal</em></h1>
+    <p class="lede">Wer 26 km über den Zürichsee schwimmt, tut das oft als Vorbereitung auf den
+      Kanal. Für 167 Personen liegen beide Zeiten vor — und sie zeigen etwas Unerwartetes: Der
+      Kanal kostet nicht ein Vielfaches der Seezeit, sondern einen <em>festen Aufschlag</em> von
+      rund vier Stunden. Ob du sieben oder zwölf Stunden über den See brauchst, ändert daran
+      fast nichts.</p>
+  </header>
+
+  <section class="panel">
+    <header>
+      <h2>Hochrechnung</h2>
+      <p class="note">Deine Zürichsee-Zeit eingeben oder den Regler schieben.</p>
+    </header>
+    <div class="calc">
+      <div class="calc-in">
+        <label for="zh-time">Zürichsee, 26 km</label>
+        <input type="text" id="zh-time" value="9:00" inputmode="numeric"
+               aria-describedby="calc-caption">
+        <input type="range" id="zh-range" min="360" max="810" step="5" value="540"
+               aria-label="Zürichsee-Zeit in Minuten">
+        <div class="rangelabels"><span>6:00</span><span>13:30</span></div>
+      </div>
+      <div class="calc-out">
+        <div class="big" id="out-mid">–<span>erwartete Kanalzeit</span></div>
+        <div class="range" id="out-range"></div>
+        <div class="gauge" id="gauge" aria-hidden="true">
+          <div class="track"></div><div class="mid"></div>
+        </div>
+        <p class="caption" id="calc-caption"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <header>
+      <h2>Jede Person ein Punkt</h2>
+      <p class="note">Zürichsee-Zeit waagrecht, Kanalzeit senkrecht. Die durchgezogene Linie
+        liegt parallel zur gestrichelten — das ist der feste Aufschlag. Das Band umfasst 95 %
+        der einzelnen Ergebnisse; es ist nach oben länger als nach unten, weil schlechte
+        Gezeiten und Wetter Stunden kosten können, während es nach unten eine harte Grenze gibt.</p>
+    </header>
+    <div class="plot"><svg id="scatter" viewBox="0 0 760 440" role="img"
+      aria-label="Streudiagramm Zürichsee-Zeit gegen Kanalzeit"></svg></div>
+    <div class="legend" id="legend"></div>
+    <dl class="facts" id="facts"></dl>
+  </section>
+
+  <section class="panel">
+    <header>
+      <h2>Warum kein Faktor</h2>
+      <p class="note">Der Aufschlag ist über alle Tempi praktisch gleich — er korreliert mit
+        der Seezeit zu 0,06, also gar nicht. Genau deshalb funktioniert ein Multiplikator
+        nicht: Wer den See in 7 h schwimmt, zahlt mit vier Stunden das 1,6-fache, wer 12 h
+        braucht, nur noch das 1,3-fache. Nicht der Faktor ist stabil, sondern die Differenz.</p>
+    </header>
+    <div class="plot"><svg id="bands" viewBox="0 0 760 200" role="img"
+      aria-label="Aufschlag in Stunden nach Tempoband"></svg></div>
+  </section>
+
+  <section class="panel">
+    <header>
+      <h2>Alle 167 Paare</h2>
+      <p class="note">Pro Person das Zürichsee- und das Kanal-Schwimmen mit dem kleinsten
+        zeitlichen Abstand.</p>
+    </header>
+    <div class="controls">
+      <div class="field">
+        <label for="q">Suche</label>
+        <input type="search" id="q" placeholder="Name, Nation, Club…" autocomplete="off">
+      </div>
+      <div class="field">
+        <label>Geschlecht</label>
+        <div class="seg" id="f-gender" role="group">
+          <button data-v="all" aria-pressed="true">Alle</button>
+          <button data-v="M">Männer</button>
+          <button data-v="F">Frauen</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-gap">Jahresabstand</label>
+        <select id="f-gap">
+          <option value="99">beliebig</option>
+          <option value="1">≤ 1 Jahr</option>
+          <option value="2">≤ 2 Jahre</option>
+          <option value="3">≤ 3 Jahre</option>
+          <option value="5">≤ 5 Jahre</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Reihenfolge</label>
+        <div class="seg" id="f-order" role="group">
+          <button data-v="all" aria-pressed="true">Alle</button>
+          <button data-v="zh">See zuerst</button>
+          <button data-v="ch">Kanal zuerst</button>
+        </div>
+      </div>
+    </div>
+    <div class="tablewrap">
+      <table><thead><tr id="thead-row"></tr></thead><tbody id="tbody"></tbody></table>
+    </div>
+    <div class="tfoot">
+      <span id="shown"></span>
+      <button id="copy" type="button">Auswahl als CSV kopieren</button>
+      <span id="copied" hidden></span>
+    </div>
+  </section>
+
+  <section class="panel">
+    <header><h2>Was die Zahl nicht sagt</h2></header>
+    <ul class="caveats">
+      <li><strong>Nur wer angekommen ist, steht in den Daten.</strong> Die Channel-Datenbank
+        verzeichnet ratifizierte Querungen — abgebrochene Versuche fehlen. Die Hochrechnung
+        gilt also unter der Bedingung, dass du ankommst. Über die Wahrscheinlichkeit dafür
+        sagt sie nichts.</li>
+      <li><strong>Der Aufschlag streut stark.</strong> Er reicht von gut anderthalb bis zu
+        knapp zehn Stunden. Gezeitenfenster, Wind, Wassertemperatur und die Route des Piloten
+        wirken sich mehr aus als die Tagesform. Das Ergebnis ist deshalb ein Bereich und keine
+        Punktprognose.</li>
+      <li><strong>Für sehr langsame Zeiten ist die Prognose am unsichersten.</strong> Über
+        11 Stunden Seezeit liegen nur 24 Paare vor, und ihre Kanalzeiten streuen breiter als
+        das Band abbildet. Ein Teil davon dürfte daran liegen, dass langsame Querungen häufiger
+        abgebrochen werden — und Abbrüche stehen nicht in den Daten.</li>
+      <li><strong>Zwei sehr verschiedene Strecken.</strong> 26 km Flachwasser im Süsswasser gegen
+        rund 33 km Luftlinie, real 40 km und mehr wegen der Gezeiten-S-Kurve, dazu Salzwasser,
+        Seegang und mehrere Grad kälter.</li>
+      <li><strong>Der Abgleich läuft über Namen.</strong> Geburtsjahr, Geschlecht und Nationalität
+        bestätigen jedes Paar, ein gemeinsamer Personenschlüssel existiert aber nicht.
+        Einzelne Fehlpaarungen sind nicht auszuschliessen.</li>
+    </ul>
+  </section>
+
+  <footer class="colophon">
+    Zürichsee: offizielle Ranglisten des Sri Chinmoy Marathon Team Schweiz, 2002–2026, nur
+    Einzelstarts ohne Neopren. Ärmelkanal: Channel Swimming Solo Database, nur einfache
+    Solo-Querungen. Modell: gewöhnliche Kleinste-Quadrate-Regression, Prognoseintervall für
+    eine einzelne neue Person.
+  </footer>
+</div>
+
+<div id="tip" role="status" aria-live="polite"></div>
