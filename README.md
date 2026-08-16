@@ -28,7 +28,8 @@ Querung (r = +0,23). Zwischen Nipp- und Springtide liegen rund 95 Minuten — un
 Tidenfenster kennt man schon bei der Buchung. Alter, Erfahrung und Geschlecht erklären
 nichts; XGBoost mit allen Merkmalen bleibt kreuzvalidiert hinter dem konstanten Aufschlag.
 
-Details in [`srichinmoy/README.md`](srichinmoy/README.md).
+Details in [`srichinmoy/README.md`](srichinmoy/README.md), das vollständige Protokoll
+inklusive der verworfenen Ansätze in [`RESEARCH.md`](RESEARCH.md).
 
 ## Aufbau
 

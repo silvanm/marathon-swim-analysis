@@ -65,6 +65,9 @@ Rang, Zeit und `relay_team_name`.
 
 ## Verknüpfung mit dem Ärmelkanal
 
+> Was sonst noch geprüft und verworfen wurde — Monat, Wassertemperatur, XGBoost,
+> Modellformen — steht in [`../RESEARCH.md`](../RESEARCH.md).
+
 `match_channel.py` gleicht die Ranglisten gegen `../channel_swims.xlsx` ab (Channel Swimming
 Solo Database, 3443 ratifizierte Solo-Querungen 1875–2025), `project.py` schätzt daraus das
 Prognosemodell.
