@@ -5,6 +5,10 @@ vollständig drin — sie sind der teurere Teil der Arbeit und verschwinden sons
 
 Stand: 2026-08-16 · n = 163 Personen mit beiden Zeiten
 
+Dasselbe als gesetzter Bericht mit elf Abbildungen:
+[`260816 Marathon-Swim | Forschungsprotokoll.pdf`](260816%20Marathon-Swim%20%7C%20Forschungsprotokoll.pdf)
+(erzeugt mit `report_data.py` + `build_report.py`).
+
 ---
 
 ## 1. Die Frage
@@ -267,4 +271,6 @@ den dünn besetzten Randbereichen.
 .venv/bin/python srichinmoy/tides.py validate     # Rückextrapolation gegen den Mond
 .venv/bin/python srichinmoy/project.py            # Formvergleich, Modell, Tide
 .venv/bin/python srichinmoy/experiment_ml.py      # XGBoost-Gegenprobe
+.venv/bin/python srichinmoy/report_data.py        # Kennzahlen für den Bericht
+.venv/bin/python srichinmoy/build_report.py       # bebildertes PDF
 ```

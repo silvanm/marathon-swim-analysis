@@ -22,3 +22,6 @@ srichinmoy/txt/
 # Arbeitsdateien
 *.log
 .DS_Store
+
+# Zwischenschritt des Berichts — das PDF ist das Ergebnis, das HTML nur der Weg dahin
+srichinmoy/report.html

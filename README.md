@@ -29,7 +29,9 @@ Tidenfenster kennt man schon bei der Buchung. Alter, Erfahrung und Geschlecht er
 nichts; XGBoost mit allen Merkmalen bleibt kreuzvalidiert hinter dem konstanten Aufschlag.
 
 Details in [`srichinmoy/README.md`](srichinmoy/README.md), das vollständige Protokoll
-inklusive der verworfenen Ansätze in [`RESEARCH.md`](RESEARCH.md).
+inklusive der verworfenen Ansätze in [`RESEARCH.md`](RESEARCH.md) — als bebilderter Bericht
+mit elf Abbildungen in
+[`260816 Marathon-Swim | Forschungsprotokoll.pdf`](260816%20Marathon-Swim%20%7C%20Forschungsprotokoll.pdf).
 
 ## Aufbau
 
@@ -42,6 +44,8 @@ srichinmoy/
   tides.py          Tidenhub in Dover aus dem Datum (portiert aus dem Simulator)
   experiment_ml.py  geprüfte und verworfene Alternative: XGBoost
   build_pages.py    Seitenquellen + Daten → eigenständige HTML-Dateien in docs/
+  report_data.py    Kennzahlen und Grafikdaten für den Bericht, frisch aus crossover.json
+  build_report.py   Bericht als A4-PDF, Grafiken als SVG ohne Bibliothek
   results/          Rohextraktion pro Jahrgang
   *.sqlite *.csv    abgeleitete Daten
 docs/               GitHub Pages
