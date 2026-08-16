@@ -85,4 +85,4 @@ Code unter MIT. Die Wettkampfergebnisse selbst stammen vom Sri Chinmoy Marathon 
 und stehen nicht unter dieser Lizenz.
 
 ---
-Stand: 2026-08-15
+Stand: 2026-08-16 · Commit 31c2df8

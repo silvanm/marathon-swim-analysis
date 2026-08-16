@@ -274,3 +274,6 @@ den dünn besetzten Randbereichen.
 .venv/bin/python srichinmoy/report_data.py        # Kennzahlen für den Bericht
 .venv/bin/python srichinmoy/build_report.py       # bebildertes PDF
 ```
+
+---
+Stand: 2026-08-16 · Commit 31c2df8
