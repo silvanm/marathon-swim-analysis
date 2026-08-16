@@ -28,9 +28,22 @@
   // Additive: the Channel costs a surcharge that does not depend on the lake time.
   // The surcharge is strictly positive and right-skewed, hence log-normal — which is why
   // the interval is asymmetric rather than a symmetric ± band.
-  function fit(x) { return x + M.median; }
-  function loBound(x) { return x + M.lo95; }
-  function hiBound(x) { return x + M.hi95; }
+  // Tide is optional: with no window chosen the overall model applies, otherwise the
+  // surcharge is conditioned on the tidal range of the booked slot.
+  var TIDE = D.tide || null;
+  var tideFactor = null;
+
+  function surcharge() {
+    if (TIDE && tideFactor != null) {
+      return { med: Math.exp(TIDE.a + TIDE.b * tideFactor), sigma: TIDE.sigma,
+               mu: TIDE.a + TIDE.b * tideFactor };
+    }
+    return { med: M.median, sigma: M.sigma, mu: M.mu };
+  }
+
+  function fit(x) { return x + surcharge().med; }
+  function loBound(x) { var s = surcharge(); return x + Math.exp(s.mu - 1.96 * s.sigma); }
+  function hiBound(x) { var s = surcharge(); return x + Math.exp(s.mu + 1.96 * s.sigma); }
 
   // ---------- calculator ----------
   var timeEl = document.getElementById("zh-time");
@@ -68,11 +81,15 @@
       g.appendChild(n);
     });
 
+    var s = surcharge();
+    var base = tideFactor == null ? "" :
+      " Ohne Angabe des Tidenfensters wären es " + hm(hours + M.median) + ".";
     document.getElementById("calc-caption").textContent =
-      "Rund " + hm(M.median) + " h Aufschlag auf deine Seezeit — das entspricht hier dem "
+      "Rund " + hm(s.med) + " h Aufschlag auf deine Seezeit — das entspricht hier dem "
       + num(mid / hours, 2) + "-fachen, bei einer anderen Seezeit wäre der Faktor ein anderer, "
       + "der Aufschlag aber derselbe. Nach oben ist die Spanne länger als nach unten: "
-      + "ungünstige Gezeiten kosten Stunden, schneller als das eigene Tempo geht es nicht.";
+      + "ungünstige Gezeiten kosten Stunden, schneller als das eigene Tempo geht es nicht."
+      + base;
 
     drawMarker(hours);
   }
@@ -98,6 +115,19 @@
   rangeEl.addEventListener("input", function () {
     setFromHours(+rangeEl.value / 60, true);
   });
+
+  var tideEl = document.getElementById("tide");
+  if (tideEl) {
+    if (!TIDE) {
+      tideEl.disabled = true;                    // no tide model in the data
+    } else {
+      tideEl.addEventListener("change", function () {
+        tideFactor = tideEl.value === "" ? null : +tideEl.value;
+        drawScatter();                            // band shifts with the tide
+        setFromHours(parseTime(timeEl.value) || 9, false);
+      });
+    }
+  }
 
   // ---------- shared svg helpers ----------
   var NS = "http://www.w3.org/2000/svg";
@@ -306,6 +336,70 @@
     });
   }
 
+  // ---------- tide chart ----------
+  function renderTide() {
+    var svg = document.getElementById("tidechart");
+    if (!svg || !TIDE) return;
+    svg.textContent = "";
+    var W = 760, H = 300, m = { l: 54, r: 16, t: 14, b: 46 };
+    var iw = W - m.l - m.r, ih = H - m.t - m.b;
+    var xLo = 0.35, xHi = 1.10, yLo = 0, yHi = 10;
+    function X(v) { return m.l + (v - xLo) / (xHi - xLo) * iw; }
+    function Y(v) { return m.t + (yHi - v) / (yHi - yLo) * ih; }
+
+    var g = el("g", { class: "axis" });
+    for (var yv = 0; yv <= yHi; yv += 2) {
+      g.appendChild(el("line", { x1: m.l, x2: W - m.r, y1: Y(yv), y2: Y(yv) }));
+      g.appendChild(el("text", { x: m.l - 8, y: Y(yv) + 3.5, "text-anchor": "end" },
+        "+" + yv + " h"));
+    }
+    [[0.45, "Nipp"], [0.60, "Richtung Nipp"], [0.80, "Mitte"], [1.00, "Spring"]]
+      .forEach(function (t) {
+        g.appendChild(el("line", { x1: X(t[0]), x2: X(t[0]), y1: m.t, y2: m.t + ih }));
+        g.appendChild(el("text", { x: X(t[0]), y: H - m.b + 16, "text-anchor": "middle" }, t[1]));
+      });
+    g.appendChild(el("line", { class: "domain", x1: m.l, x2: W - m.r,
+      y1: m.t + ih, y2: m.t + ih }));
+    svg.appendChild(g);
+    svg.appendChild(el("text", { class: "axis-title", x: m.l + iw / 2, y: H - 6,
+      "text-anchor": "middle" }, "Tidenhub am Tag der Querung"));
+    svg.appendChild(el("text", { class: "axis-title", x: 12, y: m.t + ih / 2,
+      "text-anchor": "middle", transform: "rotate(-90 12 " + (m.t + ih / 2) + ")" },
+      "Aufschlag"));
+
+    // model band and median line
+    var up = [], dn = [], mid = [];
+    for (var f = xLo; f <= xHi + 1e-9; f += 0.02) {
+      var mu = TIDE.a + TIDE.b * f;
+      up.push([X(f), Y(Math.exp(mu + 1.28 * TIDE.sigma))]);
+      dn.push([X(f), Y(Math.exp(mu - 1.28 * TIDE.sigma))]);
+      mid.push([X(f), Y(Math.exp(mu))]);
+    }
+    svg.appendChild(el("path", {
+      d: up.map(function (p, i) { return (i ? "L" : "M") + p[0] + " " + p[1]; }).join(" ")
+        + dn.reverse().map(function (p) { return "L" + p[0] + " " + p[1]; }).join(" ") + "Z",
+      fill: "var(--band)", stroke: "none"
+    }));
+    svg.appendChild(el("path", {
+      d: mid.map(function (p, i) { return (i ? "L" : "M") + p[0] + " " + p[1]; }).join(" "),
+      fill: "none", stroke: "var(--ink-2)", "stroke-width": 2
+    }));
+
+    var pts = PAIRS.filter(function (p) { return p.tide_spring; });
+    pts.forEach(function (p) {
+      svg.appendChild(el("circle", {
+        cx: X(p.tide_spring), cy: Y(p.surcharge), r: 4,
+        fill: p.gender === "F" ? C_F : C_M, "fill-opacity": .68,
+        stroke: "var(--surface)", "stroke-width": 1
+      }));
+    });
+
+    document.getElementById("tidelegend").innerHTML =
+      '<span><i class="line" style="background:var(--ink-2)"></i>erwarteter Aufschlag</span>' +
+      '<span><i class="area" style="background:var(--band)"></i>80 % der Fälle</span>' +
+      "<span>r = " + num(TIDE.r, 2) + " · n = " + TIDE.n + "</span>";
+  }
+
   // ---------- table ----------
   var COLS = [
     { k: null, t: "#" },
@@ -438,6 +532,7 @@
   });
 
   drawScatter();
+  renderTide();
   renderFacts();
   renderBands();
   renderHead();

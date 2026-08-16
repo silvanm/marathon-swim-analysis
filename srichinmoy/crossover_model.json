@@ -14,6 +14,15 @@
   "xmin": 6.685555555555555,
   "xmax": 13.399166666666666
  },
+ "tide": {
+  "n": 159,
+  "a": 0.8630544337555812,
+  "b": 0.7194462357505591,
+  "sigma": 0.47353429239374556,
+  "r": 0.22899980588597238,
+  "xmin": 0.4045,
+  "xmax": 1.0519
+ },
  "alternatives": [
   {
    "label": "linear mit Achsenabschnitt",
@@ -76,7 +85,9 @@
    "surcharge": 5.7158,
    "grade": "A",
    "zh_nat": "Czech",
-   "zh_club": "Sri Chinmoy Marathon Team"
+   "zh_club": "Sri Chinmoy Marathon Team",
+   "ch_date": "2011-07-11",
+   "tide_spring": 0.6105
   },
   {
    "name": "Aditya Santosh Raut",
@@ -91,7 +102,9 @@
    "surcharge": 5.6986,
    "grade": "A",
    "zh_nat": "Indien",
-   "zh_club": "Champion Aquatics Club"
+   "zh_club": "Champion Aquatics Club",
+   "ch_date": "2009-08-19",
+   "tide_spring": 0.8689
   },
   {
    "name": "Adrian Brown",
@@ -106,7 +119,9 @@
    "surcharge": 5.2489,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "Sheerness"
+   "zh_club": "Sheerness",
+   "ch_date": "2019-08-22",
+   "tide_spring": 0.6695
   },
   {
    "name": "Adriano Passini",
@@ -121,7 +136,9 @@
    "surcharge": 3.4611,
    "grade": "A",
    "zh_nat": "Brazilian",
-   "zh_club": "Sri Chinmoy Marathon Team"
+   "zh_club": "Sri Chinmoy Marathon Team",
+   "ch_date": "2013-07-27",
+   "tide_spring": 0.9205
   },
   {
    "name": "Aerin Kelly Bowers",
@@ -136,7 +153,9 @@
    "surcharge": 5.1289,
    "grade": "A",
    "zh_nat": "Canada",
-   "zh_club": "Lower Columbia Swim Club"
+   "zh_club": "Lower Columbia Swim Club",
+   "ch_date": "2025-06-30",
+   "tide_spring": 0.848
   },
   {
    "name": "Alexander Begg",
@@ -151,7 +170,9 @@
    "surcharge": 3.3339,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "Red Top Swim"
+   "zh_club": "Red Top Swim",
+   "ch_date": "2019-07-23",
+   "tide_spring": 0.664
   },
   {
    "name": "Alexandra Hardy",
@@ -166,7 +187,9 @@
    "surcharge": 2.8178,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Royal Engineers"
+   "zh_club": "Royal Engineers",
+   "ch_date": "2012-09-03",
+   "tide_spring": 0.9434
   },
   {
    "name": "Alice Harvey",
@@ -181,7 +204,9 @@
    "surcharge": 3.8197,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Jersey Long Distance Swimming Club"
+   "zh_club": "Jersey Long Distance Swimming Club",
+   "ch_date": "2018-07-22",
+   "tide_spring": 0.5124
   },
   {
    "name": "Alice Hubbard",
@@ -196,7 +221,9 @@
    "surcharge": 2.9806,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Just Swim, Southbourne"
+   "zh_club": "Just Swim, Southbourne",
+   "ch_date": "2012-09-07",
+   "tide_spring": 0.6298
   },
   {
    "name": "Alison Streeter",
@@ -211,7 +238,9 @@
    "surcharge": 3.1833,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "CSPF"
+   "zh_club": "CSPF",
+   "ch_date": "2004-07-24",
+   "tide_spring": 0.7071
   },
   {
    "name": "Alistair Cottle",
@@ -226,7 +255,9 @@
    "surcharge": 7.0314,
    "grade": "A",
    "zh_nat": "New Zealand",
-   "zh_club": "N/A"
+   "zh_club": "N/A",
+   "ch_date": "2008-09-19",
+   "tide_spring": 0.977
   },
   {
    "name": "Amy Ennion",
@@ -241,7 +272,9 @@
    "surcharge": 3.3619,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2021-09-16",
+   "tide_spring": 0.5892
   },
   {
    "name": "Amy Mellor",
@@ -256,7 +289,9 @@
    "surcharge": 3.2258,
    "grade": "A",
    "zh_nat": "English",
-   "zh_club": "Northampton"
+   "zh_club": "Northampton",
+   "ch_date": "2019-08-23",
+   "tide_spring": 0.5915
   },
   {
    "name": "Andre Roberts",
@@ -271,7 +306,9 @@
    "surcharge": 3.0397,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "British Long Distance Swimming Assoc"
+   "zh_club": "British Long Distance Swimming Assoc",
+   "ch_date": "2015-10-04",
+   "tide_spring": 0.768
   },
   {
    "name": "André Wiersig",
@@ -286,7 +323,9 @@
    "surcharge": 1.9944,
    "grade": "A",
    "zh_nat": "German",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2014-09-02",
+   "tide_spring": 0.6323
   },
   {
    "name": "Andrew Keegan",
@@ -301,7 +340,9 @@
    "surcharge": 4.0408,
    "grade": "A",
    "zh_nat": "Australia",
-   "zh_club": "Barbarians Masters Swim Team"
+   "zh_club": "Barbarians Masters Swim Team",
+   "ch_date": "2011-07-20",
+   "tide_spring": 0.7788
   },
   {
    "name": "Andrey Bozhko",
@@ -316,7 +357,9 @@
    "surcharge": 5.17,
    "grade": "A",
    "zh_nat": "Russian",
-   "zh_club": "Stamina Swimming Club"
+   "zh_club": "Stamina Swimming Club",
+   "ch_date": "2021-09-18",
+   "tide_spring": 0.7037
   },
   {
    "name": "Angela Wood",
@@ -331,7 +374,9 @@
    "surcharge": 4.8058,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2024-06-30",
+   "tide_spring": 0.6009
   },
   {
    "name": "Anke Höhne",
@@ -346,7 +391,9 @@
    "surcharge": 4.9325,
    "grade": "A",
    "zh_nat": "Germany",
-   "zh_club": "SV Poseidon Hamburg"
+   "zh_club": "SV Poseidon Hamburg",
+   "ch_date": "2022-07-06",
+   "tide_spring": 0.6467
   },
   {
    "name": "Anna-Carin Nordin",
@@ -361,7 +408,9 @@
    "surcharge": 3.2594,
    "grade": "A",
    "zh_nat": "Swedish",
-   "zh_club": "IFK Lindings"
+   "zh_club": "IFK Lindings",
+   "ch_date": "2010-09-21",
+   "tide_spring": 0.6853
   },
   {
    "name": "Anna Ploszajski",
@@ -376,7 +425,9 @@
    "surcharge": 6.3908,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2018-07-14",
+   "tide_spring": 1.0418
   },
   {
    "name": "Anna Torok",
@@ -391,7 +442,9 @@
    "surcharge": 4.195,
    "grade": "A",
    "zh_nat": "Australian",
-   "zh_club": "The Spit ASC Australia"
+   "zh_club": "The Spit ASC Australia",
+   "ch_date": "2014-08-24",
+   "tide_spring": 0.748
   },
   {
    "name": "Annette Stewart",
@@ -406,7 +459,9 @@
    "surcharge": 8.3003,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "Black Lion"
+   "zh_club": "Black Lion",
+   "ch_date": "2005-07-13",
+   "tide_spring": 0.6542
   },
   {
    "name": "Anthony Plant",
@@ -421,7 +476,9 @@
    "surcharge": 6.2739,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2014-08-08",
+   "tide_spring": 0.6861
   },
   {
    "name": "Anton Floh",
@@ -436,7 +493,9 @@
    "surcharge": 3.9278,
    "grade": "A",
    "zh_nat": "Austria",
-   "zh_club": "Tri Tulln"
+   "zh_club": "Tri Tulln",
+   "ch_date": "2014-08-24",
+   "tide_spring": 0.748
   },
   {
    "name": "Aris Polizos",
@@ -451,7 +510,9 @@
    "surcharge": 4.7661,
    "grade": "A",
    "zh_nat": "Greece",
-   "zh_club": "Neapoli swimming club"
+   "zh_club": "Neapoli swimming club",
+   "ch_date": "2003-08-08",
+   "tide_spring": 0.6087
   },
   {
    "name": "Armin-Johannes Wunder",
@@ -466,7 +527,9 @@
    "surcharge": 3.5517,
    "grade": "A",
    "zh_nat": "Germany",
-   "zh_club": "Channel Swimming Association"
+   "zh_club": "Channel Swimming Association",
+   "ch_date": "2010-09-18",
+   "tide_spring": 0.4829
   },
   {
    "name": "Attila Manyoki",
@@ -481,7 +544,9 @@
    "surcharge": 1.4856,
    "grade": "A",
    "zh_nat": "Hungary",
-   "zh_club": "2KSE"
+   "zh_club": "2KSE",
+   "ch_date": "2013-08-20",
+   "tide_spring": 0.906
   },
   {
    "name": "Barbara Held",
@@ -496,7 +561,9 @@
    "surcharge": 3.9861,
    "grade": "A",
    "zh_nat": "American",
-   "zh_club": "La Jolla Cove Swim Club"
+   "zh_club": "La Jolla Cove Swim Club",
+   "ch_date": "2012-08-24",
+   "tide_spring": 0.7528
   },
   {
    "name": "Bhakti Sharma",
@@ -511,7 +578,9 @@
    "surcharge": 3.2219,
    "grade": "A",
    "zh_nat": "India",
-   "zh_club": "Ozone Swimming Pool, Mumbai"
+   "zh_club": "Ozone Swimming Pool, Mumbai",
+   "ch_date": "2006-07-06",
+   "tide_spring": 0.4106
   },
   {
    "name": "Birgit Kempf",
@@ -526,7 +595,9 @@
    "surcharge": 4.7069,
    "grade": "A",
    "zh_nat": "German",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2006-08-05",
+   "tide_spring": 0.4682
   },
   {
    "name": "Boris Mavra",
@@ -541,7 +612,9 @@
    "surcharge": 1.7664,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Serpentine Swimming Club"
+   "zh_club": "Serpentine Swimming Club",
+   "ch_date": "2011-07-26",
+   "tide_spring": 0.4255
   },
   {
    "name": "Brian Fergusson",
@@ -556,7 +629,9 @@
    "surcharge": 4.8003,
    "grade": "A",
    "zh_nat": "Australia",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2012-07-21",
+   "tide_spring": 0.9322
   },
   {
    "name": "Carol Cashell",
@@ -571,7 +646,9 @@
    "surcharge": 2.6467,
    "grade": "A",
    "zh_nat": "Irish",
-   "zh_club": "Dolphin"
+   "zh_club": "Dolphin",
+   "ch_date": "2017-08-26",
+   "tide_spring": 0.8734
   },
   {
    "name": "Cathy Marco",
@@ -586,7 +663,9 @@
    "surcharge": 4.1528,
    "grade": "A",
    "zh_nat": "France",
-   "zh_club": "CNC ALES"
+   "zh_club": "CNC ALES",
+   "ch_date": null,
+   "tide_spring": null
   },
   {
    "name": "Christian Hübner",
@@ -601,7 +680,9 @@
    "surcharge": 6.5431,
    "grade": "A",
    "zh_nat": "German",
-   "zh_club": "IFA Nonstop Bamberg"
+   "zh_club": "IFA Nonstop Bamberg",
+   "ch_date": "2008-06-24",
+   "tide_spring": 0.7875
   },
   {
    "name": "Christopher Jordinson",
@@ -616,7 +697,9 @@
    "surcharge": 5.6981,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "South London Swimming Club"
+   "zh_club": "South London Swimming Club",
+   "ch_date": "2014-07-02",
+   "tide_spring": 0.7629
   },
   {
    "name": "Clifford GOLDING",
@@ -631,7 +714,9 @@
    "surcharge": 4.4569,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "Black Lion Masters"
+   "zh_club": "Black Lion Masters",
+   "ch_date": "2003-06-28",
+   "tide_spring": 0.7196
   },
   {
    "name": "Daniel Hollas",
@@ -646,7 +731,9 @@
    "surcharge": 4.8794,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2024-09-14",
+   "tide_spring": 0.5177
   },
   {
    "name": "Daniel Lobo",
@@ -661,7 +748,9 @@
    "surcharge": 9.2806,
    "grade": "A",
    "zh_nat": "Spain",
-   "zh_club": "Serpentine Swimming Club"
+   "zh_club": "Serpentine Swimming Club",
+   "ch_date": "2017-08-13",
+   "tide_spring": 0.8392
   },
   {
    "name": "Dave Berry",
@@ -676,7 +765,9 @@
    "surcharge": 3.1419,
    "grade": "A",
    "zh_nat": "Irish",
-   "zh_club": "Sandycove SC"
+   "zh_club": "Sandycove SC",
+   "ch_date": "2022-10-03",
+   "tide_spring": 0.6845
   },
   {
    "name": "David Buckley",
@@ -691,7 +782,9 @@
    "surcharge": 2.7736,
    "grade": "A",
    "zh_nat": "Irish",
-   "zh_club": "Sandycove Island SC"
+   "zh_club": "Sandycove Island SC",
+   "ch_date": "2024-07-15",
+   "tide_spring": 0.4052
   },
   {
    "name": "David Cech",
@@ -706,7 +799,9 @@
    "surcharge": 2.8528,
    "grade": "A",
    "zh_nat": "Czech",
-   "zh_club": "UNBR"
+   "zh_club": "UNBR",
+   "ch_date": "2004-08-07",
+   "tide_spring": 0.6758
   },
   {
    "name": "David Granger",
@@ -721,7 +816,9 @@
    "surcharge": 5.5464,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Gloucester Masters"
+   "zh_club": "Gloucester Masters",
+   "ch_date": "2011-07-27",
+   "tide_spring": 0.5168
   },
   {
    "name": "David Owen",
@@ -736,7 +833,9 @@
    "surcharge": 4.2172,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2019-10-03",
+   "tide_spring": 0.9369
   },
   {
    "name": "Deirdre Ward",
@@ -751,7 +850,9 @@
    "surcharge": 5.9342,
    "grade": "A",
    "zh_nat": "Irish",
-   "zh_club": "Serpentine S.C."
+   "zh_club": "Serpentine S.C.",
+   "ch_date": "2012-07-26",
+   "tide_spring": 0.6954
   },
   {
    "name": "Didier Castagna",
@@ -766,7 +867,9 @@
    "surcharge": 5.455,
    "grade": "A",
    "zh_nat": "France",
-   "zh_club": "PNWP"
+   "zh_club": "PNWP",
+   "ch_date": "2020-09-10",
+   "tide_spring": 0.5408
   },
   {
    "name": "Dylan Haughton",
@@ -781,7 +884,9 @@
    "surcharge": 0.9392,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "Cally Masters"
+   "zh_club": "Cally Masters",
+   "ch_date": "2017-08-29",
+   "tide_spring": 0.5447
   },
   {
    "name": "Edmond Irwin",
@@ -796,7 +901,9 @@
    "surcharge": 4.3747,
    "grade": "A",
    "zh_nat": "Irland",
-   "zh_club": "Source"
+   "zh_club": "Source",
+   "ch_date": "2008-07-31",
+   "tide_spring": 0.8755
   },
   {
    "name": "Elizabeth Price",
@@ -811,7 +918,9 @@
    "surcharge": 3.6656,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Eastbourne"
+   "zh_club": "Eastbourne",
+   "ch_date": "2017-08-27",
+   "tide_spring": 0.7719
   },
   {
    "name": "Emily Morris",
@@ -826,7 +935,9 @@
    "surcharge": 4.1978,
    "grade": "A",
    "zh_nat": "GB",
-   "zh_club": "Teddington"
+   "zh_club": "Teddington",
+   "ch_date": "2006-08-16",
+   "tide_spring": 0.7071
   },
   {
    "name": "Emma France",
@@ -841,7 +952,9 @@
    "surcharge": 5.2683,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "Guildford City Swimming Club"
+   "zh_club": "Guildford City Swimming Club",
+   "ch_date": "2018-07-21",
+   "tide_spring": 0.5371
   },
   {
    "name": "Fernando Espina Velaz",
@@ -856,7 +969,9 @@
    "surcharge": 3.5725,
    "grade": "A",
    "zh_nat": "Argentina",
-   "zh_club": "C.E. Mediterrani"
+   "zh_club": "C.E. Mediterrani",
+   "ch_date": "2023-08-09",
+   "tide_spring": 0.608
   },
   {
    "name": "Gabor Molnar",
@@ -871,7 +986,9 @@
    "surcharge": 6.58,
    "grade": "A",
    "zh_nat": "Hungary",
-   "zh_club": "Cork Masters S.C."
+   "zh_club": "Cork Masters S.C.",
+   "ch_date": "2010-09-28",
+   "tide_spring": 0.8374
   },
   {
    "name": "Gary Brickley",
@@ -886,7 +1003,9 @@
    "surcharge": 3.4292,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "Eastbourne SC"
+   "zh_club": "Eastbourne SC",
+   "ch_date": "2016-08-30",
+   "tide_spring": 0.7643
   },
   {
    "name": "Gary Bruce",
@@ -901,7 +1020,9 @@
    "surcharge": 2.9842,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "South End Rowing Club"
+   "zh_club": "South End Rowing Club",
+   "ch_date": "2013-09-24",
+   "tide_spring": 0.8385
   },
   {
    "name": "George Meenan",
@@ -916,7 +1037,9 @@
    "surcharge": 3.7728,
    "grade": "A",
    "zh_nat": "Irland",
-   "zh_club": "City of Derry Masters"
+   "zh_club": "City of Derry Masters",
+   "ch_date": "2011-07-28",
+   "tide_spring": 0.6297
   },
   {
    "name": "Giles Meyer",
@@ -931,7 +1054,9 @@
    "surcharge": 5.3347,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "SLSC"
+   "zh_club": "SLSC",
+   "ch_date": "2007-08-27",
+   "tide_spring": 0.7834
   },
   {
    "name": "Graeme Lowe",
@@ -946,7 +1071,9 @@
    "surcharge": 3.9847,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Jersey Long Distance Swimming Club"
+   "zh_club": "Jersey Long Distance Swimming Club",
+   "ch_date": "2011-07-10",
+   "tide_spring": 0.596
   },
   {
    "name": "Graeme Schlachter",
@@ -961,7 +1088,9 @@
    "surcharge": 3.4086,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2008-09-28",
+   "tide_spring": 0.8588
   },
   {
    "name": "Graham Coleman",
@@ -976,7 +1105,9 @@
    "surcharge": 4.8575,
    "grade": "A",
    "zh_nat": "Irish",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2007-09-06",
+   "tide_spring": 0.5887
   },
   {
    "name": "Guy Moar",
@@ -991,7 +1122,9 @@
    "surcharge": 3.0506,
    "grade": "A",
    "zh_nat": "Australia",
-   "zh_club": "Red Top Swim"
+   "zh_club": "Red Top Swim",
+   "ch_date": "2010-09-13",
+   "tide_spring": 0.9125
   },
   {
    "name": "Hannah Bennett",
@@ -1006,7 +1139,9 @@
    "surcharge": 5.0439,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "Hemel Hempstead SC"
+   "zh_club": "Hemel Hempstead SC",
+   "ch_date": "2014-08-31",
+   "tide_spring": 0.7844
   },
   {
    "name": "Hayley Chapman",
@@ -1021,7 +1156,9 @@
    "surcharge": 3.1583,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "Hoylake Swimming Club"
+   "zh_club": "Hoylake Swimming Club",
+   "ch_date": "2019-08-03",
+   "tide_spring": 1.0519
   },
   {
    "name": "Helen Conway",
@@ -1036,7 +1173,9 @@
    "surcharge": 2.2761,
    "grade": "A",
    "zh_nat": "Australia",
-   "zh_club": "Sea's the limit"
+   "zh_club": "Sea's the limit",
+   "ch_date": "2010-09-18",
+   "tide_spring": 0.4829
   },
   {
    "name": "Howard Keech",
@@ -1051,7 +1190,9 @@
    "surcharge": 5.1325,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Deal Tri / BLDSA"
+   "zh_club": "Deal Tri / BLDSA",
+   "ch_date": "2016-05-16",
+   "tide_spring": 0.4688
   },
   {
    "name": "Ian Jones",
@@ -1066,7 +1207,9 @@
    "surcharge": 4.1736,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Jersey LDSC"
+   "zh_club": "Jersey LDSC",
+   "ch_date": "2005-08-02",
+   "tide_spring": 0.6585
   },
   {
    "name": "Ivan Gazdik",
@@ -1081,7 +1224,9 @@
    "surcharge": 2.045,
    "grade": "A",
    "zh_nat": "Slovakia",
-   "zh_club": "Polar Bears Bratislava"
+   "zh_club": "Polar Bears Bratislava",
+   "ch_date": "2009-09-26",
+   "tide_spring": 0.5527
   },
   {
    "name": "Jackson Carroll",
@@ -1096,7 +1241,9 @@
    "surcharge": 2.2686,
    "grade": "A",
    "zh_nat": "Australia",
-   "zh_club": "Serpentine Swimming Club"
+   "zh_club": "Serpentine Swimming Club",
+   "ch_date": "2013-08-28",
+   "tide_spring": 0.5886
   },
   {
    "name": "Jacqueline Kempfer",
@@ -1111,7 +1258,9 @@
    "surcharge": 8.9669,
    "grade": "A",
    "zh_nat": "Germany",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2024-06-29",
+   "tide_spring": 0.6739
   },
   {
    "name": "Jacques Tuset",
@@ -1126,7 +1275,9 @@
    "surcharge": 5.3744,
    "grade": "A",
    "zh_nat": "Frankreich",
-   "zh_club": "Palavas Nat.Sauv."
+   "zh_club": "Palavas Nat.Sauv.",
+   "ch_date": "2002-07-20",
+   "tide_spring": 0.6034
   },
   {
    "name": "James Norton",
@@ -1141,7 +1292,9 @@
    "surcharge": 6.1892,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Serpentine Swimming Club"
+   "zh_club": "Serpentine Swimming Club",
+   "ch_date": "2014-08-04",
+   "tide_spring": 0.5513
   },
   {
    "name": "James Penrose",
@@ -1156,7 +1309,9 @@
    "surcharge": 4.0053,
    "grade": "A",
    "zh_nat": "USA",
-   "zh_club": "Red Top Swim"
+   "zh_club": "Red Top Swim",
+   "ch_date": "2012-10-07",
+   "tide_spring": 0.6076
   },
   {
    "name": "Janina Dowding",
@@ -1171,7 +1326,9 @@
    "surcharge": 4.2425,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "RTW Monson"
+   "zh_club": "RTW Monson",
+   "ch_date": "2016-07-30",
+   "tide_spring": 0.6318
   },
   {
    "name": "Jenny Zwijnen",
@@ -1186,7 +1343,9 @@
    "surcharge": 7.1356,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2012-09-04",
+   "tide_spring": 0.8895
   },
   {
    "name": "John Daly",
@@ -1201,7 +1360,9 @@
    "surcharge": 1.5131,
    "grade": "A",
    "zh_nat": "Irish",
-   "zh_club": "Estern Bay (Ireland)"
+   "zh_club": "Estern Bay (Ireland)",
+   "ch_date": "2010-09-18",
+   "tide_spring": 0.4829
   },
   {
    "name": "John Zemaitis",
@@ -1216,7 +1377,9 @@
    "surcharge": 3.5103,
    "grade": "A",
    "zh_nat": "America",
-   "zh_club": "Swim Neptune"
+   "zh_club": "Swim Neptune",
+   "ch_date": "2017-08-25",
+   "tide_spring": 0.9534
   },
   {
    "name": "Jonathan Ford",
@@ -1231,7 +1394,9 @@
    "surcharge": 5.9261,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2013-09-06",
+   "tide_spring": 0.8731
   },
   {
    "name": "Jose Ramon Sanz Rodenas",
@@ -1246,7 +1411,9 @@
    "surcharge": 3.5033,
    "grade": "A",
    "zh_nat": "Spain",
-   "zh_club": "Galea Ur Irekiak"
+   "zh_club": "Galea Ur Irekiak",
+   "ch_date": "2018-07-20",
+   "tide_spring": 0.6351
   },
   {
    "name": "Jozef LENDACKY",
@@ -1261,7 +1428,9 @@
    "surcharge": 2.5072,
    "grade": "A",
    "zh_nat": "Slovakia",
-   "zh_club": "SCMT"
+   "zh_club": "SCMT",
+   "ch_date": "2004-08-07",
+   "tide_spring": 0.6758
   },
   {
    "name": "Kate MASON",
@@ -1276,7 +1445,9 @@
    "surcharge": 4.8114,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "Weyport Masters Swim Club"
+   "zh_club": "Weyport Masters Swim Club",
+   "ch_date": "2001-08-14",
+   "tide_spring": 0.4926
   },
   {
    "name": "Kate Robarts",
@@ -1291,7 +1462,9 @@
    "surcharge": 1.5786,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "D.C.W.S"
+   "zh_club": "D.C.W.S",
+   "ch_date": "2014-08-20",
+   "tide_spring": 0.4952
   },
   {
    "name": "Kate Steels-Fryatt",
@@ -1306,7 +1479,9 @@
    "surcharge": 3.8928,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Portmouth Triathletes"
+   "zh_club": "Portmouth Triathletes",
+   "ch_date": "2016-09-06",
+   "tide_spring": 0.7819
   },
   {
    "name": "Kate Todd",
@@ -1321,7 +1496,9 @@
    "surcharge": 4.6514,
    "grade": "A",
    "zh_nat": "English",
-   "zh_club": "East Dorset Open Water SC"
+   "zh_club": "East Dorset Open Water SC",
+   "ch_date": "2014-10-02",
+   "tide_spring": 0.6225
   },
   {
    "name": "Katherine Mearman",
@@ -1336,7 +1513,9 @@
    "surcharge": 4.7744,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Otter"
+   "zh_club": "Otter",
+   "ch_date": "2004-08-14",
+   "tide_spring": 0.6858
   },
   {
    "name": "Katie Hope",
@@ -1351,7 +1530,9 @@
    "surcharge": 3.7722,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Otter Swim Club"
+   "zh_club": "Otter Swim Club",
+   "ch_date": "2006-07-21",
+   "tide_spring": 0.6089
   },
   {
    "name": "Kaveri THAKUR",
@@ -1366,7 +1547,9 @@
    "surcharge": 3.0825,
    "grade": "A",
    "zh_nat": "India",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": null,
+   "tide_spring": null
   },
   {
    "name": "Kevin Blick",
@@ -1381,7 +1564,9 @@
    "surcharge": 6.8308,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "Serpentine Swimming Club"
+   "zh_club": "Serpentine Swimming Club",
+   "ch_date": "2013-09-03",
+   "tide_spring": 0.6421
   },
   {
    "name": "Kristy McIntyre",
@@ -1396,7 +1581,9 @@
    "surcharge": 3.1914,
    "grade": "A",
    "zh_nat": "Australian",
-   "zh_club": "Serpentine Swimming Club"
+   "zh_club": "Serpentine Swimming Club",
+   "ch_date": "2012-07-25",
+   "tide_spring": 0.7905
   },
   {
    "name": "Laura LOPEZ-BONILLA",
@@ -1411,7 +1598,9 @@
    "surcharge": 4.7875,
    "grade": "A",
    "zh_nat": "Spain",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2002-08-04",
+   "tide_spring": 0.4296
   },
   {
    "name": "Laura Sharpe",
@@ -1426,7 +1615,9 @@
    "surcharge": 4.0661,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "London Fields Triathlon Club"
+   "zh_club": "London Fields Triathlon Club",
+   "ch_date": "2023-08-15",
+   "tide_spring": 0.7778
   },
   {
    "name": "Liam Maher",
@@ -1441,7 +1632,9 @@
    "surcharge": 4.1719,
    "grade": "A",
    "zh_nat": "Irland",
-   "zh_club": "N/A"
+   "zh_club": "N/A",
+   "ch_date": "2010-07-19",
+   "tide_spring": 0.6329
   },
   {
    "name": "Linda Ashmore",
@@ -1456,7 +1649,9 @@
    "surcharge": 5.2597,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Weyport Masters"
+   "zh_club": "Weyport Masters",
+   "ch_date": "2007-08-26",
+   "tide_spring": 0.6663
   },
   {
    "name": "Liz Rycroft",
@@ -1471,7 +1666,9 @@
    "surcharge": 1.7294,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Black Lion Swimming Club"
+   "zh_club": "Black Lion Swimming Club",
+   "ch_date": "2009-07-31",
+   "tide_spring": 0.4909
   },
   {
    "name": "Lucy Roper",
@@ -1486,7 +1683,9 @@
    "surcharge": 4.6292,
    "grade": "A",
    "zh_nat": "GB",
-   "zh_club": "Reading"
+   "zh_club": "Reading",
+   "ch_date": "2011-09-24",
+   "tide_spring": 0.577
   },
   {
    "name": "Marcel Degreef",
@@ -1501,7 +1700,9 @@
    "surcharge": 9.3472,
    "grade": "A",
    "zh_nat": "Netherland",
-   "zh_club": "Dutch Channel Swimming Team"
+   "zh_club": "Dutch Channel Swimming Team",
+   "ch_date": "2008-09-14",
+   "tide_spring": 0.76
   },
   {
    "name": "Margit Bohnhoff",
@@ -1516,7 +1717,9 @@
    "surcharge": 3.5858,
    "grade": "A",
    "zh_nat": "German",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2007-08-09",
+   "tide_spring": 0.6251
   },
   {
    "name": "Mark Bayliss",
@@ -1531,7 +1734,9 @@
    "surcharge": 3.1153,
    "grade": "A",
    "zh_nat": "English",
-   "zh_club": "Croydon Amphibian Swimming Club"
+   "zh_club": "Croydon Amphibian Swimming Club",
+   "ch_date": "2007-09-04",
+   "tide_spring": 0.7227
   },
   {
    "name": "Mark Fabik",
@@ -1546,7 +1751,9 @@
    "surcharge": 3.1386,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Serpentine Swimming Club"
+   "zh_club": "Serpentine Swimming Club",
+   "ch_date": "2013-07-16",
+   "tide_spring": 0.5958
   },
   {
    "name": "Mark Faure Walker",
@@ -1561,7 +1768,9 @@
    "surcharge": 3.0864,
    "grade": "A",
    "zh_nat": "GB",
-   "zh_club": "Serpentine"
+   "zh_club": "Serpentine",
+   "ch_date": "2013-07-15",
+   "tide_spring": 0.6781
   },
   {
    "name": "Mark Hannigan",
@@ -1576,7 +1785,9 @@
    "surcharge": 3.1036,
    "grade": "A",
    "zh_nat": "Ireland",
-   "zh_club": "Limerick Masters"
+   "zh_club": "Limerick Masters",
+   "ch_date": "2021-08-02",
+   "tide_spring": 0.4045
   },
   {
    "name": "Martyn Webster",
@@ -1591,7 +1802,9 @@
    "surcharge": 4.0925,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2018-08-28",
+   "tide_spring": 0.8733
   },
   {
    "name": "Mate Szekely",
@@ -1606,7 +1819,9 @@
    "surcharge": 4.6444,
    "grade": "A",
    "zh_nat": "Hungary",
-   "zh_club": "Sri Chinmoy Marathon Team"
+   "zh_club": "Sri Chinmoy Marathon Team",
+   "ch_date": "2003-08-03",
+   "tide_spring": 0.8923
   },
   {
    "name": "Matthew JOHNSON",
@@ -1621,7 +1836,9 @@
    "surcharge": 4.1408,
    "grade": "A",
    "zh_nat": "USA",
-   "zh_club": "MTV-Kronberg"
+   "zh_club": "MTV-Kronberg",
+   "ch_date": "2003-09-02",
+   "tide_spring": 0.8645
   },
   {
    "name": "Mäx Beer",
@@ -1636,7 +1853,9 @@
    "surcharge": 3.6586,
    "grade": "A",
    "zh_nat": "Austrian",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2016-08-09",
+   "tide_spring": 0.6534
   },
   {
    "name": "Michael Garnett",
@@ -1651,7 +1870,9 @@
    "surcharge": 3.1817,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "Serpentine Swimming Club"
+   "zh_club": "Serpentine Swimming Club",
+   "ch_date": "2022-09-14",
+   "tide_spring": 0.9406
   },
   {
    "name": "Michael Helps",
@@ -1666,7 +1887,9 @@
    "surcharge": 3.9381,
    "grade": "A",
    "zh_nat": "English",
-   "zh_club": "Sotton & Cheam Swimming Club"
+   "zh_club": "Sotton & Cheam Swimming Club",
+   "ch_date": "2007-07-10",
+   "tide_spring": 0.5956
   },
   {
    "name": "Michal Brauner",
@@ -1681,7 +1904,9 @@
    "surcharge": 2.8175,
    "grade": "A",
    "zh_nat": "Czech Republic",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2022-08-06",
+   "tide_spring": 0.5719
   },
   {
    "name": "Miles Worling",
@@ -1696,7 +1921,9 @@
    "surcharge": 5.5506,
    "grade": "A",
    "zh_nat": "South Africa",
-   "zh_club": "South London Swimming Club"
+   "zh_club": "South London Swimming Club",
+   "ch_date": "2019-08-22",
+   "tide_spring": 0.6695
   },
   {
    "name": "Mo Siegel",
@@ -1711,7 +1938,9 @@
    "surcharge": 3.3186,
    "grade": "A",
    "zh_nat": "USA",
-   "zh_club": "N.Y. Harbour Seals"
+   "zh_club": "N.Y. Harbour Seals",
+   "ch_date": "2010-08-03",
+   "tide_spring": 0.5379
   },
   {
    "name": "Monika Mittaz",
@@ -1726,7 +1955,9 @@
    "surcharge": 6.0894,
    "grade": "A",
    "zh_nat": "Switzerland",
-   "zh_club": "Spartak"
+   "zh_club": "Spartak",
+   "ch_date": "2025-08-22",
+   "tide_spring": 0.8706
   },
   {
    "name": "Nancy Douglas",
@@ -1741,7 +1972,9 @@
    "surcharge": 4.1525,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "South London Swimming Club"
+   "zh_club": "South London Swimming Club",
+   "ch_date": "2006-07-01",
+   "tide_spring": 0.7153
   },
   {
    "name": "Nathalie Pohl",
@@ -1756,7 +1989,9 @@
    "surcharge": 3.4456,
    "grade": "A",
    "zh_nat": "German",
-   "zh_club": "TV Dillenburg"
+   "zh_club": "TV Dillenburg",
+   "ch_date": "2016-09-21",
+   "tide_spring": 0.9648
   },
   {
    "name": "Ned Denison",
@@ -1771,7 +2006,9 @@
    "surcharge": 5.1797,
    "grade": "A",
    "zh_nat": "Ireland",
-   "zh_club": "Cork Maters"
+   "zh_club": "Cork Maters",
+   "ch_date": "2005-09-11",
+   "tide_spring": 0.6592
   },
   {
    "name": "Nick Owen",
@@ -1786,7 +2023,9 @@
    "surcharge": 3.5664,
    "grade": "A",
    "zh_nat": "Australia",
-   "zh_club": "Brighton Ice Bergers"
+   "zh_club": "Brighton Ice Bergers",
+   "ch_date": "2013-09-12",
+   "tide_spring": 0.7374
   },
   {
    "name": "Nuala Muir-Cochrane",
@@ -1801,7 +2040,9 @@
    "surcharge": 4.8433,
    "grade": "A",
    "zh_nat": "Irland",
-   "zh_club": "Camden"
+   "zh_club": "Camden",
+   "ch_date": "2008-07-26",
+   "tide_spring": 0.6195
   },
   {
    "name": "Oliver Turner",
@@ -1816,7 +2057,9 @@
    "surcharge": 2.7181,
    "grade": "A",
    "zh_nat": "USA",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "1995-08-16",
+   "tide_spring": 0.7861
   },
   {
    "name": "Oliver Wilkinson",
@@ -1831,7 +2074,9 @@
    "surcharge": 4.1567,
    "grade": "A",
    "zh_nat": "Australian/English",
-   "zh_club": "C.S.W.P.C"
+   "zh_club": "C.S.W.P.C",
+   "ch_date": "2009-09-08",
+   "tide_spring": 0.9114
   },
   {
    "name": "Patrick Corkery",
@@ -1846,7 +2091,9 @@
    "surcharge": 3.9447,
    "grade": "A",
    "zh_nat": "Irish",
-   "zh_club": "NAC Masters"
+   "zh_club": "NAC Masters",
+   "ch_date": "2017-09-26",
+   "tide_spring": 0.696
   },
   {
    "name": "Patrick Cray",
@@ -1861,7 +2108,9 @@
    "surcharge": 4.6986,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Weyport Masters Swimming Club"
+   "zh_club": "Weyport Masters Swimming Club",
+   "ch_date": "2016-09-13",
+   "tide_spring": 0.5134
   },
   {
    "name": "Patti Bauernfeind",
@@ -1876,7 +2125,9 @@
    "surcharge": 2.8572,
    "grade": "A",
    "zh_nat": "American",
-   "zh_club": "Loch Ness Masters"
+   "zh_club": "Loch Ness Masters",
+   "ch_date": "2015-09-25",
+   "tide_spring": 0.6359
   },
   {
    "name": "Paul Eugen Dorin Georgescu",
@@ -1891,7 +2142,9 @@
    "surcharge": 6.4064,
    "grade": "A",
    "zh_nat": "Romania",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2016-09-14",
+   "tide_spring": 0.6301
   },
   {
    "name": "Paul Leonard",
@@ -1906,7 +2159,9 @@
    "surcharge": 4.0733,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Winsford ASC"
+   "zh_club": "Winsford ASC",
+   "ch_date": "2022-09-15",
+   "tide_spring": 0.8519
   },
   {
    "name": "Paul Massey",
@@ -1921,7 +2176,9 @@
    "surcharge": 8.5822,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Deal Tri"
+   "zh_club": "Deal Tri",
+   "ch_date": "2010-09-02",
+   "tide_spring": 0.5478
   },
   {
    "name": "Paule Kremer",
@@ -1936,7 +2193,9 @@
    "surcharge": 3.8333,
    "grade": "A",
    "zh_nat": "Luxemburgish",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2017-08-07",
+   "tide_spring": 0.7855
   },
   {
    "name": "Peter Dolnik",
@@ -1951,7 +2210,9 @@
    "surcharge": 0.1058,
    "grade": "A",
    "zh_nat": "Australian",
-   "zh_club": "Vodnik"
+   "zh_club": "Vodnik",
+   "ch_date": "2013-07-05",
+   "tide_spring": 0.6413
   },
   {
    "name": "Petr MIHOLA",
@@ -1966,7 +2227,9 @@
    "surcharge": 5.8322,
    "grade": "A",
    "zh_nat": "Czech",
-   "zh_club": "Fides Brno"
+   "zh_club": "Fides Brno",
+   "ch_date": null,
+   "tide_spring": null
   },
   {
    "name": "Philippe Fort",
@@ -1981,7 +2244,9 @@
    "surcharge": 3.7347,
    "grade": "A",
    "zh_nat": "France",
-   "zh_club": "L'ois'eau Libre"
+   "zh_club": "L'ois'eau Libre",
+   "ch_date": "2016-08-25",
+   "tide_spring": 0.7216
   },
   {
    "name": "Pippa Harrold",
@@ -1996,7 +2261,9 @@
    "surcharge": 3.4336,
    "grade": "A",
    "zh_nat": "UK",
-   "zh_club": "J.L.D.S.C."
+   "zh_club": "J.L.D.S.C.",
+   "ch_date": "2002-08-19",
+   "tide_spring": 0.6197
   },
   {
    "name": "Piyush Sharma",
@@ -2011,7 +2278,9 @@
    "surcharge": 4.9222,
    "grade": "A",
    "zh_nat": "India",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": null,
+   "tide_spring": null
   },
   {
    "name": "Rachael Lee",
@@ -2026,7 +2295,9 @@
    "surcharge": 2.6292,
    "grade": "A",
    "zh_nat": "Irish",
-   "zh_club": "Guinness Swim Club"
+   "zh_club": "Guinness Swim Club",
+   "ch_date": "2016-08-14",
+   "tide_spring": 0.4502
   },
   {
    "name": "Richard Haan",
@@ -2041,7 +2312,9 @@
    "surcharge": 3.0339,
    "grade": "A",
    "zh_nat": "Czech Rep.",
-   "zh_club": "Fides Brno Czech Republic"
+   "zh_club": "Fides Brno Czech Republic",
+   "ch_date": "2005-07-29",
+   "tide_spring": 0.5711
   },
   {
    "name": "Richard Nyary",
@@ -2056,7 +2329,9 @@
    "surcharge": 6.6292,
    "grade": "A",
    "zh_nat": "Slovakia",
-   "zh_club": "Top Run DS"
+   "zh_club": "Top Run DS",
+   "ch_date": "2021-10-16",
+   "tide_spring": 0.578
   },
   {
    "name": "Ritu Kedia",
@@ -2071,7 +2346,9 @@
    "surcharge": 4.9883,
    "grade": "A",
    "zh_nat": "India",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2007-08-11",
+   "tide_spring": 0.811
   },
   {
    "name": "Roberta BERNET",
@@ -2086,7 +2363,9 @@
    "surcharge": 2.0972,
    "grade": "A",
    "zh_nat": "Wädenswil",
-   "zh_club": "Aquatic Masters Team Zürich"
+   "zh_club": "Aquatic Masters Team Zürich",
+   "ch_date": "2006-07-21",
+   "tide_spring": 0.6089
   },
   {
    "name": "Roger Finch",
@@ -2101,7 +2380,9 @@
    "surcharge": 3.8564,
    "grade": "A",
    "zh_nat": "South African",
-   "zh_club": "Wahoo Masters"
+   "zh_club": "Wahoo Masters",
+   "ch_date": "2011-08-20",
+   "tide_spring": 0.6531
   },
   {
    "name": "Ross Reichard",
@@ -2116,7 +2397,9 @@
    "surcharge": 3.9206,
    "grade": "A",
    "zh_nat": "USA",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2006-08-16",
+   "tide_spring": 0.7071
   },
   {
    "name": "Roy Harding",
@@ -2131,7 +2414,9 @@
    "surcharge": 2.3978,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2005-08-01",
+   "tide_spring": 0.5782
   },
   {
    "name": "Sakura Adams",
@@ -2146,7 +2431,9 @@
    "surcharge": 2.7542,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2005-07-14",
+   "tide_spring": 0.5757
   },
   {
    "name": "Sami Robertson",
@@ -2161,7 +2448,9 @@
    "surcharge": 3.0464,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "Serpentine Swimming Club"
+   "zh_club": "Serpentine Swimming Club",
+   "ch_date": "2014-07-08",
+   "tide_spring": 0.4843
   },
   {
    "name": "Sara Marley",
@@ -2176,7 +2465,9 @@
    "surcharge": 3.4789,
    "grade": "A",
    "zh_nat": "USA/Ireland",
-   "zh_club": "Red Top Swim"
+   "zh_club": "Red Top Swim",
+   "ch_date": "2014-07-29",
+   "tide_spring": 0.8611
   },
   {
    "name": "Sean Paul Breslin",
@@ -2191,7 +2482,9 @@
    "surcharge": 4.4706,
    "grade": "A",
    "zh_nat": "Irish",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2024-09-15",
+   "tide_spring": 0.6234
   },
   {
    "name": "Sian Williams",
@@ -2206,7 +2499,9 @@
    "surcharge": 5.7006,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Chester Triathlon Club"
+   "zh_club": "Chester Triathlon Club",
+   "ch_date": "2013-09-24",
+   "tide_spring": 0.8385
   },
   {
    "name": "Sorcha Barry",
@@ -2221,7 +2516,9 @@
    "surcharge": 4.7486,
    "grade": "A",
    "zh_nat": "Irish",
-   "zh_club": "Glenalbyn Masters"
+   "zh_club": "Glenalbyn Masters",
+   "ch_date": "2011-09-15",
+   "tide_spring": 0.8625
   },
   {
    "name": "Stuart Bowman",
@@ -2236,7 +2533,9 @@
    "surcharge": 3.7997,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Serpentine Swimming Club"
+   "zh_club": "Serpentine Swimming Club",
+   "ch_date": "2014-08-05",
+   "tide_spring": 0.5007
   },
   {
    "name": "Suzanne Dods",
@@ -2251,7 +2550,9 @@
    "surcharge": 2.0425,
    "grade": "A",
    "zh_nat": "USA",
-   "zh_club": "Dolphin Club, San Francisco"
+   "zh_club": "Dolphin Club, San Francisco",
+   "ch_date": "2000-08-07",
+   "tide_spring": 0.6103
   },
   {
    "name": "Sylvain Estadieu",
@@ -2266,7 +2567,9 @@
    "surcharge": 5.3772,
    "grade": "A",
    "zh_nat": "Frankreich",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2009-09-20",
+   "tide_spring": 1.0278
   },
   {
    "name": "Thomas Ladurner",
@@ -2281,7 +2584,9 @@
    "surcharge": 4.1542,
    "grade": "A",
    "zh_nat": "Italy",
-   "zh_club": "Sport Club Meran"
+   "zh_club": "Sport Club Meran",
+   "ch_date": "2012-08-13",
+   "tide_spring": 0.436
   },
   {
    "name": "Thomas Van Every",
@@ -2296,7 +2601,9 @@
    "surcharge": 4.0017,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "South London Swimming Club"
+   "zh_club": "South London Swimming Club",
+   "ch_date": "2014-09-05",
+   "tide_spring": 0.5676
   },
   {
    "name": "Tim Denyer",
@@ -2311,7 +2618,9 @@
    "surcharge": 2.8689,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Red Top Swim"
+   "zh_club": "Red Top Swim",
+   "ch_date": "2005-08-16",
+   "tide_spring": 0.5844
   },
   {
    "name": "Timothy Donovan",
@@ -2326,7 +2635,9 @@
    "surcharge": 3.0467,
    "grade": "A",
    "zh_nat": "Australian",
-   "zh_club": "Barnes Swimming Club"
+   "zh_club": "Barnes Swimming Club",
+   "ch_date": "2012-08-13",
+   "tide_spring": 0.436
   },
   {
    "name": "Tina Neill",
@@ -2341,7 +2652,9 @@
    "surcharge": 5.3328,
    "grade": "A",
    "zh_nat": "USA",
-   "zh_club": "Macalester"
+   "zh_club": "Macalester",
+   "ch_date": "2005-08-09",
+   "tide_spring": 0.8336
   },
   {
    "name": "Tom Healy",
@@ -2356,7 +2669,9 @@
    "surcharge": 2.8367,
    "grade": "A",
    "zh_nat": "Irish",
-   "zh_club": "Glenalbyn Masters"
+   "zh_club": "Glenalbyn Masters",
+   "ch_date": "2012-09-07",
+   "tide_spring": 0.6298
   },
   {
    "name": "Tom Knight",
@@ -2371,7 +2686,9 @@
    "surcharge": 1.3011,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": "Serpentine Swimming Club"
+   "zh_club": "Serpentine Swimming Club",
+   "ch_date": "2019-08-25",
+   "tide_spring": 0.4882
   },
   {
    "name": "Tom Rutter",
@@ -2386,7 +2703,9 @@
    "surcharge": 8.4564,
    "grade": "A",
    "zh_nat": "Great Britain",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2019-07-09",
+   "tide_spring": 0.7471
   },
   {
    "name": "Toni PAVICIC-DONKIC",
@@ -2401,7 +2720,9 @@
    "surcharge": 3.0644,
    "grade": "A",
    "zh_nat": "Zürich",
-   "zh_club": ""
+   "zh_club": "",
+   "ch_date": "2006-08-07",
+   "tide_spring": 0.6906
   },
   {
    "name": "Trevor Colman",
@@ -2416,7 +2737,9 @@
    "surcharge": 4.715,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Ruislip Northwood Masters"
+   "zh_club": "Ruislip Northwood Masters",
+   "ch_date": "2009-08-18",
+   "tide_spring": 0.7521
   },
   {
    "name": "Trevor Malone",
@@ -2431,7 +2754,9 @@
    "surcharge": 5.7089,
    "grade": "A",
    "zh_nat": "Irish",
-   "zh_club": "Sandycove Island Swim Club"
+   "zh_club": "Sandycove Island Swim Club",
+   "ch_date": "2015-08-01",
+   "tide_spring": 0.9849
   },
   {
    "name": "Tullio Salvatore",
@@ -2446,7 +2771,9 @@
    "surcharge": 3.8769,
    "grade": "A",
    "zh_nat": "Italian",
-   "zh_club": "Otter SC, Serpentine SC, CS&PF"
+   "zh_club": "Otter SC, Serpentine SC, CS&PF",
+   "ch_date": "2010-09-21",
+   "tide_spring": 0.6853
   },
   {
    "name": "Vasanti Niemz",
@@ -2461,7 +2788,9 @@
    "surcharge": 7.0472,
    "grade": "A",
    "zh_nat": "Germany",
-   "zh_club": "Sri Chinmoy Marathon Team"
+   "zh_club": "Sri Chinmoy Marathon Team",
+   "ch_date": "2010-09-03",
+   "tide_spring": 0.5119
   },
   {
    "name": "Vedika BOLLIGER",
@@ -2476,7 +2805,9 @@
    "surcharge": 9.9342,
    "grade": "A",
    "zh_nat": "Switzerland",
-   "zh_club": "Sri Chinmoy Marathon Team"
+   "zh_club": "Sri Chinmoy Marathon Team",
+   "ch_date": "2002-08-21",
+   "tide_spring": 0.7909
   },
   {
    "name": "Victoria Thorpe",
@@ -2491,7 +2822,9 @@
    "surcharge": 3.4706,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Serpentine S.C."
+   "zh_club": "Serpentine S.C.",
+   "ch_date": "2012-08-13",
+   "tide_spring": 0.436
   },
   {
    "name": "William Ellis",
@@ -2506,7 +2839,9 @@
    "surcharge": 5.2039,
    "grade": "A",
    "zh_nat": "British",
-   "zh_club": "Kingston Royals"
+   "zh_club": "Kingston Royals",
+   "ch_date": "2024-08-18",
+   "tide_spring": 0.7701
   }
  ]
 }

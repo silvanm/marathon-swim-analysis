@@ -21,7 +21,14 @@ Kanalzeit = Zürichseezeit + 3:53 h        (95 %: +1:31 bis +9:58, n = 163)
 
 Die Korrelation zwischen Aufschlag und Seezeit beträgt **+0,06** — er hängt praktisch nicht
 vom Tempo ab. Vier Funktionsformen wurden getestet; die naheliegende Proportionalität durch
-den Nullpunkt passt am schlechtesten. Details in [`srichinmoy/README.md`](srichinmoy/README.md).
+den Nullpunkt passt am schlechtesten.
+
+Von allen geprüften Zusatzmerkmalen trägt genau eines Signal: der **Tidenhub** am Tag der
+Querung (r = +0,23). Zwischen Nipp- und Springtide liegen rund 95 Minuten — und das
+Tidenfenster kennt man schon bei der Buchung. Alter, Erfahrung und Geschlecht erklären
+nichts; XGBoost mit allen Merkmalen bleibt kreuzvalidiert hinter dem konstanten Aufschlag.
+
+Details in [`srichinmoy/README.md`](srichinmoy/README.md).
 
 ## Aufbau
 
@@ -31,7 +38,9 @@ srichinmoy/
   build_db.py       JSONs → SQLite + CSV, Zeit-Parsing und Geschwindigkeit
   match_channel.py  Namensabgleich mit der Channel-Datenbank, mit Konfidenzstufen
   project.py        Modellvergleich und Hochrechnung
-  build_pages.py    Artifact-Seiten → eigenständige HTML-Dateien in docs/
+  tides.py          Tidenhub in Dover aus dem Datum (portiert aus dem Simulator)
+  experiment_ml.py  geprüfte und verworfene Alternative: XGBoost
+  build_pages.py    Seitenquellen + Daten → eigenständige HTML-Dateien in docs/
   results/          Rohextraktion pro Jahrgang
   *.sqlite *.csv    abgeleitete Daten
 docs/               GitHub Pages

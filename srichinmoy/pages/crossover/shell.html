@@ -125,6 +125,7 @@ h1 em { font-style: italic; color: var(--accent); }
 .field { display: flex; flex-direction: column; gap: 4px; }
 .field > label { font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
   text-transform: uppercase; color: var(--ink-3); }
+#tide { width: 100%; margin-top: 2px; }
 select, input[type="search"] { font: inherit; font-size: 14px; color: var(--ink);
   background: var(--surface-2); border: 1px solid var(--rule-strong); border-radius: 2px;
   padding: 6px 9px; min-height: 34px; }
@@ -204,6 +205,15 @@ footer.colophon a { color: var(--accent); }
         <input type="range" id="zh-range" min="360" max="810" step="5" value="540"
                aria-label="Zürichsee-Zeit in Minuten">
         <div class="rangelabels"><span>6:00</span><span>13:30</span></div>
+
+        <label for="tide" style="margin-top:20px">Tidenfenster</label>
+        <select id="tide">
+          <option value="">unbekannt — Gesamtmodell</option>
+          <option value="0.45">Nipptide</option>
+          <option value="0.60">Richtung Nipptide</option>
+          <option value="0.80">Mitte des Zyklus</option>
+          <option value="1.00">Springtide</option>
+        </select>
       </div>
       <div class="calc-out">
         <div class="big" id="out-mid">–<span>erwartete Kanalzeit</span></div>
@@ -240,6 +250,19 @@ footer.colophon a { color: var(--accent); }
     </header>
     <div class="plot"><svg id="bands" viewBox="0 0 760 200" role="img"
       aria-label="Aufschlag in Stunden nach Tempoband"></svg></div>
+  </section>
+
+  <section class="panel">
+    <header>
+      <h2>Das Tidenfenster</h2>
+      <p class="note">Die einzige äussere Grösse in diesen Daten, die etwas erklärt — und die
+        einzige, die du vor der Buchung kennst. Bei Springtide laufen die Ströme stärker, die
+        Gezeiten-S-Kurve wird länger. Der Tidenhub stammt aus einem harmonischen Modell
+        (M2+S2+N2), das auf Dover-Pegelstände gefittet ist.</p>
+    </header>
+    <div class="plot"><svg id="tidechart" viewBox="0 0 760 300" role="img"
+      aria-label="Aufschlag gegen Tidenhub"></svg></div>
+    <div class="legend" id="tidelegend"></div>
   </section>
 
   <section class="panel">

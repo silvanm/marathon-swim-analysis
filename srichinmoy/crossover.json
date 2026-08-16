@@ -34,10 +34,14 @@
    "ch_nat": "Czech Republic",
    "ch_direction": "E-F",
    "ch_age": 34.4,
+   "ch_date": "2011-07-11",
    "ch_swims": 2,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.6413
+   "ratio": 1.6413,
+   "tide_spring": 0.6105,
+   "tide_range": 3.761,
+   "moon_age": 10.56
   },
   {
    "key": "aditya santosh raut",
@@ -60,10 +64,14 @@
    "ch_nat": "India",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2009-08-19",
    "ch_swims": 1,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.6182
+   "ratio": 1.6182,
+   "tide_spring": 0.8689,
+   "tide_range": 5.353,
+   "moon_age": 28.29
   },
   {
    "key": "adrian brown",
@@ -86,10 +94,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 52.9,
+   "ch_date": "2019-08-22",
    "ch_swims": 2,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.5063
+   "ratio": 1.5063,
+   "tide_spring": 0.6695,
+   "tide_range": 4.124,
+   "moon_age": 21.5
   },
   {
    "key": "adriano passini",
@@ -112,10 +124,14 @@
    "ch_nat": "Brazil",
    "ch_direction": "E-F",
    "ch_age": 32.1,
+   "ch_date": "2013-07-27",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.4494
+   "ratio": 1.4494,
+   "tide_spring": 0.9205,
+   "tide_range": 5.67,
+   "moon_age": 19.29
   },
   {
    "key": "aerin bowers",
@@ -138,10 +154,14 @@
    "ch_nat": "Canada",
    "ch_direction": "E-F",
    "ch_age": 50.7,
+   "ch_date": "2025-06-30",
    "ch_swims": 1,
    "gap_years": 3,
    "zh_first": true,
-   "ratio": 1.4491
+   "ratio": 1.4491,
+   "tide_spring": 0.848,
+   "tide_range": 5.224,
+   "moon_age": 4.77
   },
   {
    "key": "alexander begg",
@@ -164,10 +184,14 @@
    "ch_nat": "UK [Jersey]",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2019-07-23",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.4349
+   "ratio": 1.4349,
+   "tide_spring": 0.664,
+   "tide_range": 4.09,
+   "moon_age": 21.03
   },
   {
    "key": "alexandra hardy",
@@ -190,10 +214,14 @@
    "ch_nat": "UK",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2012-09-03",
    "ch_swims": 1,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.3749
+   "ratio": 1.3749,
+   "tide_spring": 0.9434,
+   "tide_range": 5.811,
+   "moon_age": 17.13
   },
   {
    "key": "alice harvey",
@@ -216,10 +244,14 @@
    "ch_nat": "UK [Jersey]",
    "ch_direction": "E-F",
    "ch_age": 27.2,
+   "ch_date": "2018-07-22",
    "ch_swims": 1,
    "gap_years": 7,
    "zh_first": false,
-   "ratio": 1.4079
+   "ratio": 1.4079,
+   "tide_spring": 0.5124,
+   "tide_range": 3.157,
+   "moon_age": 9.4
   },
   {
    "key": "alice hubbard",
@@ -242,10 +274,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 25.1,
+   "ch_date": "2012-09-07",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": false,
-   "ratio": 1.2725
+   "ratio": 1.2725,
+   "tide_spring": 0.6298,
+   "tide_range": 3.879,
+   "moon_age": 21.13
   },
   {
    "key": "alison streeter",
@@ -268,10 +304,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 39.9,
+   "ch_date": "2004-07-24",
    "ch_swims": 34,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.3387
+   "ratio": 1.3387,
+   "tide_spring": 0.7071,
+   "tide_range": 4.356,
+   "moon_age": 7.19
   },
   {
    "key": "alistair cottle",
@@ -294,10 +334,14 @@
    "ch_nat": "New Zealand",
    "ch_direction": "E-F",
    "ch_age": 32.2,
+   "ch_date": "2008-09-19",
    "ch_swims": 1,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.9436
+   "ratio": 1.9436,
+   "tide_spring": 0.977,
+   "tide_range": 6.018,
+   "moon_age": 19.13
   },
   {
    "key": "amy ennion",
@@ -320,10 +364,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 28.5,
+   "ch_date": "2021-09-16",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.3366
+   "ratio": 1.3366,
+   "tide_spring": 0.5892,
+   "tide_range": 3.63,
+   "moon_age": 9.7
   },
   {
    "key": "amy mellor",
@@ -346,10 +394,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 40.2,
+   "ch_date": "2019-08-23",
    "ch_swims": 1,
    "gap_years": 6,
    "zh_first": false,
-   "ratio": 1.2909
+   "ratio": 1.2909,
+   "tide_spring": 0.5915,
+   "tide_range": 3.644,
+   "moon_age": 22.5
   },
   {
    "key": "andre roberts",
@@ -372,10 +424,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 21.2,
+   "ch_date": "2015-10-04",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": false,
-   "ratio": 1.2997
+   "ratio": 1.2997,
+   "tide_spring": 0.768,
+   "tide_range": 4.731,
+   "moon_age": 20.97
   },
   {
    "key": "andre wiersig",
@@ -398,10 +454,14 @@
    "ch_nat": "Germany",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2014-09-02",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.2583
+   "ratio": 1.2583,
+   "tide_spring": 0.6323,
+   "tide_range": 3.895,
+   "moon_age": 7.87
   },
   {
    "key": "andrew keegan",
@@ -424,10 +484,14 @@
    "ch_nat": "Australia",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2011-07-20",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.5313
+   "ratio": 1.5313,
+   "tide_spring": 0.7788,
+   "tide_range": 4.797,
+   "moon_age": 19.56
   },
   {
    "key": "andrey bozhko",
@@ -450,10 +514,14 @@
    "ch_nat": "Russia",
    "ch_direction": "E-F",
    "ch_age": 34.6,
+   "ch_date": "2021-09-18",
    "ch_swims": 1,
    "gap_years": 4,
    "zh_first": false,
-   "ratio": 1.5991
+   "ratio": 1.5991,
+   "tide_spring": 0.7037,
+   "tide_range": 4.335,
+   "moon_age": 11.7
   },
   {
    "key": "angela wood",
@@ -476,10 +544,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 45.0,
+   "ch_date": "2024-06-30",
    "ch_swims": 1,
    "gap_years": 6,
    "zh_first": true,
-   "ratio": 1.411
+   "ratio": 1.411,
+   "tide_spring": 0.6009,
+   "tide_range": 3.701,
+   "moon_age": 23.66
   },
   {
    "key": "anke hohne",
@@ -502,10 +574,14 @@
    "ch_nat": "Germany",
    "ch_direction": "E-F",
    "ch_age": 51.7,
+   "ch_date": "2022-07-06",
    "ch_swims": 1,
    "gap_years": 3,
    "zh_first": true,
-   "ratio": 1.4653
+   "ratio": 1.4653,
+   "tide_spring": 0.6467,
+   "tide_range": 3.984,
+   "moon_age": 7.4
   },
   {
    "key": "anna carin nordin",
@@ -528,10 +604,14 @@
    "ch_nat": "Sweden",
    "ch_direction": "E-F",
    "ch_age": 39.8,
+   "ch_date": "2010-09-21",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.3722
+   "ratio": 1.3722,
+   "tide_spring": 0.6853,
+   "tide_range": 4.222,
+   "moon_age": 12.86
   },
   {
    "key": "anna ploszajski",
@@ -554,10 +634,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 27.4,
+   "ch_date": "2018-07-14",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.6927
+   "ratio": 1.6927,
+   "tide_spring": 1.0418,
+   "tide_range": 6.417,
+   "moon_age": 1.4
   },
   {
    "key": "anna torok",
@@ -580,10 +664,14 @@
    "ch_nat": "Australia",
    "ch_direction": "E-F",
    "ch_age": 37.7,
+   "ch_date": "2014-08-24",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.4772
+   "ratio": 1.4772,
+   "tide_spring": 0.748,
+   "tide_range": 4.608,
+   "moon_age": 28.4
   },
   {
    "key": "annette stewart",
@@ -606,10 +694,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 45.0,
+   "ch_date": "2005-07-13",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.7176
+   "ratio": 1.7176,
+   "tide_spring": 0.6542,
+   "tide_range": 4.03,
+   "moon_age": 6.82
   },
   {
    "key": "anthony plant",
@@ -632,10 +724,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 34.5,
+   "ch_date": "2014-08-08",
    "ch_swims": 1,
    "gap_years": 3,
    "zh_first": false,
-   "ratio": 1.7217
+   "ratio": 1.7217,
+   "tide_spring": 0.6861,
+   "tide_range": 4.226,
+   "moon_age": 12.4
   },
   {
    "key": "anton floh",
@@ -658,10 +754,14 @@
    "ch_nat": "Austria",
    "ch_direction": "E-F",
    "ch_age": 44.2,
+   "ch_date": "2014-08-24",
    "ch_swims": 1,
    "gap_years": 4,
    "zh_first": true,
-   "ratio": 1.4582
+   "ratio": 1.4582,
+   "tide_spring": 0.748,
+   "tide_range": 4.608,
+   "moon_age": 28.4
   },
   {
    "key": "aris polizos",
@@ -684,10 +784,14 @@
    "ch_nat": "Greece",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2003-08-08",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.5375
+   "ratio": 1.5375,
+   "tide_spring": 0.6087,
+   "tide_range": 3.749,
+   "moon_age": 10.56
   },
   {
    "key": "armin wunder",
@@ -710,10 +814,14 @@
    "ch_nat": "Germany",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2010-09-18",
    "ch_swims": 1,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.4564
+   "ratio": 1.4564,
+   "tide_spring": 0.4829,
+   "tide_range": 2.975,
+   "moon_age": 9.86
   },
   {
    "key": "attila manyoki",
@@ -736,10 +844,14 @@
    "ch_nat": "Hungary",
    "ch_direction": "E-F",
    "ch_age": 39.9,
+   "ch_date": "2013-08-20",
    "ch_swims": 1,
    "gap_years": 8,
    "zh_first": false,
-   "ratio": 1.1598
+   "ratio": 1.1598,
+   "tide_spring": 0.906,
+   "tide_range": 5.581,
+   "moon_age": 13.76
   },
   {
    "key": "barbara held",
@@ -762,10 +874,14 @@
    "ch_nat": "USA",
    "ch_direction": "E-F",
    "ch_age": 58.7,
+   "ch_date": "2012-08-24",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.4873
+   "ratio": 1.4873,
+   "tide_spring": 0.7528,
+   "tide_range": 4.637,
+   "moon_age": 7.13
   },
   {
    "key": "bhakti sharma",
@@ -788,10 +904,14 @@
    "ch_nat": "India",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2006-07-06",
    "ch_swims": 1,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.3013
+   "ratio": 1.3013,
+   "tide_spring": 0.4106,
+   "tide_range": 2.529,
+   "moon_age": 10.45
   },
   {
    "key": "birgit kempf",
@@ -814,10 +934,14 @@
    "ch_nat": "Germany",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2006-08-05",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.4025
+   "ratio": 1.4025,
+   "tide_spring": 0.4682,
+   "tide_range": 2.884,
+   "moon_age": 10.92
   },
   {
    "key": "boris mavra",
@@ -840,10 +964,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 41.5,
+   "ch_date": "2011-07-26",
    "ch_swims": 4,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.1729
+   "ratio": 1.1729,
+   "tide_spring": 0.4255,
+   "tide_range": 2.621,
+   "moon_age": 25.56
   },
   {
    "key": "brian fergusson",
@@ -866,10 +994,14 @@
    "ch_nat": "Australia",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2012-07-21",
    "ch_swims": 1,
    "gap_years": 4,
    "zh_first": false,
-   "ratio": 1.5434
+   "ratio": 1.5434,
+   "tide_spring": 0.9322,
+   "tide_range": 5.743,
+   "moon_age": 2.66
   },
   {
    "key": "carol cashell",
@@ -892,10 +1024,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 38.6,
+   "ch_date": "2017-08-26",
    "ch_swims": 1,
    "gap_years": 5,
    "zh_first": true,
-   "ratio": 1.3458
+   "ratio": 1.3458,
+   "tide_spring": 0.8734,
+   "tide_range": 5.38,
+   "moon_age": 4.23
   },
   {
    "key": "cathy marco",
@@ -918,10 +1054,14 @@
    "ch_nat": "France",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": null,
    "ch_swims": 1,
    "gap_years": 4,
    "zh_first": false,
-   "ratio": 1.4694
+   "ratio": 1.4694,
+   "tide_spring": null,
+   "tide_range": null,
+   "moon_age": null
   },
   {
    "key": "christian hubner",
@@ -944,10 +1084,14 @@
    "ch_nat": "Germany",
    "ch_direction": "E-F",
    "ch_age": 37.9,
+   "ch_date": "2008-06-24",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.6102
+   "ratio": 1.6102,
+   "tide_spring": 0.7875,
+   "tide_range": 4.851,
+   "moon_age": 20.72
   },
   {
    "key": "christopher jordinson",
@@ -970,10 +1114,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 38.0,
+   "ch_date": "2014-07-02",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": false,
-   "ratio": 1.6181
+   "ratio": 1.6181,
+   "tide_spring": 0.7629,
+   "tide_range": 4.7,
+   "moon_age": 4.93
   },
   {
    "key": "clifford golding",
@@ -996,10 +1144,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 48.7,
+   "ch_date": "2003-06-28",
    "ch_swims": 2,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.4387
+   "ratio": 1.4387,
+   "tide_spring": 0.7196,
+   "tide_range": 4.433,
+   "moon_age": 28.62
   },
   {
    "key": "daniel hollas",
@@ -1022,10 +1174,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 55.6,
+   "ch_date": "2024-09-14",
    "ch_swims": 1,
    "gap_years": 5,
    "zh_first": true,
-   "ratio": 1.4516
+   "ratio": 1.4516,
+   "tide_spring": 0.5177,
+   "tide_range": 3.189,
+   "moon_age": 11.07
   },
   {
    "key": "daniel lobo",
@@ -1048,10 +1204,14 @@
    "ch_nat": "Spain",
    "ch_direction": "E-F",
    "ch_age": 43.5,
+   "ch_date": "2017-08-13",
    "ch_swims": 2,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.8958
+   "ratio": 1.8958,
+   "tide_spring": 0.8392,
+   "tide_range": 5.17,
+   "moon_age": 20.76
   },
   {
    "key": "dave berry",
@@ -1074,10 +1234,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 47.6,
+   "ch_date": "2022-10-03",
    "ch_swims": 1,
    "gap_years": 4,
    "zh_first": false,
-   "ratio": 1.3328
+   "ratio": 1.3328,
+   "tide_spring": 0.6845,
+   "tide_range": 4.217,
+   "moon_age": 7.81
   },
   {
    "key": "david buckley",
@@ -1100,10 +1264,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 41.7,
+   "ch_date": "2024-07-15",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.3441
+   "ratio": 1.3441,
+   "tide_spring": 0.4052,
+   "tide_range": 2.496,
+   "moon_age": 9.13
   },
   {
    "key": "david cech",
@@ -1126,10 +1294,14 @@
    "ch_nat": "Czech Republic",
    "ch_direction": "E-F",
    "ch_age": 18.8,
+   "ch_date": "2004-08-07",
    "ch_swims": 1,
    "gap_years": 3,
    "zh_first": false,
-   "ratio": 1.4136
+   "ratio": 1.4136,
+   "tide_spring": 0.6758,
+   "tide_range": 4.163,
+   "moon_age": 21.19
   },
   {
    "key": "david granger",
@@ -1152,10 +1324,14 @@
    "ch_nat": "UK [Wales]",
    "ch_direction": "E-F",
    "ch_age": 54.6,
+   "ch_date": "2011-07-27",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": false,
-   "ratio": 1.5836
+   "ratio": 1.5836,
+   "tide_spring": 0.5168,
+   "tide_range": 3.184,
+   "moon_age": 26.56
   },
   {
    "key": "david owen",
@@ -1178,10 +1354,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 34.8,
+   "ch_date": "2019-10-03",
    "ch_swims": 1,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.5817
+   "ratio": 1.5817,
+   "tide_spring": 0.9369,
+   "tide_range": 5.771,
+   "moon_age": 4.44
   },
   {
    "key": "deirdre ward",
@@ -1204,10 +1384,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 32.7,
+   "ch_date": "2012-07-26",
    "ch_swims": 2,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.6928
+   "ratio": 1.6928,
+   "tide_spring": 0.6954,
+   "tide_range": 4.284,
+   "moon_age": 7.66
   },
   {
    "key": "didier castagna",
@@ -1230,10 +1414,14 @@
    "ch_nat": "France",
    "ch_direction": "E-F",
    "ch_age": 51.1,
+   "ch_date": "2020-09-10",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.6421
+   "ratio": 1.6421,
+   "tide_spring": 0.5408,
+   "tide_range": 3.331,
+   "moon_age": 22.6
   },
   {
    "key": "dylan haughton",
@@ -1256,10 +1444,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 51.5,
+   "ch_date": "2017-08-29",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.0785
+   "ratio": 1.0785,
+   "tide_spring": 0.5447,
+   "tide_range": 3.355,
+   "moon_age": 7.23
   },
   {
    "key": "edmond irwin",
@@ -1282,10 +1474,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 36.9,
+   "ch_date": "2008-07-31",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.4641
+   "ratio": 1.4641,
+   "tide_spring": 0.8755,
+   "tide_range": 5.393,
+   "moon_age": 28.19
   },
   {
    "key": "elizabeth price",
@@ -1308,10 +1504,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2017-08-27",
    "ch_swims": 1,
    "gap_years": 6,
    "zh_first": true,
-   "ratio": 1.4349
+   "ratio": 1.4349,
+   "tide_spring": 0.7719,
+   "tide_range": 4.755,
+   "moon_age": 5.23
   },
   {
    "key": "emily morris",
@@ -1334,10 +1534,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2006-08-16",
    "ch_swims": 1,
    "gap_years": 3,
    "zh_first": false,
-   "ratio": 1.377
+   "ratio": 1.377,
+   "tide_spring": 0.7071,
+   "tide_range": 4.356,
+   "moon_age": 21.92
   },
   {
    "key": "emma france",
@@ -1360,10 +1564,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 50.1,
+   "ch_date": "2018-07-21",
    "ch_swims": 3,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.4902
+   "ratio": 1.4902,
+   "tide_spring": 0.5371,
+   "tide_range": 3.309,
+   "moon_age": 8.4
   },
   {
    "key": "fernando espina velaz",
@@ -1386,10 +1594,14 @@
    "ch_nat": "Argentina",
    "ch_direction": "E-F",
    "ch_age": 51.6,
+   "ch_date": "2023-08-09",
    "ch_swims": 1,
    "gap_years": 4,
    "zh_first": true,
-   "ratio": 1.4989
+   "ratio": 1.4989,
+   "tide_spring": 0.608,
+   "tide_range": 3.745,
+   "moon_age": 22.5
   },
   {
    "key": "gabor molnar",
@@ -1412,10 +1624,14 @@
    "ch_nat": "Hungary",
    "ch_direction": "E-F",
    "ch_age": 28.9,
+   "ch_date": "2010-09-28",
    "ch_swims": 1,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.8519
+   "ratio": 1.8519,
+   "tide_spring": 0.8374,
+   "tide_range": 5.159,
+   "moon_age": 19.86
   },
   {
    "key": "gary brickley",
@@ -1438,10 +1654,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 51.0,
+   "ch_date": "2016-08-30",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.4101
+   "ratio": 1.4101,
+   "tide_spring": 0.7643,
+   "tide_range": 4.708,
+   "moon_age": 27.13
   },
   {
    "key": "gary bruce",
@@ -1464,10 +1684,14 @@
    "ch_nat": "UK",
    "ch_direction": "E-F",
    "ch_age": 49.4,
+   "ch_date": "2013-09-24",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.2738
+   "ratio": 1.2738,
+   "tide_spring": 0.8385,
+   "tide_range": 5.165,
+   "moon_age": 19.23
   },
   {
    "key": "george meenan",
@@ -1490,10 +1714,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 39.2,
+   "ch_date": "2011-07-28",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.411
+   "ratio": 1.411,
+   "tide_spring": 0.6297,
+   "tide_range": 3.879,
+   "moon_age": 27.56
   },
   {
    "key": "giles meyer",
@@ -1516,10 +1744,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 36.8,
+   "ch_date": "2007-08-27",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.7099
+   "ratio": 1.7099,
+   "tide_spring": 0.7834,
+   "tide_range": 4.826,
+   "moon_age": 14.03
   },
   {
    "key": "graeme lowe",
@@ -1542,10 +1774,14 @@
    "ch_nat": "UK [Jersey]",
    "ch_direction": "E-F",
    "ch_age": 46.2,
+   "ch_date": "2011-07-10",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.4151
+   "ratio": 1.4151,
+   "tide_spring": 0.596,
+   "tide_range": 3.671,
+   "moon_age": 9.56
   },
   {
    "key": "graeme schlachter",
@@ -1568,10 +1804,14 @@
    "ch_nat": "Zimbabwe",
    "ch_direction": "E-F",
    "ch_age": 33.8,
+   "ch_date": "2008-09-28",
    "ch_swims": 1,
    "gap_years": 6,
    "zh_first": false,
-   "ratio": 1.4086
+   "ratio": 1.4086,
+   "tide_spring": 0.8588,
+   "tide_range": 5.29,
+   "moon_age": 28.13
   },
   {
    "key": "graham coleman",
@@ -1594,10 +1834,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 29.8,
+   "ch_date": "2007-09-06",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.4102
+   "ratio": 1.4102,
+   "tide_spring": 0.5887,
+   "tide_range": 3.626,
+   "moon_age": 24.03
   },
   {
    "key": "guy moar",
@@ -1620,10 +1864,14 @@
    "ch_nat": "Australia",
    "ch_direction": "E-F",
    "ch_age": 43.1,
+   "ch_date": "2010-09-13",
    "ch_swims": 3,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.3813
+   "ratio": 1.3813,
+   "tide_spring": 0.9125,
+   "tide_range": 5.621,
+   "moon_age": 4.86
   },
   {
    "key": "hannah bennett",
@@ -1646,10 +1894,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 23.5,
+   "ch_date": "2014-08-31",
    "ch_swims": 1,
    "gap_years": 4,
    "zh_first": false,
-   "ratio": 1.5895
+   "ratio": 1.5895,
+   "tide_spring": 0.7844,
+   "tide_range": 4.832,
+   "moon_age": 5.87
   },
   {
    "key": "hayley chapman",
@@ -1672,10 +1924,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 43.1,
+   "ch_date": "2019-08-03",
    "ch_swims": 1,
    "gap_years": 3,
    "zh_first": false,
-   "ratio": 1.3079
+   "ratio": 1.3079,
+   "tide_spring": 1.0519,
+   "tide_range": 6.479,
+   "moon_age": 2.5
   },
   {
    "key": "helen conway",
@@ -1698,10 +1954,14 @@
    "ch_nat": "Australia",
    "ch_direction": "E-F",
    "ch_age": 34.0,
+   "ch_date": "2010-09-18",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.258
+   "ratio": 1.258,
+   "tide_spring": 0.4829,
+   "tide_range": 2.975,
+   "moon_age": 9.86
   },
   {
    "key": "howard keech",
@@ -1724,10 +1984,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 37.4,
+   "ch_date": "2016-05-16",
    "ch_swims": 3,
    "gap_years": 3,
    "zh_first": true,
-   "ratio": 1.6349
+   "ratio": 1.6349,
+   "tide_spring": 0.4688,
+   "tide_range": 2.888,
+   "moon_age": 9.72
   },
   {
    "key": "ian jones",
@@ -1750,10 +2014,14 @@
    "ch_nat": "UK [Jersey]",
    "ch_direction": "E-F",
    "ch_age": 32.8,
+   "ch_date": "2005-08-02",
    "ch_swims": 1,
    "gap_years": 3,
    "zh_first": false,
-   "ratio": 1.545
+   "ratio": 1.545,
+   "tide_spring": 0.6585,
+   "tide_range": 4.056,
+   "moon_age": 26.82
   },
   {
    "key": "ivan gazdik",
@@ -1776,10 +2044,14 @@
    "ch_nat": "Slovakia",
    "ch_direction": "E-F",
    "ch_age": 44.9,
+   "ch_date": "2009-09-26",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": false,
-   "ratio": 1.1788
+   "ratio": 1.1788,
+   "tide_spring": 0.5527,
+   "tide_range": 3.404,
+   "moon_age": 7.23
   },
   {
    "key": "jackson carroll",
@@ -1802,10 +2074,14 @@
    "ch_nat": "Australia",
    "ch_direction": "E-F",
    "ch_age": 35.1,
+   "ch_date": "2013-08-28",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": false,
-   "ratio": 1.2011
+   "ratio": 1.2011,
+   "tide_spring": 0.5886,
+   "tide_range": 3.626,
+   "moon_age": 21.76
   },
   {
    "key": "jacqueline kempfer",
@@ -1828,10 +2104,14 @@
    "ch_nat": "Germany",
    "ch_direction": "E-F",
    "ch_age": 45.6,
+   "ch_date": "2024-06-29",
    "ch_swims": 1,
    "gap_years": 7,
    "zh_first": true,
-   "ratio": 1.854
+   "ratio": 1.854,
+   "tide_spring": 0.6739,
+   "tide_range": 4.151,
+   "moon_age": 22.66
   },
   {
    "key": "jacques tuset",
@@ -1854,10 +2134,14 @@
    "ch_nat": "France",
    "ch_direction": "E-F",
    "ch_age": 38.5,
+   "ch_date": "2002-07-20",
    "ch_swims": 1,
    "gap_years": 7,
    "zh_first": false,
-   "ratio": 1.737
+   "ratio": 1.737,
+   "tide_spring": 0.6034,
+   "tide_range": 3.717,
+   "moon_age": 10.45
   },
   {
    "key": "james norton",
@@ -1880,10 +2164,14 @@
    "ch_nat": "Canada",
    "ch_direction": "E-F",
    "ch_age": 51.4,
+   "ch_date": "2014-08-04",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.7038
+   "ratio": 1.7038,
+   "tide_spring": 0.5513,
+   "tide_range": 3.396,
+   "moon_age": 8.4
   },
   {
    "key": "james penrose",
@@ -1906,10 +2194,14 @@
    "ch_nat": "USA",
    "ch_direction": "E-F",
    "ch_age": 60.5,
+   "ch_date": "2012-10-07",
    "ch_swims": 1,
    "gap_years": 5,
    "zh_first": false,
-   "ratio": 1.4204
+   "ratio": 1.4204,
+   "tide_spring": 0.6076,
+   "tide_range": 3.743,
+   "moon_age": 21.6
   },
   {
    "key": "janina dowding",
@@ -1932,10 +2224,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 42.3,
+   "ch_date": "2016-07-30",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.4958
+   "ratio": 1.4958,
+   "tide_spring": 0.6318,
+   "tide_range": 3.892,
+   "moon_age": 25.66
   },
   {
    "key": "jenny zwijnen",
@@ -1958,10 +2254,14 @@
    "ch_nat": "UK",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2012-09-04",
    "ch_swims": 1,
    "gap_years": 5,
    "zh_first": false,
-   "ratio": 1.921
+   "ratio": 1.921,
+   "tide_spring": 0.8895,
+   "tide_range": 5.479,
+   "moon_age": 18.13
   },
   {
    "key": "john daly",
@@ -1984,10 +2284,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 47.3,
+   "ch_date": "2010-09-18",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.1291
+   "ratio": 1.1291,
+   "tide_spring": 0.4829,
+   "tide_range": 2.975,
+   "moon_age": 9.86
   },
   {
    "key": "john zemaitis",
@@ -2010,10 +2314,14 @@
    "ch_nat": "USA",
    "ch_direction": "E-F",
    "ch_age": 34.3,
+   "ch_date": "2017-08-25",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.4575
+   "ratio": 1.4575,
+   "tide_spring": 0.9534,
+   "tide_range": 5.873,
+   "moon_age": 3.23
   },
   {
    "key": "jonathan ford",
@@ -2036,10 +2344,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 45.4,
+   "ch_date": "2013-09-06",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.5815
+   "ratio": 1.5815,
+   "tide_spring": 0.8731,
+   "tide_range": 5.378,
+   "moon_age": 1.23
   },
   {
    "key": "jose ramon sanz rodenas",
@@ -2062,10 +2374,14 @@
    "ch_nat": "Spain",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2018-07-20",
    "ch_swims": 1,
    "gap_years": 4,
    "zh_first": false,
-   "ratio": 1.367
+   "ratio": 1.367,
+   "tide_spring": 0.6351,
+   "tide_range": 3.913,
+   "moon_age": 7.4
   },
   {
    "key": "jozef lendacky",
@@ -2088,10 +2404,14 @@
    "ch_nat": "Slovakia",
    "ch_direction": "E-F",
    "ch_age": 40.5,
+   "ch_date": "2004-08-07",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.2096
+   "ratio": 1.2096,
+   "tide_spring": 0.6758,
+   "tide_range": 4.163,
+   "moon_age": 21.19
   },
   {
    "key": "kate mason",
@@ -2114,10 +2434,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 42.5,
+   "ch_date": "2001-08-14",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": false,
-   "ratio": 1.5236
+   "ratio": 1.5236,
+   "tide_spring": 0.4926,
+   "tide_range": 3.035,
+   "moon_age": 24.82
   },
   {
    "key": "kate robarts",
@@ -2140,10 +2464,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 52.9,
+   "ch_date": "2014-08-20",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": false,
-   "ratio": 1.1343
+   "ratio": 1.1343,
+   "tide_spring": 0.4952,
+   "tide_range": 3.051,
+   "moon_age": 24.4
   },
   {
    "key": "kate steels fryatt",
@@ -2166,10 +2494,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 46.9,
+   "ch_date": "2016-09-06",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.4236
+   "ratio": 1.4236,
+   "tide_spring": 0.7819,
+   "tide_range": 4.817,
+   "moon_age": 4.6
   },
   {
    "key": "kate todd",
@@ -2192,10 +2524,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 43.5,
+   "ch_date": "2014-10-02",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.4307
+   "ratio": 1.4307,
+   "tide_spring": 0.6225,
+   "tide_range": 3.835,
+   "moon_age": 8.33
   },
   {
    "key": "katherine mearman",
@@ -2218,10 +2554,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 25.7,
+   "ch_date": "2004-08-14",
    "ch_swims": 1,
    "gap_years": 3,
    "zh_first": false,
-   "ratio": 1.5876
+   "ratio": 1.5876,
+   "tide_spring": 0.6858,
+   "tide_range": 4.224,
+   "moon_age": 28.19
   },
   {
    "key": "katie hope",
@@ -2244,10 +2584,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2006-07-21",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.3832
+   "ratio": 1.3832,
+   "tide_spring": 0.6089,
+   "tide_range": 3.751,
+   "moon_age": 25.45
   },
   {
    "key": "kaveri thakur",
@@ -2270,10 +2614,14 @@
    "ch_nat": "India",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": null,
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": false,
-   "ratio": 1.2798
+   "ratio": 1.2798,
+   "tide_spring": null,
+   "tide_range": null,
+   "moon_age": null
   },
   {
    "key": "kevin blick",
@@ -2296,10 +2644,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 53.1,
+   "ch_date": "2013-09-03",
    "ch_swims": 3,
    "gap_years": 9,
    "zh_first": false,
-   "ratio": 1.6304
+   "ratio": 1.6304,
+   "tide_spring": 0.6421,
+   "tide_range": 3.955,
+   "moon_age": 27.76
   },
   {
    "key": "kristy mcintyre",
@@ -2322,10 +2674,14 @@
    "ch_nat": "Australia",
    "ch_direction": "E-F",
    "ch_age": 31.5,
+   "ch_date": "2012-07-25",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": false,
-   "ratio": 1.3162
+   "ratio": 1.3162,
+   "tide_spring": 0.7905,
+   "tide_range": 4.87,
+   "moon_age": 6.66
   },
   {
    "key": "laura lopez bonilla",
@@ -2348,10 +2704,14 @@
    "ch_nat": "Spain",
    "ch_direction": "E-F",
    "ch_age": 34.3,
+   "ch_date": "2002-08-04",
    "ch_swims": 2,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.4407
+   "ratio": 1.4407,
+   "tide_spring": 0.4296,
+   "tide_range": 2.646,
+   "moon_age": 25.45
   },
   {
    "key": "laura sharpe",
@@ -2374,10 +2734,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 44.4,
+   "ch_date": "2023-08-15",
    "ch_swims": 1,
    "gap_years": 3,
    "zh_first": false,
-   "ratio": 1.3577
+   "ratio": 1.3577,
+   "tide_spring": 0.7778,
+   "tide_range": 4.791,
+   "moon_age": 28.5
   },
   {
    "key": "liam maher",
@@ -2400,10 +2764,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 40.9,
+   "ch_date": "2010-07-19",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.463
+   "ratio": 1.463,
+   "tide_spring": 0.6329,
+   "tide_range": 3.899,
+   "moon_age": 7.93
   },
   {
    "key": "linda ashmore",
@@ -2426,10 +2794,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 60.8,
+   "ch_date": "2007-08-26",
    "ch_swims": 2,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.53
+   "ratio": 1.53,
+   "tide_spring": 0.6663,
+   "tide_range": 4.104,
+   "moon_age": 13.03
   },
   {
    "key": "liz rycroft",
@@ -2452,10 +2824,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 30.6,
+   "ch_date": "2009-07-31",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.1728
+   "ratio": 1.1728,
+   "tide_spring": 0.4909,
+   "tide_range": 3.024,
+   "moon_age": 9.29
   },
   {
    "key": "lucy roper",
@@ -2478,10 +2854,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 39.6,
+   "ch_date": "2011-09-24",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.469
+   "ratio": 1.469,
+   "tide_spring": 0.577,
+   "tide_range": 3.554,
+   "moon_age": 26.5
   },
   {
    "key": "marcel degreef",
@@ -2504,10 +2884,14 @@
    "ch_nat": "Netherlands",
    "ch_direction": "E-F",
    "ch_age": 30.9,
+   "ch_date": "2008-09-14",
    "ch_swims": 1,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.8914
+   "ratio": 1.8914,
+   "tide_spring": 0.76,
+   "tide_range": 4.682,
+   "moon_age": 14.13
   },
   {
    "key": "margit bohnhoff",
@@ -2530,10 +2914,14 @@
    "ch_nat": "Germany",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2007-08-09",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.4436
+   "ratio": 1.4436,
+   "tide_spring": 0.6251,
+   "tide_range": 3.851,
+   "moon_age": 25.56
   },
   {
    "key": "mark bayliss",
@@ -2556,10 +2944,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 30.1,
+   "ch_date": "2007-09-04",
    "ch_swims": 2,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.3701
+   "ratio": 1.3701,
+   "tide_spring": 0.7227,
+   "tide_range": 4.452,
+   "moon_age": 22.03
   },
   {
    "key": "mark fabik",
@@ -2582,10 +2974,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 37.0,
+   "ch_date": "2013-07-16",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.3535
+   "ratio": 1.3535,
+   "tide_spring": 0.5958,
+   "tide_range": 3.67,
+   "moon_age": 8.29
   },
   {
    "key": "mark faure walker",
@@ -2608,10 +3004,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 37.7,
+   "ch_date": "2013-07-15",
    "ch_swims": 1,
    "gap_years": 4,
    "zh_first": true,
-   "ratio": 1.3781
+   "ratio": 1.3781,
+   "tide_spring": 0.6781,
+   "tide_range": 4.177,
+   "moon_age": 7.29
   },
   {
    "key": "mark hannigan",
@@ -2634,10 +3034,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 49.4,
+   "ch_date": "2021-08-02",
    "ch_swims": 1,
    "gap_years": 6,
    "zh_first": true,
-   "ratio": 1.2657
+   "ratio": 1.2657,
+   "tide_spring": 0.4045,
+   "tide_range": 2.492,
+   "moon_age": 23.76
   },
   {
    "key": "martyn webster",
@@ -2660,10 +3064,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 51.5,
+   "ch_date": "2018-08-28",
    "ch_swims": 3,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.462
+   "ratio": 1.462,
+   "tide_spring": 0.8733,
+   "tide_range": 5.38,
+   "moon_age": 16.87
   },
   {
    "key": "mate szekely",
@@ -2686,10 +3094,14 @@
    "ch_nat": "Hungary",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2003-08-03",
    "ch_swims": 1,
    "gap_years": 3,
    "zh_first": false,
-   "ratio": 1.5504
+   "ratio": 1.5504,
+   "tide_spring": 0.8923,
+   "tide_range": 5.496,
+   "moon_age": 5.56
   },
   {
    "key": "matthew johnson",
@@ -2712,10 +3124,14 @@
    "ch_nat": "USA",
    "ch_direction": "E-F",
    "ch_age": 41.0,
+   "ch_date": "2003-09-02",
    "ch_swims": 1,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.4464
+   "ratio": 1.4464,
+   "tide_spring": 0.8645,
+   "tide_range": 5.326,
+   "moon_age": 6.03
   },
   {
    "key": "max beer",
@@ -2738,10 +3154,14 @@
    "ch_nat": "Austria",
    "ch_direction": "E-F",
    "ch_age": 43.9,
+   "ch_date": "2016-08-09",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.436
+   "ratio": 1.436,
+   "tide_spring": 0.6534,
+   "tide_range": 4.025,
+   "moon_age": 6.13
   },
   {
    "key": "michael garnett",
@@ -2764,10 +3184,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 42.0,
+   "ch_date": "2022-09-14",
    "ch_swims": 1,
    "gap_years": 7,
    "zh_first": true,
-   "ratio": 1.3372
+   "ratio": 1.3372,
+   "tide_spring": 0.9406,
+   "tide_range": 5.794,
+   "moon_age": 18.34
   },
   {
    "key": "michael helps",
@@ -2790,10 +3214,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 41.3,
+   "ch_date": "2007-07-10",
    "ch_swims": 2,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.4076
+   "ratio": 1.4076,
+   "tide_spring": 0.5956,
+   "tide_range": 3.669,
+   "moon_age": 25.09
   },
   {
    "key": "michal brauner",
@@ -2816,10 +3244,14 @@
    "ch_nat": "Czech Republic",
    "ch_direction": "E-F",
    "ch_age": 36.7,
+   "ch_date": "2022-08-06",
    "ch_swims": 1,
    "gap_years": 3,
    "zh_first": true,
-   "ratio": 1.3142
+   "ratio": 1.3142,
+   "tide_spring": 0.5719,
+   "tide_range": 3.523,
+   "moon_age": 8.87
   },
   {
    "key": "miles worling",
@@ -2842,10 +3274,14 @@
    "ch_nat": "South Africa",
    "ch_direction": "E-F",
    "ch_age": 46.9,
+   "ch_date": "2019-08-22",
    "ch_swims": 1,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.6968
+   "ratio": 1.6968,
+   "tide_spring": 0.6695,
+   "tide_range": 4.124,
+   "moon_age": 21.5
   },
   {
    "key": "mo siegel",
@@ -2868,10 +3304,14 @@
    "ch_nat": "USA",
    "ch_direction": "E-F",
    "ch_age": 58.9,
+   "ch_date": "2010-08-03",
    "ch_swims": 2,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.3022
+   "ratio": 1.3022,
+   "tide_spring": 0.5379,
+   "tide_range": 3.314,
+   "moon_age": 22.93
   },
   {
    "key": "monika mittaz",
@@ -2894,10 +3334,14 @@
    "ch_nat": "Switzerland",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2025-08-22",
    "ch_swims": 1,
    "gap_years": 6,
    "zh_first": true,
-   "ratio": 1.8072
+   "ratio": 1.8072,
+   "tide_spring": 0.8706,
+   "tide_range": 5.363,
+   "moon_age": 28.24
   },
   {
    "key": "nancy douglas",
@@ -2920,10 +3364,14 @@
    "ch_nat": "UK [Wales]",
    "ch_direction": "E-F",
    "ch_age": 26.4,
+   "ch_date": "2006-07-01",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.5834
+   "ratio": 1.5834,
+   "tide_spring": 0.7153,
+   "tide_range": 4.406,
+   "moon_age": 5.45
   },
   {
    "key": "nathalie pohl",
@@ -2946,10 +3394,14 @@
    "ch_nat": "Germany",
    "ch_direction": "E-F",
    "ch_age": 21.9,
+   "ch_date": "2016-09-21",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.4463
+   "ratio": 1.4463,
+   "tide_spring": 0.9648,
+   "tide_range": 5.943,
+   "moon_age": 19.6
   },
   {
    "key": "ned denison",
@@ -2972,10 +3424,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 47.8,
+   "ch_date": "2005-09-11",
    "ch_swims": 1,
    "gap_years": 3,
    "zh_first": false,
-   "ratio": 1.6812
+   "ratio": 1.6812,
+   "tide_spring": 0.6592,
+   "tide_range": 4.061,
+   "moon_age": 7.76
   },
   {
    "key": "nick owen",
@@ -2998,10 +3454,14 @@
    "ch_nat": "Australia",
    "ch_direction": "E-F",
    "ch_age": 50.9,
+   "ch_date": "2013-09-12",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.4439
+   "ratio": 1.4439,
+   "tide_spring": 0.7374,
+   "tide_range": 4.542,
+   "moon_age": 7.23
   },
   {
    "key": "nuala muir cochrane",
@@ -3024,10 +3484,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 44.1,
+   "ch_date": "2008-07-26",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.5999
+   "ratio": 1.5999,
+   "tide_spring": 0.6195,
+   "tide_range": 3.816,
+   "moon_age": 23.19
   },
   {
    "key": "oliver turner",
@@ -3050,10 +3514,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 24.5,
+   "ch_date": "1995-08-16",
    "ch_swims": 1,
    "gap_years": 13,
    "zh_first": false,
-   "ratio": 1.2674
+   "ratio": 1.2674,
+   "tide_spring": 0.7861,
+   "tide_range": 4.842,
+   "moon_age": 20.08
   },
   {
    "key": "oliver wilkinson",
@@ -3076,10 +3544,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 34.1,
+   "ch_date": "2009-09-08",
    "ch_swims": 1,
    "gap_years": 4,
    "zh_first": false,
-   "ratio": 1.5987
+   "ratio": 1.5987,
+   "tide_spring": 0.9114,
+   "tide_range": 5.614,
+   "moon_age": 18.76
   },
   {
    "key": "patrick corkery",
@@ -3102,10 +3574,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 43.9,
+   "ch_date": "2017-09-26",
    "ch_swims": 1,
    "gap_years": 4,
    "zh_first": true,
-   "ratio": 1.4262
+   "ratio": 1.4262,
+   "tide_spring": 0.696,
+   "tide_range": 4.287,
+   "moon_age": 5.7
   },
   {
    "key": "patrick cray",
@@ -3128,10 +3604,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 49.9,
+   "ch_date": "2016-09-13",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.451
+   "ratio": 1.451,
+   "tide_spring": 0.5134,
+   "tide_range": 3.163,
+   "moon_age": 11.6
   },
   {
    "key": "patti bauernfeind",
@@ -3154,10 +3634,14 @@
    "ch_nat": "USA",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2015-09-25",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.362
+   "ratio": 1.362,
+   "tide_spring": 0.6359,
+   "tide_range": 3.917,
+   "moon_age": 11.97
   },
   {
    "key": "paul georgescu",
@@ -3180,10 +3664,14 @@
    "ch_nat": "Romania",
    "ch_direction": "E-F",
    "ch_age": 37.7,
+   "ch_date": "2016-09-14",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.8906
+   "ratio": 1.8906,
+   "tide_spring": 0.6301,
+   "tide_range": 3.881,
+   "moon_age": 12.6
   },
   {
    "key": "paul leonard",
@@ -3206,10 +3694,14 @@
    "ch_nat": "UK",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2022-09-15",
    "ch_swims": 1,
    "gap_years": 4,
    "zh_first": false,
-   "ratio": 1.4749
+   "ratio": 1.4749,
+   "tide_spring": 0.8519,
+   "tide_range": 5.248,
+   "moon_age": 19.34
   },
   {
    "key": "paul massey",
@@ -3232,10 +3724,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 46.7,
+   "ch_date": "2010-09-02",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.8816
+   "ratio": 1.8816,
+   "tide_spring": 0.5478,
+   "tide_range": 3.375,
+   "moon_age": 23.39
   },
   {
    "key": "paule kremer",
@@ -3258,10 +3754,14 @@
    "ch_nat": "Luxembourg",
    "ch_direction": "E-F",
    "ch_age": 29.0,
+   "ch_date": "2017-08-07",
    "ch_swims": 1,
    "gap_years": 9,
    "zh_first": false,
-   "ratio": 1.3808
+   "ratio": 1.3808,
+   "tide_spring": 0.7855,
+   "tide_range": 4.839,
+   "moon_age": 14.76
   },
   {
    "key": "peter dolnik",
@@ -3284,10 +3784,14 @@
    "ch_nat": "Slovakia",
    "ch_direction": "E-F",
    "ch_age": 46.0,
+   "ch_date": "2013-07-05",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.0091
+   "ratio": 1.0091,
+   "tide_spring": 0.6413,
+   "tide_range": 3.951,
+   "moon_age": 26.82
   },
   {
    "key": "petr mihola",
@@ -3310,10 +3814,14 @@
    "ch_nat": "Czech Republic",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": null,
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.5607
+   "ratio": 1.5607,
+   "tide_spring": null,
+   "tide_range": null,
+   "moon_age": null
   },
   {
    "key": "philippe fort",
@@ -3336,10 +3844,14 @@
    "ch_nat": "France",
    "ch_direction": "E-F",
    "ch_age": 52.4,
+   "ch_date": "2016-08-25",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.3692
+   "ratio": 1.3692,
+   "tide_spring": 0.7216,
+   "tide_range": 4.445,
+   "moon_age": 22.13
   },
   {
    "key": "pippa harrold",
@@ -3362,10 +3874,14 @@
    "ch_nat": "UK [Jersey]",
    "ch_direction": "E-F",
    "ch_age": 35.7,
+   "ch_date": "2002-08-19",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": false,
-   "ratio": 1.3066
+   "ratio": 1.3066,
+   "tide_spring": 0.6197,
+   "tide_range": 3.818,
+   "moon_age": 10.92
   },
   {
    "key": "piyush sharma",
@@ -3388,10 +3904,14 @@
    "ch_nat": "India",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": null,
    "ch_swims": 1,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.4852
+   "ratio": 1.4852,
+   "tide_spring": null,
+   "tide_range": null,
+   "moon_age": null
   },
   {
    "key": "rachael lee",
@@ -3414,10 +3934,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 37.0,
+   "ch_date": "2016-08-14",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.3736
+   "ratio": 1.3736,
+   "tide_spring": 0.4502,
+   "tide_range": 2.773,
+   "moon_age": 11.13
   },
   {
    "key": "richard haan",
@@ -3440,10 +3964,14 @@
    "ch_nat": "Czech Republic",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2005-07-29",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.2737
+   "ratio": 1.2737,
+   "tide_spring": 0.5711,
+   "tide_range": 3.518,
+   "moon_age": 22.82
   },
   {
    "key": "richard nyary",
@@ -3466,10 +3994,14 @@
    "ch_nat": "Slovakia",
    "ch_direction": "E-F",
    "ch_age": 45.2,
+   "ch_date": "2021-10-16",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.7112
+   "ratio": 1.7112,
+   "tide_spring": 0.578,
+   "tide_range": 3.56,
+   "moon_age": 10.17
   },
   {
    "key": "ritu kedia",
@@ -3492,10 +4024,14 @@
    "ch_nat": "India",
    "ch_direction": "E-F",
    "ch_age": 17.8,
+   "ch_date": "2007-08-11",
    "ch_swims": 1,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.46
+   "ratio": 1.46,
+   "tide_spring": 0.811,
+   "tide_range": 4.996,
+   "moon_age": 27.56
   },
   {
    "key": "roberta bernet",
@@ -3518,10 +4054,14 @@
    "ch_nat": "Switzerland",
    "ch_direction": "E-F",
    "ch_age": 40.2,
+   "ch_date": "2006-07-21",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.2685
+   "ratio": 1.2685,
+   "tide_spring": 0.6089,
+   "tide_range": 3.751,
+   "moon_age": 25.45
   },
   {
    "key": "roger finch",
@@ -3544,10 +4084,14 @@
    "ch_nat": "South Africa",
    "ch_direction": "E-F",
    "ch_age": 54.0,
+   "ch_date": "2011-08-20",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": false,
-   "ratio": 1.4385
+   "ratio": 1.4385,
+   "tide_spring": 0.6531,
+   "tide_range": 4.023,
+   "moon_age": 21.03
   },
   {
    "key": "ross reichard",
@@ -3570,10 +4114,14 @@
    "ch_nat": "USA",
    "ch_direction": "E-F",
    "ch_age": 35.6,
+   "ch_date": "2006-08-16",
    "ch_swims": 1,
    "gap_years": 3,
    "zh_first": false,
-   "ratio": 1.4633
+   "ratio": 1.4633,
+   "tide_spring": 0.7071,
+   "tide_range": 4.356,
+   "moon_age": 21.92
   },
   {
    "key": "roy harding",
@@ -3596,10 +4144,14 @@
    "ch_nat": "UK",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2005-08-01",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.2683
+   "ratio": 1.2683,
+   "tide_spring": 0.5782,
+   "tide_range": 3.562,
+   "moon_age": 25.82
   },
   {
    "key": "sakura adams",
@@ -3622,10 +4174,14 @@
    "ch_nat": "Japan",
    "ch_direction": "E-F",
    "ch_age": 23.4,
+   "ch_date": "2005-07-14",
    "ch_swims": 1,
    "gap_years": 12,
    "zh_first": false,
-   "ratio": 1.3287
+   "ratio": 1.3287,
+   "tide_spring": 0.5757,
+   "tide_range": 3.546,
+   "moon_age": 7.82
   },
   {
    "key": "sami robertson",
@@ -3648,10 +4204,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 32.0,
+   "ch_date": "2014-07-08",
    "ch_swims": 1,
    "gap_years": 5,
    "zh_first": false,
-   "ratio": 1.3507
+   "ratio": 1.3507,
+   "tide_spring": 0.4843,
+   "tide_range": 2.983,
+   "moon_age": 10.93
   },
   {
    "key": "sara marley",
@@ -3674,10 +4234,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 46.0,
+   "ch_date": "2014-07-29",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": false,
-   "ratio": 1.3376
+   "ratio": 1.3376,
+   "tide_spring": 0.8611,
+   "tide_range": 5.305,
+   "moon_age": 2.4
   },
   {
    "key": "sean paul breslin",
@@ -3700,10 +4264,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2024-09-15",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": false,
-   "ratio": 1.5759
+   "ratio": 1.5759,
+   "tide_spring": 0.6234,
+   "tide_range": 3.84,
+   "moon_age": 12.07
   },
   {
    "key": "sian williams",
@@ -3726,10 +4294,14 @@
    "ch_nat": "UK [Wales]",
    "ch_direction": "E-F",
    "ch_age": 44.4,
+   "ch_date": "2013-09-24",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.5015
+   "ratio": 1.5015,
+   "tide_spring": 0.8385,
+   "tide_range": 5.165,
+   "moon_age": 19.23
   },
   {
    "key": "sorcha barry",
@@ -3752,10 +4324,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 29.6,
+   "ch_date": "2011-09-15",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.6519
+   "ratio": 1.6519,
+   "tide_spring": 0.8625,
+   "tide_range": 5.313,
+   "moon_age": 17.5
   },
   {
    "key": "stuart bowman",
@@ -3778,10 +4354,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 41.3,
+   "ch_date": "2014-08-05",
    "ch_swims": 7,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.3276
+   "ratio": 1.3276,
+   "tide_spring": 0.5007,
+   "tide_range": 3.084,
+   "moon_age": 9.4
   },
   {
    "key": "suzanne dods",
@@ -3804,10 +4384,14 @@
    "ch_nat": "USA",
    "ch_direction": "E-F",
    "ch_age": 40.1,
+   "ch_date": "2000-08-07",
    "ch_swims": 1,
    "gap_years": 4,
    "zh_first": false,
-   "ratio": 1.1932
+   "ratio": 1.1932,
+   "tide_spring": 0.6103,
+   "tide_range": 3.759,
+   "moon_age": 7.19
   },
   {
    "key": "sylvain estadieu",
@@ -3830,10 +4414,14 @@
    "ch_nat": "France",
    "ch_direction": "E-F",
    "ch_age": 23.7,
+   "ch_date": "2009-09-20",
    "ch_swims": 2,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.5747
+   "ratio": 1.5747,
+   "tide_spring": 1.0278,
+   "tide_range": 6.331,
+   "moon_age": 1.23
   },
   {
    "key": "thomas ladurner",
@@ -3856,10 +4444,14 @@
    "ch_nat": "Italy",
    "ch_direction": "E-F",
    "ch_age": 34.4,
+   "ch_date": "2012-08-13",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.601
+   "ratio": 1.601,
+   "tide_spring": 0.436,
+   "tide_range": 2.686,
+   "moon_age": 25.66
   },
   {
    "key": "thomas van every",
@@ -3882,10 +4474,14 @@
    "ch_nat": "Canada",
    "ch_direction": "E-F",
    "ch_age": 44.7,
+   "ch_date": "2014-09-05",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.3958
+   "ratio": 1.3958,
+   "tide_spring": 0.5676,
+   "tide_range": 3.496,
+   "moon_age": 10.87
   },
   {
    "key": "tim denyer",
@@ -3908,10 +4504,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 26.7,
+   "ch_date": "2005-08-16",
    "ch_swims": 1,
    "gap_years": 5,
    "zh_first": false,
-   "ratio": 1.2928
+   "ratio": 1.2928,
+   "tide_spring": 0.5844,
+   "tide_range": 3.6,
+   "moon_age": 11.29
   },
   {
    "key": "timothy donovan",
@@ -3934,10 +4534,14 @@
    "ch_nat": "Australia",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2012-08-13",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": false,
-   "ratio": 1.3534
+   "ratio": 1.3534,
+   "tide_spring": 0.436,
+   "tide_range": 2.686,
+   "moon_age": 25.66
   },
   {
    "key": "tina neill",
@@ -3960,10 +4564,14 @@
    "ch_nat": "USA",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2005-08-09",
    "ch_swims": 2,
    "gap_years": 1,
    "zh_first": false,
-   "ratio": 1.6638
+   "ratio": 1.6638,
+   "tide_spring": 0.8336,
+   "tide_range": 5.135,
+   "moon_age": 4.29
   },
   {
    "key": "tom healy",
@@ -3986,10 +4594,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 45.0,
+   "ch_date": "2012-09-07",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.4045
+   "ratio": 1.4045,
+   "tide_spring": 0.6298,
+   "tide_range": 3.879,
+   "moon_age": 21.13
   },
   {
    "key": "tom knight",
@@ -4012,10 +4624,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 36.1,
+   "ch_date": "2019-08-25",
    "ch_swims": 1,
    "gap_years": 3,
    "zh_first": false,
-   "ratio": 1.1451
+   "ratio": 1.1451,
+   "tide_spring": 0.4882,
+   "tide_range": 3.008,
+   "moon_age": 24.5
   },
   {
    "key": "tom rutter",
@@ -4038,10 +4654,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 43.4,
+   "ch_date": "2019-07-09",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.7477
+   "ratio": 1.7477,
+   "tide_spring": 0.7471,
+   "tide_range": 4.602,
+   "moon_age": 7.03
   },
   {
    "key": "toni pavicic donkic",
@@ -4064,10 +4684,14 @@
    "ch_nat": "Croatia",
    "ch_direction": "E-F",
    "ch_age": 38.4,
+   "ch_date": "2006-08-07",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.4584
+   "ratio": 1.4584,
+   "tide_spring": 0.6906,
+   "tide_range": 4.254,
+   "moon_age": 12.92
   },
   {
    "key": "trevor colman",
@@ -4090,10 +4714,14 @@
    "ch_nat": "UK [England]",
    "ch_direction": "E-F",
    "ch_age": 55.8,
+   "ch_date": "2009-08-18",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.374
+   "ratio": 1.374,
+   "tide_spring": 0.7521,
+   "tide_range": 4.633,
+   "moon_age": 27.29
   },
   {
    "key": "trevor malone",
@@ -4116,10 +4744,14 @@
    "ch_nat": "Ireland",
    "ch_direction": "E-F",
    "ch_age": 42.8,
+   "ch_date": "2015-08-01",
    "ch_swims": 1,
    "gap_years": 1,
    "zh_first": true,
-   "ratio": 1.7604
+   "ratio": 1.7604,
+   "tide_spring": 0.9849,
+   "tide_range": 6.067,
+   "moon_age": 16.03
   },
   {
    "key": "tullio salvatore",
@@ -4142,10 +4774,14 @@
    "ch_nat": "Italy",
    "ch_direction": "E-F",
    "ch_age": 35.0,
+   "ch_date": "2010-09-21",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": false,
-   "ratio": 1.4698
+   "ratio": 1.4698,
+   "tide_spring": 0.6853,
+   "tide_range": 4.222,
+   "moon_age": 12.86
   },
   {
    "key": "vasanti niemz",
@@ -4168,10 +4804,14 @@
    "ch_nat": "Germany",
    "ch_direction": "E-F",
    "ch_age": 53.7,
+   "ch_date": "2010-09-03",
    "ch_swims": 2,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.7189
+   "ratio": 1.7189,
+   "tide_spring": 0.5119,
+   "tide_range": 3.153,
+   "moon_age": 24.39
   },
   {
    "key": "vedika bolliger",
@@ -4194,10 +4834,14 @@
    "ch_nat": "Switzerland",
    "ch_direction": "E-F",
    "ch_age": 37.6,
+   "ch_date": "2002-08-21",
    "ch_swims": 5,
    "gap_years": 0,
    "zh_first": true,
-   "ratio": 1.7414
+   "ratio": 1.7414,
+   "tide_spring": 0.7909,
+   "tide_range": 4.872,
+   "moon_age": 12.92
   },
   {
    "key": "victoria thorpe",
@@ -4220,10 +4864,14 @@
    "ch_nat": "UK",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2012-08-13",
    "ch_swims": 1,
    "gap_years": 2,
    "zh_first": true,
-   "ratio": 1.3961
+   "ratio": 1.3961,
+   "tide_spring": 0.436,
+   "tide_range": 2.686,
+   "moon_age": 25.66
   },
   {
    "key": "william ellis",
@@ -4246,10 +4894,14 @@
    "ch_nat": "UK",
    "ch_direction": "E-F",
    "ch_age": null,
+   "ch_date": "2024-08-18",
    "ch_swims": 1,
    "gap_years": 10,
    "zh_first": true,
-   "ratio": 1.7351
+   "ratio": 1.7351,
+   "tide_spring": 0.7701,
+   "tide_range": 4.744,
+   "moon_age": 13.6
   }
  ],
  "review": []

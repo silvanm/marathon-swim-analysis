@@ -152,6 +152,8 @@ def load_channel() -> tuple[list[dict], dict[tuple[str, str], list[int]]]:
             "gender": str(r[idx["Gender"]] or ""),
             "nat": str(r[idx["Nationality when swam"]] or ""),
             "direction": str(r[idx["Direction"]] or ""),
+            "date": (r[idx["Swim Depart Date"]].date().isoformat()
+                     if isinstance(r[idx["Swim Depart Date"]], datetime.datetime) else None),
             "age": float(age) if isinstance(age, (int, float)) else None,
         }
         i = len(swims)
@@ -263,6 +265,7 @@ def main(verbose: bool = typer.Option(False, "--verbose", "-v")) -> None:
             "zh_yob": z["yob"], "zh_age": z["age"], "zh_swims": len(zs),
             "ch_year": c["year"], "ch_seconds": c["seconds"],
             "ch_nat": c["nat"], "ch_direction": c["direction"], "ch_age": c["age"],
+            "ch_date": c["date"],
             "ch_swims": len(cs),
             "gap_years": abs(z["year"] - c["year"]),
             "zh_first": z["year"] <= c["year"],

@@ -126,6 +126,27 @@ def main(max_gap: int = typer.Option(99, help="Nur Paare mit höchstens so viele
                    f"im Band {100 * cov / len(sel):3.0f} %")
     typer.echo("")
 
+    # --- tide ---------------------------------------------------------------
+    # The one external variable that carries signal, and the only one a swimmer knows
+    # in advance: the tidal range of the booked slot. Fitted on log(surcharge) so the
+    # model stays multiplicative on the surcharge and the band stays asymmetric.
+    tide_pairs = [p for p in pairs if p.get("tide_spring")]
+    tide = None
+    if len(tide_pairs) >= 50:
+        tx = [p["tide_spring"] for p in tide_pairs]
+        ty = [math.log((p["ch_seconds"] - p["zh_seconds"]) / 3600) for p in tide_pairs]
+        ta, tb, ts = ols(tx, ty)
+        tr = corr([p["ch_seconds"] / 3600 - p["zh_seconds"] / 3600 for p in tide_pairs], tx)
+        tide = {"n": len(tide_pairs), "a": ta, "b": tb, "sigma": ts, "r": tr,
+                "xmin": min(tx), "xmax": max(tx)}
+        typer.echo(f"Tidenhub (n = {len(tide_pairs)}): Korrelation mit dem Aufschlag "
+                   f"r = {tr:+.3f}")
+        typer.echo(f"  log(Aufschlag) = {ta:.3f} + {tb:.3f} · Tidenfaktor   (Streuung {ts:.3f})")
+        for f, lbl in ((0.45, "Nipptide"), (0.60, "Richtung Nipp"),
+                       (0.80, "Mitte"), (1.00, "Springtide")):
+            typer.echo(f"    {lbl:15s} Faktor {f:.2f}  →  Aufschlag {hm(math.exp(ta + tb * f))} h")
+        typer.echo("")
+
     typer.echo("Nebenbefunde (Abweichung vom Median-Aufschlag):")
     for label, sel in (
         ("Frauen", [i for i, p in enumerate(pairs) if p["gender"] == "F"]),
@@ -149,6 +170,7 @@ def main(max_gap: int = typer.Option(99, help="Nur Paare mit höchstens so viele
             "corr_surcharge_vs_time": corr(off, x),
             "xmin": min(x), "xmax": max(x),
         },
+        "tide": tide,
         "alternatives": [{"label": l, "formula": f, "resid_sd": s} for l, f, s in compare(x, y)],
         "bands": bands,
         "pairs": [{
@@ -159,6 +181,8 @@ def main(max_gap: int = typer.Option(99, help="Nur Paare mit höchstens so viele
             "ratio": p["ratio"],
             "surcharge": round((p["ch_seconds"] - p["zh_seconds"]) / 3600, 4),
             "grade": p["grade"], "zh_nat": p["zh_nat"], "zh_club": p["zh_club"],
+            "ch_date": p.get("ch_date"),
+            "tide_spring": p.get("tide_spring"),
         } for p in pairs],
     }, ensure_ascii=False, indent=1))
     typer.echo(f"\n→ {OUT.name}")

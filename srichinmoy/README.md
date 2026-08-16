@@ -124,6 +124,33 @@ Schwächste Stelle: über 11 h Seezeit liegen nur 24 Paare vor, und ihre Kanalze
 breiter als das Band abbildet (Abdeckung 83 %). Vermutlich Survivorship — langsame Querungen
 werden häufiger abgebrochen, Abbrüche fehlen im Datensatz.
 
+### Tidenhub
+
+`tides.py` rechnet aus dem Datum der Querung den Tidenhub in Dover. Das harmonische Modell
+(M2+S2+N2) ist aus dem Channel-Simulator portiert, wo es auf 56 publizierte Dover-Hochwasser
+gefittet wurde. Die Rückextrapolation über 24 Jahre ist geprüft: an 1272 Stichtagen von 2002
+bis 2025 widerspricht die Spring/Nipp-Einstufung der Mondphase dreimal (0,2 %) — sie hält,
+weil nur die Amplituden gefittet sind, die Frequenzen aber astronomische Konstanten.
+
+Der Tidenhub ist das **einzige** geprüfte Zusatzmerkmal mit Signal:
+
+```
+log(Aufschlag) = 0.863 + 0.719 · Tidenfaktor        r = +0.229, 95%-KI [+0.08, +0.37]
+
+  Nipptide      (0.45)  →  3:16 h        Mitte      (0.80)  →  4:12 h
+  Richtung Nipp (0.60)  →  3:39 h        Springtide (1.00)  →  4:52 h
+```
+
+Kreuzvalidiert bringt das −1,4 % MAE (in 64 % von 200 Folds besser). Der Gewinn ist klein,
+weil zwei Drittel der Querungen ohnehin in Nippfenstern liegen — Piloten buchen die ruhigen
+Termine. Für eine *einzelne* Planung ist der Effekt gross: zwischen Nipp und Spring liegen
+rund 95 Minuten. Und anders als Wetter oder Wassertemperatur kennt man das Tidenfenster
+schon bei der Buchung.
+
+Alter, Anzahl Zürichsee-Starts, Geschlecht, Jahresabstand und Reihenfolge wurden ebenfalls
+geprüft (`experiment_ml.py`) — keines korreliert über 0,12 mit dem Aufschlag, und XGBoost
+mit allen Merkmalen bleibt kreuzvalidiert hinter dem konstanten Aufschlag zurück.
+
 **Vorbehalt**: Die Channel-Datenbank enthält nur erfolgreiche Querungen. Die Hochrechnung gilt
 unter der Bedingung, dass man ankommt, und sagt nichts über die Erfolgswahrscheinlichkeit.
 
@@ -134,6 +161,7 @@ uv venv .venv && uv pip install --python .venv/bin/python anthropic typer pypdf 
 .venv/bin/python srichinmoy/extract.py            # ANTHROPIC_API_KEY nötig
 .venv/bin/python srichinmoy/build_db.py
 .venv/bin/python srichinmoy/match_channel.py -v   # braucht openpyxl
+.venv/bin/python srichinmoy/tides.py annotate
 .venv/bin/python srichinmoy/project.py
 ```
 
