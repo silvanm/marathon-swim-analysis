@@ -179,4 +179,4 @@ uv venv .venv && uv pip install --python .venv/bin/python anthropic typer pypdf 
 Erstellt: 2026-08-15
 
 ---
-Stand: 2026-08-22 · Commit e462ef5
+Stand: 2026-08-22 · Commit e678b50
