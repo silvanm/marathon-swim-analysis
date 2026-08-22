@@ -21,7 +21,76 @@
     d.name = (d.first ? d.first + " " : "") + d.last;
     d.key = (d.last + "|" + d.first).toLowerCase();
     d.hay = (d.name + " " + d.club + " " + d.city + " " + d.nat + " " + d.team).toLowerCase();
+    d.rows = [d];            // an entry always knows the source rows behind it
   });
+
+  // ---------- relay teams ----------
+  // The source has one row per relay swimmer: the team's rank and time repeat on each of them.
+  // For a team ranking those rows are folded into a single entry. A name alone is not a team
+  // identity — Club Batan de Natacion fielded two teams in 2003 — so the key carries category,
+  // rank, status and time as well.
+  function uniq(a) {
+    var seen = {}, out = [];
+    a.forEach(function (v) { if (v && !seen[v]) { seen[v] = 1; out.push(v); } });
+    return out;
+  }
+  function firstNotNull(rows, k) {
+    for (var i = 0; i < rows.length; i++) if (rows[i][k] != null) return rows[i][k];
+    return null;
+  }
+  function makeTeam(rows) {
+    var r = rows[0];
+    var members = rows.map(function (d) { return d.name; }).filter(Boolean);
+    // A handful of old rankings list a relay without its team name; then the surnames stand in.
+    var label = r.team || (members.length
+      ? uniq(rows.map(function (d) { return d.last; })).join(" / ")
+      : "Staffel ohne Namen");
+    var t = {
+      year: r.year, rank: r.rank, status: r.status,
+      last: label, first: "", name: label, team: r.team,
+      yob: null, age: null,
+      nat: uniq(rows.map(function (d) { return d.nat; })).join(", "),
+      city: uniq(rows.map(function (d) { return d.city; })).join(", "),
+      club: uniq(rows.map(function (d) { return d.club; })).join(", "),
+      gender: r.gender, cls: r.cls, suit: r.suit, relay: 1,
+      split: firstNotNull(rows, "split"), finish: firstNotNull(rows, "finish"),
+      speed: firstNotNull(rows, "speed"), cat: r.cat,
+      members: members, rows: rows, isTeam: true
+    };
+    t.key = "team|" + (r.team || label).toLowerCase();
+    t.hay = (label + " " + members.join(" ") + " " + t.club + " " + t.city + " " +
+             t.nat).toLowerCase();
+    return t;
+  }
+
+  var SOLO = ALL.filter(function (d) { return !d.relay; });
+  var TEAMS = (function () {
+    var groups = {}, order = [];
+    ALL.forEach(function (d) {
+      if (!d.relay) return;
+      var k = [d.year, d.cat, d.suit, d.status, d.rank, d.finish, d.team].join("\u00a6");
+      if (!groups[k]) { groups[k] = []; order.push(k); }
+      groups[k].push(d);
+    });
+    return order.map(function (k) { return makeTeam(groups[k]); });
+  })();
+  // The field a team is ranked against: teams that finished the full distance. Teams with a
+  // time but outside the classification (HC, OTHER) are not part of it.
+  var TEAMS_FIN = TEAMS.filter(function (t) {
+    return t.finish != null && t.status === "FINISHED";
+  });
+
+  // Position of one entry in a field, counting only finishers: "3. von 449".
+  function rankAmong(list, t) {
+    var faster = 0, n = 0;
+    list.forEach(function (o) {
+      if (o.finish == null) return;
+      n++;
+      if (o.finish < t.finish) faster++;
+    });
+    return { pos: faster + 1, n: n };
+  }
+  function fmtRank(r) { return r ? r.pos + ". von " + fmtInt(r.n) : "–"; }
 
   var YEARS = Array.from(new Set(ALL.map(function (d) { return d.year; }))).sort();
   var Y_MIN = YEARS[0], Y_MAX = YEARS[YEARS.length - 1];
@@ -59,7 +128,8 @@
   }
 
   // ---------- state ----------
-  var S = { q: "", y1: Y_MIN, y2: Y_MAX, gender: "all", cls: "all", type: "all", suit: "all", status: "fin" };
+  var S = { q: "", y1: Y_MIN, y2: Y_MAX, gender: "all", cls: "all", type: "all", suit: "all",
+    status: "fin", teams: "team" };
   var sortKey = "finish", sortDir = 1, limit = 200;
   var view = [];
 
@@ -75,8 +145,11 @@
     return true;
   }
 
+  // In team mode a relay counts once, so the ranking positions are team positions.
+  function source() { return S.teams === "team" ? SOLO.concat(TEAMS) : ALL; }
+
   function apply() {
-    view = ALL.filter(passes);
+    view = source().filter(passes);
     sortView();
     renderStats();
     renderTimes();
@@ -101,12 +174,15 @@
   function renderStats() {
     var fin = view.filter(function (d) { return d.finish != null; });
     var times = fin.map(function (d) { return d.finish; });
-    var people = new Set(view.map(function (d) { return d.key; }));
+    var people = new Set();
+    view.forEach(function (d) {
+      d.rows.forEach(function (r) { if (r.last) people.add(r.key); });
+    });
     var best = times.length ? Math.min.apply(null, times) : null;
     var bestRow = best == null ? null : fin.find(function (d) { return d.finish === best; });
     var yrs = new Set(view.map(function (d) { return d.year; }));
     var items = [
-      ["Ergebnisse", fmtInt(view.length), ""],
+      [S.teams === "team" ? "Wertungen" : "Ergebnisse", fmtInt(view.length), ""],
       ["Personen", fmtInt(people.size), ""],
       ["Jahrgänge", fmtInt(yrs.size), ""],
       ["Schnellste Zeit", best == null ? "–" : fmtTime(best),
@@ -246,7 +322,8 @@
       hover.setAttribute("cx", best.x); hover.setAttribute("cy", best.y);
       hover.setAttribute("opacity", 1);
       var d = best.d;
-      showTip(evt, '<div class="t-name">' + esc(d.name) + (d.relay && d.team ? " · " + esc(d.team) : "") + "</div>" +
+      showTip(evt, '<div class="t-name">' + esc(d.name) +
+        (!d.isTeam && d.relay && d.team ? " · " + esc(d.team) : "") + "</div>" +
         '<div class="t-row">' + d.year + " · " + fmtTime(d.finish) + " · " + fmtSpeed(d.speed) + " km/h</div>" +
         '<div class="t-row">' + esc(catLabel(d)) + (d.rank ? " · Rang " + d.rank : "") + "</div>");
     };
@@ -310,14 +387,16 @@
         "data-year": y
       })).addEventListener("mousemove", function (evt) {
         showTip(evt, '<div class="t-name">' + y + "</div>" +
-          '<div class="t-row">Einzel ' + c.solo + " · Staffel " + c.relay + "</div>" +
+          '<div class="t-row">Einzel ' + c.solo + " · " +
+          (S.teams === "team" ? "Teams " : "Staffelstarts ") + c.relay + "</div>" +
           '<div class="t-row">Total ' + (c.solo + c.relay) + "</div>");
       });
     });
     svg.onmouseleave = hideTip;
 
     legendFor(document.getElementById("legend-count"), [
-      ["Einzel", "var(--s1)"], ["Staffel", "var(--s3)"]
+      ["Einzel", "var(--s1)"],
+      [S.teams === "team" ? "Staffelteams" : "Staffel-Starts", "var(--s3)"]
     ]);
   }
 
@@ -366,13 +445,16 @@
         '<td class="num">' + d.year + "</td>" +
         '<td class="num">' + (d.rank == null ? "" : d.rank) + "</td>" +
         "<td><span class=\"name\">" + esc(d.name) + "</span>" + status +
-          (d.relay && d.team ? '<div class="sub">' + esc(d.team) + "</div>" : "") + "</td>" +
+          (d.isTeam
+            ? '<div class="sub">' + esc(d.members.join(" · ")) + "</div>"
+            : d.relay && d.team ? '<div class="sub">' + esc(d.team) + "</div>" : "") + "</td>" +
         "<td>" + esc(catLabel(d)) + "</td>" +
         '<td class="num">' + fmtTime(d.finish) + "</td>" +
         '<td class="num">' + fmtSpeed(d.speed) + "</td>" +
         '<td class="num">' + fmtHM(d.split) + "</td>" +
         "<td>" + esc(d.nat) + "</td>" +
-        "<td>" + esc(d.club || d.team) + (d.city ? '<div class="sub">' + esc(d.city) + "</div>" : "") + "</td>" +
+        "<td>" + esc(d.isTeam ? d.club : (d.club || d.team)) +
+          (d.city ? '<div class="sub">' + esc(d.city) + "</div>" : "") + "</td>" +
         "</tr>";
     }).join("");
     Array.prototype.forEach.call(body.querySelectorAll("tr"), function (tr) {
@@ -386,13 +468,69 @@
     document.getElementById("more").hidden = view.length <= limit;
     document.getElementById("shown").textContent =
       fmtInt(Math.min(limit, view.length)) + " von " + fmtInt(view.length) + " Zeilen";
-    document.getElementById("table-note").textContent =
-      "Zeile anklicken für die vollständige Historie einer Person.";
+    document.getElementById("table-note").textContent = S.teams === "team"
+      ? "Staffeln zählen als ein Team. Zeile anklicken für Historie und Platzierungen."
+      : "Zeile anklicken für die vollständige Historie einer Person.";
   }
 
   // ---------- drawer ----------
   var drawer = document.getElementById("drawer");
   function openDrawer(d) {
+    if (d.isTeam) return openTeamDrawer(d);
+    return openPersonDrawer(d);
+  }
+
+  function openTeamDrawer(t) {
+    var hist = TEAMS.filter(function (o) { return o.key === t.key; })
+      .sort(function (a, b) { return a.year - b.year; });
+    var fins = hist.filter(function (o) { return o.finish != null; });
+    var best = fins.length ? Math.min.apply(null, fins.map(function (o) { return o.finish; })) : null;
+    var maxT = fins.length ? Math.max.apply(null, fins.map(function (o) { return o.finish; })) : 1;
+    var suitField = TEAMS_FIN.filter(function (o) { return o.suit === t.suit; });
+    var yearField = TEAMS_FIN.filter(function (o) { return o.year === t.year; });
+
+    document.getElementById("d-name").textContent = t.name;
+    var kv = [
+      ["Jahr", String(t.year)],
+      ["Kategorie", catLabel(t)],
+      ["Endzeit", fmtTime(t.finish) + (t.speed == null ? "" : "  ·  " + fmtSpeed(t.speed) + " km/h")],
+      ["Rang in der Kategorie", t.rank == null ? "–" : String(t.rank)],
+      ["Alle Staffeln 2002–2026", t.finish == null ? "–" : fmtRank(rankAmong(TEAMS_FIN, t))],
+      [t.suit ? "Staffeln mit Neopren" : "Staffeln ohne Neopren",
+        t.finish == null ? "–" : fmtRank(rankAmong(suitField, t))],
+      ["Staffeln " + t.year, t.finish == null ? "–" : fmtRank(rankAmong(yearField, t))],
+      ["Mitglieder", t.members.length ? t.members.join(", ") : "–"],
+      ["Club", t.club || "–"]
+    ];
+    // Only worth showing when the current filters actually span more than this one team.
+    var sel = view.filter(function (o) { return o.isTeam && o.finish != null; });
+    if (t.finish != null && sel.length > 1) {
+      kv.splice(7, 0, ["In dieser Auswahl", fmtRank(rankAmong(sel, t))]);
+    }
+    document.getElementById("d-body").innerHTML =
+      '<dl class="kv">' + kv.map(function (p) {
+        return "<dt>" + esc(p[0]) + "</dt><dd>" + esc(p[1]) + "</dd>";
+      }).join("") + "</dl>" +
+      (hist.length > 1
+        ? '<p class="note" style="margin:18px 0 0;color:var(--ink-3);font-size:13px">' +
+          "Alle Starts unter diesem Teamnamen</p>" +
+          '<ul class="hist">' + hist.map(function (o) {
+            var w = o.finish ? Math.round(o.finish / maxT * 100) : 0;
+            return '<li><span class="y">' + o.year + "</span><span>" + esc(catLabel(o)) +
+              (o.rank ? ' <span class="sub">Rang ' + o.rank + "</span>" : "") +
+              '<div class="sub">' + esc(o.members.join(" · ")) + "</div>" +
+              (o.finish ? '<div class="bars"><i style="width:' + w + '%"></i></div>' : "") +
+              '</span><span class="num">' +
+              (o.finish ? fmtTime(o.finish) + (o.finish === best && fins.length > 1 ? " ★" : "")
+                        : '<span class="pill ' + o.status.toLowerCase() + '">' + o.status + "</span>") +
+              "</span></li>";
+          }).join("") + "</ul>"
+        : "");
+    drawer.hidden = false;
+    document.getElementById("d-close").focus();
+  }
+
+  function openPersonDrawer(d) {
     var hist = ALL.filter(function (r) { return r.key === d.key; })
       .sort(function (a, b) { return a.year - b.year; });
     var fins = hist.filter(function (r) { return r.finish != null; });
@@ -479,12 +617,14 @@
   });
 
   document.getElementById("reset").addEventListener("click", function () {
-    S = { q: "", y1: Y_MIN, y2: Y_MAX, gender: "all", cls: "all", type: "all", suit: "all", status: "fin" };
+    S = { q: "", y1: Y_MIN, y2: Y_MAX, gender: "all", cls: "all", type: "all", suit: "all",
+      status: "fin", teams: "team" };
     qEl.value = "";
     clsEl.value = "all";
     document.getElementById("y1").value = Y_MIN;
     document.getElementById("y2").value = Y_MAX;
-    [["f-gender", "all"], ["f-type", "all"], ["f-suit", "all"], ["f-status", "fin"]].forEach(function (p) {
+    [["f-gender", "all"], ["f-type", "all"], ["f-suit", "all"], ["f-status", "fin"],
+     ["f-team", "team"]].forEach(function (p) {
       Array.prototype.forEach.call(document.querySelectorAll("#" + p[0] + " button"), function (b) {
         b.setAttribute("aria-pressed", String(b.dataset.v === p[1]));
       });
@@ -495,10 +635,12 @@
 
   document.getElementById("copy").addEventListener("click", function () {
     var head = ["Pos", "Jahr", "Rang", "Status", "Nachname", "Vorname", "Kategorie", "Neopren",
-      "Staffel", "Team", "Endzeit", "Sekunden", "km/h", "Meilen", "Nation", "Ort", "Club"];
+      "Staffel", "Team", "Mitglieder", "Endzeit", "Sekunden", "km/h", "Meilen", "Nation", "Ort",
+      "Club"];
     var lines = [head.join(";")].concat(view.map(function (d, i) {
       return [i + 1, d.year, d.rank == null ? "" : d.rank, d.status, d.last, d.first, catLabel(d),
-        d.suit, d.relay, d.team, fmtTime(d.finish), d.finish == null ? "" : d.finish,
+        d.suit, d.relay, d.team, d.isTeam ? d.members.join("; ") : "",
+        fmtTime(d.finish), d.finish == null ? "" : d.finish,
         d.speed == null ? "" : d.speed, fmtHM(d.split), d.nat, d.city, d.club]
         .map(function (v) {
           v = v == null ? "" : String(v);
@@ -538,6 +680,7 @@
   segment("f-type", "type");
   segment("f-suit", "suit");
   segment("f-status", "status");
+  segment("f-team", "teams");
   renderHead();
   apply();
 })();

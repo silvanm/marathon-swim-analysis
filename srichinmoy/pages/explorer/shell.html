@@ -229,7 +229,8 @@ footer.colophon a { color: var(--accent); }
     <h1>23 Sommer auf dem <em>Zürichsee</em></h1>
     <p class="lede">Jede offizielle Rangliste von 2002 bis 2026, aus den PDFs des Veranstalters
       extrahiert: 2015 Ergebnisse von Einzelschwimmerinnen, Masters und Staffeln — durchsuchbar,
-      filterbar und auf Tempo umgerechnet.</p>
+      filterbar und auf Tempo umgerechnet. Staffeln zählen als ein Team, umschaltbar auf eine
+      Zeile pro Schwimmerin oder Schwimmer.</p>
     <dl class="stats" id="stats"></dl>
   </header>
 
@@ -268,6 +269,13 @@ footer.colophon a { color: var(--accent); }
         <button data-v="all" aria-pressed="true">Alle</button>
         <button data-v="solo">Einzel</button>
         <button data-v="relay">Staffel</button>
+      </div>
+    </div>
+    <div class="field">
+      <label>Staffelwertung</label>
+      <div class="seg" id="f-team" role="group">
+        <button data-v="team" aria-pressed="true">als Team</button>
+        <button data-v="person" aria-pressed="false">pro Person</button>
       </div>
     </div>
     <div class="field">
@@ -336,7 +344,10 @@ footer.colophon a { color: var(--accent); }
     aus den Original-PDFs extrahiert. Erfasst sind 2002–2026; 1987–2001 liegen nur als Scans ohne
     Textlayer vor, 1997 und 2020 fanden nicht statt, 2023 wurde nach dem Start wegen Sturm
     abgebrochen. Geschwindigkeit = 26 km ÷ Endzeit, nur für gewertete Finisher über die volle
-    Distanz. Staffeln erscheinen mit einer Zeile pro Schwimmerin oder Schwimmer.
+    Distanz. Eine Staffel zählt in der Standardwertung als ein Team mit der Zeit des Teams; der
+    Schalter «Staffelwertung» stellt auf eine Zeile pro Schwimmerin oder Schwimmer um. Zwei
+    Teams desselben Jahres können denselben Namen tragen — sie werden über Kategorie, Rang und
+    Zeit unterschieden.
   </footer>
 </div>
 

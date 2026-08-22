@@ -50,7 +50,10 @@ Erfasst sind **2002–2026** (23 Jahrgänge) – alle PDFs mit Textlayer.
 | `remark` | Bemerkungsspalte der Rangliste |
 
 Staffeln sind pro Schwimmer als eigene Zeile erfasst; alle Mitglieder eines Teams teilen
-Rang, Zeit und `relay_team_name`.
+Rang, Zeit und `relay_team_name`. Die Ranglisten-Seite faltet sie für die Teamwertung wieder
+zusammen (456 Teams, davon 434 mit gewerteter Zeit). Der Teamname allein genügt dabei nicht als
+Identität — Club Batan de Natacion stellte 2003 zwei Teams —, der Schlüssel umfasst zusätzlich
+Jahr, Kategorie, Rang, Status und Zeit.
 
 ## Datenqualität
 
@@ -176,4 +179,4 @@ uv venv .venv && uv pip install --python .venv/bin/python anthropic typer pypdf 
 Erstellt: 2026-08-15
 
 ---
-Stand: 2026-08-16 · Commit 31c2df8
+Stand: 2026-08-22 · Commit e462ef5
